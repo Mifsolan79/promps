@@ -11231,4 +11231,707 @@ window.PROMPT_DATABASE = {
             "content": "Retrato corporativo definitivo capturado con Arri Alexa 35. Personaje con rostro subido como referencia con traje de gala personalizado PBR. Iluminación de máxima autoridad estilo retrato presidencial. Fondo de despacho de roble y banderas con detalle microscópico. Calidad cinematográfica de élite mundial."
         }
     ]
+,
+    "PROFESIONES": [
+    {
+        "id": "PROFESIONES_1",
+        "number": "001",
+        "style": "PROFESIONES",
+        "title": "MÉDICO DE URGENCIAS",
+        "content": "Retrato 8K, bata blanca impoluta, fonendoscopio Littmann al cuello, iluminación clínica fría de hospital."
+    },
+    {
+        "id": "PROFESIONES_2",
+        "number": "002",
+        "style": "PROFESIONES",
+        "title": "ALBAÑIL EN OBRA",
+        "content": "Primer plano, casco de seguridad amarillo con roces, chaleco reflectante naranja, rostro con motas de cemento y sudor, fondo de andamiaje."
+    },
+    {
+        "id": "PROFESIONES_3",
+        "number": "003",
+        "style": "PROFESIONES",
+        "title": "PILOTO DE CAZA F-35",
+        "content": "Interior de cabina, casco de vuelo con visor HUD avanzado, G-suit táctico, controles iluminados en verde esmeralda."
+    },
+    {
+        "id": "PROFESIONES_4",
+        "number": "004",
+        "style": "PROFESIONES",
+        "title": "BOMBERO EN ACCIÓN",
+        "content": "Traje ignífugo Nomex oscuro, casco con linterna frontal, hacha en mano, fondo de partículas de ceniza y humo denso iluminado por fuego."
+    },
+    {
+        "id": "PROFESIONES_5",
+        "number": "005",
+        "style": "PROFESIONES",
+        "title": "PILOTO COMERCIAL",
+        "content": "Uniforme azul marino con galones dorados, gorra de plato, cabina de cristal de un Airbus A350, amanecer a través del parabrisas."
+    },
+    {
+        "id": "PROFESIONES_6",
+        "number": "006",
+        "style": "PROFESIONES",
+        "title": "MILITAR DE OPERACIONES ESPECIALES",
+        "content": "Uniforme de camuflaje Multicam, chaleco táctico con cargadores, visión nocturna GPNVG-18 levantada, entorno de jungla húmeda."
+    },
+    {
+        "id": "PROFESIONES_7",
+        "number": "007",
+        "style": "PROFESIONES",
+        "title": "CIRUJANO JEFE",
+        "content": "Gorro y mascarilla quirúrgica, guantes de látex con sangre, luces LED de quirófano potentes, enfoque en los ojos de concentración extrema."
+    },
+    {
+        "id": "PROFESIONES_8",
+        "number": "008",
+        "style": "PROFESIONES",
+        "title": "INGENIERO CIVIL",
+        "content": "Casco blanco, planos enrollados bajo el brazo, estación total topográfica al fondo, gran puente en construcción bajo cielo despejado."
+    },
+    {
+        "id": "PROFESIONES_9",
+        "number": "009",
+        "style": "PROFESIONES",
+        "title": "CHEF DE COCINA",
+        "content": "Chaqueta blanca cruzada, gorro alto (toque), cuchillo de damasco en mano, cocina industrial con fogones encendidos y vapor."
+    },
+    {
+        "id": "PROFESIONES_10",
+        "number": "010",
+        "style": "PROFESIONES",
+        "title": "POLICÍA CIENTÍFICO",
+        "content": "Mono blanco de protección, cámara réflex, recolectando evidencias con pinzas, iluminación de luz forense ultravioleta."
+    },
+    {
+        "id": "PROFESIONES_11",
+        "number": "011",
+        "style": "PROFESIONES",
+        "title": "ASTRONAUTA EN LA ISS",
+        "content": "Traje espacial EMU, visor reflejando la curvatura de la Tierra, ingravidez, paneles solares al fondo."
+    },
+    {
+        "id": "PROFESIONES_12",
+        "number": "012",
+        "style": "PROFESIONES",
+        "title": "CAMIONERO DE LARGA DISTANCIA",
+        "content": "Gorra de camionero, manos curtidas al volante de un Peterbilt, interior de cabina con luces de neón, carretera nocturna infinita."
+    },
+    {
+        "id": "PROFESIONES_13",
+        "number": "013",
+        "style": "PROFESIONES",
+        "title": "AGRICULTOR MODERNO",
+        "content": "Camisa de cuadros, manos con tierra fértil, tractor John Deere moderno al fondo, campo de trigo dorado al atardecer."
+    },
+    {
+        "id": "PROFESIONES_14",
+        "number": "014",
+        "style": "PROFESIONES",
+        "title": "BUZO SOLDADOR",
+        "content": "Casco de buceo antiguo Kirk Kirby, antorcha de soldadura submarina emitiendo burbujas y luz azul brillante, profundidad abisal."
+    },
+    {
+        "id": "PROFESIONES_15",
+        "number": "015",
+        "style": "PROFESIONES",
+        "title": "PERIODISTA DE GUERRA",
+        "content": "Chaleco antibalas con rótulo 'PRESS', cámara Canon con teleobjetivo, fondo de ciudad en ruinas con humo en el horizonte."
+    },
+    {
+        "id": "PROFESIONES_16",
+        "number": "016",
+        "style": "PROFESIONES",
+        "title": "VETERINARIO DE EXÓTICOS",
+        "content": "Pijama sanitario verde, examinando un pequeño reptil, clínica iluminada con luz natural, instrumental médico de precisión."
+    },
+    {
+        "id": "PROFESIONES_17",
+        "number": "017",
+        "style": "PROFESIONES",
+        "title": "REPOSTERO ARTESANO",
+        "content": "Delantal con harina, amasando pan rústico, horno de piedra de leña al fondo con llamas cálidas."
+    },
+    {
+        "id": "PROFESIONES_18",
+        "number": "018",
+        "style": "PROFESIONES",
+        "title": "MECÁNICO DE FÓRMULA 1",
+        "content": "Mono ignífugo de equipo, casquillos de comunicación, pistola de impacto en mano, boxes iluminados con luz blanca técnica."
+    },
+    {
+        "id": "PROFESIONES_19",
+        "number": "019",
+        "style": "PROFESIONES",
+        "title": "CAPITÁN DE CARGUERO",
+        "content": "Barba cana, jersey de lana azul, prismáticos, puente de mando con radares iluminados, océano embravecido."
+    },
+    {
+        "id": "PROFESIONES_20",
+        "number": "020",
+        "style": "PROFESIONES",
+        "title": "ABOGADO DE ELITE",
+        "content": "Traje de sastre a medida, corbata de seda, despacho de lujo con estanterías de libros jurídicos, luz de lámpara de banquero."
+    },
+    {
+        "id": "PROFESIONES_21",
+        "number": "021",
+        "style": "PROFESIONES",
+        "title": "SOLDADOR INDUSTRIAL",
+        "content": "Máscara de soldar bajada, chispas saltando en arco voltaico, guantes de cuero protectores, atmósfera de taller metalúrgico."
+    },
+    {
+        "id": "PROFESIONES_22",
+        "number": "022",
+        "style": "PROFESIONES",
+        "title": "DETECTIVE PRIVADO",
+        "content": "Gabardina clásica, sombrero fedora, office en penumbra con persianas venecianas, humo de cigarrillo y luz de neón exterior."
+    },
+    {
+        "id": "PROFESIONES_23",
+        "number": "023",
+        "style": "PROFESIONES",
+        "title": "ARQUEÓLOGO EN EXCAVACIÓN",
+        "content": "Sombrero tipo Indiana Jones, brocha fina retirando arena de una reliquia antigua, sol del desierto abrasador."
+    },
+    {
+        "id": "PROFESIONES_24",
+        "number": "024",
+        "style": "PROFESIONES",
+        "title": "ASTROFÍSICO EN OBSERVATORIO",
+        "content": "Frente a pantallas con mapas estelares, telescopio gigante al fondo, cúpula abierta revelando la Vía Láctea."
+    },
+    {
+        "id": "PROFESIONES_25",
+        "number": "025",
+        "style": "PROFESIONES",
+        "title": "PELUQUERO ESTILISTA",
+        "content": "Tijeras profesionales en mano, capa de peluquería negra, espejos de salón con luces circulares, atmósfera de moda urbana."
+    },
+    {
+        "id": "PROFESIONES_26",
+        "number": "026",
+        "style": "PROFESIONES",
+        "title": "GUARDIA REAL",
+        "content": "Uniforme de gala con plumas, fusil al hombro, expresión imperturbable, fachada de palacio histórico detrás."
+    },
+    {
+        "id": "PROFESIONES_27",
+        "number": "027",
+        "style": "PROFESIONES",
+        "title": "GUÍA DE MONTAÑA",
+        "content": "Ropa técnica Gore-Tex, piolet y crampones, cima de montaña nevada con nubes bajas, sol de alta montaña."
+    },
+    {
+        "id": "PROFESIONES_28",
+        "number": "028",
+        "style": "PROFESIONES",
+        "title": "MÚSICO DE ORQUESTA",
+        "content": "Frac negro, violín Stradivarius, escenario de auditorio iluminado, partituras con anotaciones a lápiz."
+    },
+    {
+        "id": "PROFESIONES_29",
+        "number": "029",
+        "style": "PROFESIONES",
+        "title": "BIÓLOGO MARINO",
+        "content": "Neopreno, máscara de buceo, nadando junto a una ballena jorobada, agua cristalina con rayos de sol filtrados."
+    },
+    {
+        "id": "PROFESIONES_30",
+        "number": "030",
+        "style": "PROFESIONES",
+        "title": "ESCRITOR SOLITARIO",
+        "content": "Máquina de escribir antigua, montaña de papeles, cabaña de madera con chimenea encendida, luz de vela."
+    },
+    {
+        "id": "PROFESIONES_31",
+        "number": "031",
+        "style": "PROFESIONES",
+        "title": "BIBLIOTECARIO DE ANTIGÜEDADES",
+        "content": "Guantes blancos de algodón, pasando páginas de un manuscrito medieval, estanterías infinitas de madera oscura."
+    },
+    {
+        "id": "PROFESIONES_32",
+        "number": "032",
+        "style": "PROFESIONES",
+        "title": "CONTROLADOR AÉREO",
+        "content": "Auriculares con micro, múltiples pantallas de radar verdes, torre de control de noche con luces de pista al fondo."
+    },
+    {
+        "id": "PROFESIONES_33",
+        "number": "033",
+        "style": "PROFESIONES",
+        "title": "HERRERO ARTESANO",
+        "content": "Yunque y martillo golpeando hierro candente, chispas naranjas, fragua con carbón al rojo vivo."
+    },
+    {
+        "id": "PROFESIONES_34",
+        "number": "034",
+        "style": "PROFESIONES",
+        "title": "DENTISTA PEDIÁTRICO",
+        "content": "Mascarilla con dibujos, clínica colorida y amigable, instrumental dental de última generación, luz cálida."
+    },
+    {
+        "id": "PROFESIONES_35",
+        "number": "035",
+        "style": "PROFESIONES",
+        "title": "REPARTIDOR DE PAQUETERÍA",
+        "content": "Uniforme de empresa, terminal PDA en mano, furgoneta al fondo en calle urbana lluviosa nocturna."
+    },
+    {
+        "id": "PROFESIONES_36",
+        "number": "036",
+        "style": "PROFESIONES",
+        "title": "JUEZ DE TRIBUNAL",
+        "content": "Toga negra, mazo de madera en el estrado, sala de juicios con paneles de madera, expresión de autoridad."
+    },
+    {
+        "id": "PROFESIONES_37",
+        "number": "037",
+        "style": "PROFESIONES",
+        "title": "PINTOR DE BELLAS ARTES",
+        "content": "Manos manchadas de óleo, paleta de colores, lienzo a medio terminar, estudio con luz zenital natural."
+    },
+    {
+        "id": "PROFESIONES_38",
+        "number": "038",
+        "style": "PROFESIONES",
+        "title": "LIMPIADOR DE CRISTALES EN RASCACIELOS",
+        "content": "Arnés de seguridad, plataforma suspendida, limpiando ventanal gigante, ciudad a 200 metros bajo los pies."
+    },
+    {
+        "id": "PROFESIONES_39",
+        "number": "039",
+        "style": "PROFESIONES",
+        "title": "ENÓLOGO EN BODEGA",
+        "content": "Copa de vino tinto a contraluz, barricas de roble alineadas, sótano de piedra con humedad y sombras."
+    },
+    {
+        "id": "PROFESIONES_40",
+        "number": "040",
+        "style": "PROFESIONES",
+        "title": "ELECTRICISTA DE ALTA TENSIÓN",
+        "content": "Subido a torre eléctrica, guantes aislantes, herramientas de cableado, cielo tormentoso al fondo."
+    },
+    {
+        "id": "PROFESIONES_41",
+        "number": "041",
+        "style": "PROFESIONES",
+        "title": "ENTRENADOR PERSONAL",
+        "content": "Ropa deportiva técnica, cronómetro, gimnasio de alto rendimiento con pesas y espejos, iluminación motivacional."
+    },
+    {
+        "id": "PROFESIONES_42",
+        "number": "042",
+        "style": "PROFESIONES",
+        "title": "GEÓLOGO DE CAMPO",
+        "content": "Martillo de geólogo, examinando veta de mineral, entorno de cañón rocoso, sol de mediodía."
+    },
+    {
+        "id": "PROFESIONES_43",
+        "number": "043",
+        "style": "PROFESIONES",
+        "title": "CONSERJE DE HOTEL DE LUJO",
+        "content": "Uniforme impecable con llaves cruzadas (Les Clefs d'Or), mostrador de mármol, lobby opulento con lámparas de araña."
+    },
+    {
+        "id": "PROFESIONES_44",
+        "number": "044",
+        "style": "PROFESIONES",
+        "title": "PESCADOR DE ALTURA",
+        "content": "Chubasquero amarillo, redes llenas de peces plateados, barco pesquero en mitad de una tormenta, olas gigantes."
+    },
+    {
+        "id": "PROFESIONES_45",
+        "number": "045",
+        "style": "PROFESIONES",
+        "title": "TAXISTA NOCTURNO",
+        "content": "Rostro iluminado por el salpicadero, luces de la ciudad reflejadas en el cristal, interior de coche con ambientador de pino."
+    },
+    {
+        "id": "PROFESIONES_46",
+        "number": "046",
+        "style": "PROFESIONES",
+        "title": "ESCULTOR DE MÁRMOL",
+        "content": "Cincel y maza, nube de polvo blanco, bloque de mármol de Carrara tomando forma humana."
+    },
+    {
+        "id": "PROFESIONES_47",
+        "number": "047",
+        "style": "PROFESIONES",
+        "title": "FOTÓGRAFO DE BODAS",
+        "content": "Dos cámaras colgadas al hombro, entorno de jardín romántico, pareja desenfocada al fondo, luz de atardecer."
+    },
+    {
+        "id": "PROFESIONES_48",
+        "number": "048",
+        "style": "PROFESIONES",
+        "title": "GUÍA TURÍSTICO URBANO",
+        "content": "Paraguas de colores levantado, grupo de turistas detrás, frente a un monumento famoso, día nublado."
+    },
+    {
+        "id": "PROFESIONES_49",
+        "number": "049",
+        "style": "PROFESIONES",
+        "title": "RELOJERO DE PRECISIÓN",
+        "content": "Monóculo de aumento, pinzas microscópicas, engranajes dorados de un reloj de pulsera suizo, banco de trabajo limpio."
+    },
+    {
+        "id": "PROFESIONES_50",
+        "number": "050",
+        "style": "PROFESIONES",
+        "title": "GANADERO DE TOROS",
+        "content": "Sombrero cordobés, a caballo, vara larga, campo de dehesa con encinas y toros bravos al fondo."
+    },
+    {
+        "id": "PROFESIONES_51",
+        "number": "051",
+        "style": "PROFESIONES",
+        "title": "SOCORRISTA DE PLAYA",
+        "content": "Camiseta roja con cruz blanca, prismáticos, silla de vigilancia alta, mar azul turquesa y arena blanca."
+    },
+    {
+        "id": "PROFESIONES_52",
+        "number": "052",
+        "style": "PROFESIONES",
+        "title": "CARPINTERO DE MUEBLES",
+        "content": "Metro de madera, serrín en el aire, garlopa cepillando madera de nogal, taller con olor a resina."
+    },
+    {
+        "id": "PROFESIONES_53",
+        "number": "053",
+        "style": "PROFESIONES",
+        "title": "VENDEDOR DE MERCADO",
+        "content": "Mandil, cesta de frutas frescas y coloridas, puesto con toldo de rayas, bullicio de gente desenfocada."
+    },
+    {
+        "id": "PROFESIONES_54",
+        "number": "054",
+        "style": "PROFESIONES",
+        "title": "MODELO DE PASARELA",
+        "content": "Maquillaje vanguardista, vestido de alta costura, flashes de cámaras cegadores, pasarela negra brillante."
+    },
+    {
+        "id": "PROFESIONES_55",
+        "number": "055",
+        "style": "PROFESIONES",
+        "title": "QUÍMICO DE LABORATORIO",
+        "content": "Bata blanca, tubos de ensayo con líquidos fluorescentes, microscopio electrónico, ambiente estéril azulado."
+    },
+    {
+        "id": "PROFESIONES_56",
+        "number": "056",
+        "style": "PROFESIONES",
+        "title": "CERRAJERO DE URGENCIAS",
+        "content": "Caja de herramientas, ganzúa abriendo cerradura de seguridad, portal de noche con luz de farola tenue."
+    },
+    {
+        "id": "PROFESIONES_57",
+        "number": "057",
+        "style": "PROFESIONES",
+        "title": "PASTOR DE OVEJAS",
+        "content": "Cayado de madera, rebaño de ovejas blancas, perro border collie a su lado, pradera verde infinita."
+    },
+    {
+        "id": "PROFESIONES_58",
+        "number": "058",
+        "style": "PROFESIONES",
+        "title": "CONSTRUCTOR DE GUITARRAS",
+        "content": "Luthiere, encolando el cuerpo de una guitarra española, veteado de madera preciosa, luz cálida de taller."
+    },
+    {
+        "id": "PROFESIONES_59",
+        "number": "059",
+        "style": "PROFESIONES",
+        "title": "TAXIDERMISTA PROFESIONAL",
+        "content": "Pincel fino, ojos de cristal, animal salvaje en pose majestuosa, estudio con especímenes conservados."
+    },
+    {
+        "id": "PROFESIONES_60",
+        "number": "060",
+        "style": "PROFESIONES",
+        "title": "MAQUINISTA DE TREN",
+        "content": "Uniforme ferroviario, panel de control de tren de alta velocidad, túnel iluminado por los faros delanteros."
+    },
+    {
+        "id": "PROFESIONES_61",
+        "number": "061",
+        "style": "PROFESIONES",
+        "title": "PALEONTÓLOGO",
+        "content": "Pincel y espátula, desenterrando un fémur de dinosaurio, entorno de desierto de Utah, sol abrasador."
+    },
+    {
+        "id": "PROFESIONES_62",
+        "number": "062",
+        "style": "PROFESIONES",
+        "title": "BARMAN DE COCTELERÍA",
+        "content": "Coctelera en movimiento, chorro de líquido dorado, cristalería elegante, bar de noche con luz tenue y botellas retroiluminadas."
+    },
+    {
+        "id": "PROFESIONES_63",
+        "number": "063",
+        "style": "PROFESIONES",
+        "title": "SOPRANO DE OPERA",
+        "content": "Vestido de época, expresión de canto potente, escenario de teatro clásico con telón rojo, iluminación de foco."
+    },
+    {
+        "id": "PROFESIONES_64",
+        "number": "064",
+        "style": "PROFESIONES",
+        "title": "ADIESTRADOR CANINO",
+        "content": "Militar o civil, silbato, perro pastor alemán en posición de guardia, campo de entrenamiento con obstáculos."
+    },
+    {
+        "id": "PROFESIONES_65",
+        "number": "065",
+        "style": "PROFESIONES",
+        "title": "PILOTO DE HELICÓPTERO DE RESCATE",
+        "content": "Casco de vuelo blanco, mandos del helicóptero, cables de rescate, montaña nevada o mar embravecido."
+    },
+    {
+        "id": "PROFESIONES_66",
+        "number": "066",
+        "style": "PROFESIONES",
+        "title": "MODISTA DE ALTA COSTURA",
+        "content": "Alfileres en la boca, cinta métrica, ajustando traje sobre maniquí, taller luminoso con telas de seda."
+    },
+    {
+        "id": "PROFESIONES_67",
+        "number": "067",
+        "style": "PROFESIONES",
+        "title": "GEÓGRAFO CARTÓGRAFO",
+        "content": "Inclinado sobre mapa topográfico gigante, brújula y escalímetro, oficina con globos terráqueos antiguos."
+    },
+    {
+        "id": "PROFESIONES_68",
+        "number": "068",
+        "style": "PROFESIONES",
+        "title": "HACKER ÉTICO",
+        "content": "Múltiples monitores con código de terminal verde, habitación a oscuras iluminada por el brillo de las pantallas."
+    },
+    {
+        "id": "PROFESIONES_69",
+        "number": "069",
+        "style": "PROFESIONES",
+        "title": "CUIDADOR DE ZOO",
+        "content": "Uniforme de safari, alimentando a una jirafa, entorno de sabana recreada, luz de mañana."
+    },
+    {
+        "id": "PROFESIONES_70",
+        "number": "070",
+        "style": "PROFESIONES",
+        "title": "JOYERO DIAMANTISTA",
+        "content": "Pinzas sosteniendo un diamante tallado, lupa de ojo, luz blanca intensísima enfocada en la gema."
+    },
+    {
+        "id": "PROFESIONES_71",
+        "number": "071",
+        "style": "PROFESIONES",
+        "title": "FLORISTA ARTESANA",
+        "content": "Tijeras de poda, ramos de flores frescas de mil colores, tienda con aroma a campo y humedad."
+    },
+    {
+        "id": "PROFESIONES_72",
+        "number": "072",
+        "style": "PROFESIONES",
+        "title": "COOPERANTE INTERNACIONAL",
+        "content": "Chaleco de ONG, repartiendo suministros, campo de refugiados con tiendas de lona, polvo y sol fuerte."
+    },
+    {
+        "id": "PROFESIONES_73",
+        "number": "073",
+        "style": "PROFESIONES",
+        "title": "ARMONIZADOR DE INSTRUMENTOS",
+        "content": "Afinando un piano de cola negro, diapasón, sala de conciertos vacía con acústica perfecta."
+    },
+    {
+        "id": "PROFESIONES_74",
+        "number": "074",
+        "style": "PROFESIONES",
+        "title": "TÉCNICO DE SONIDO",
+        "content": "Mesa de mezclas con cientos de botones y faders iluminados, auriculares, escenario de concierto de rock al fondo."
+    },
+    {
+        "id": "PROFESIONES_75",
+        "number": "075",
+        "style": "PROFESIONES",
+        "title": "VIDRIERO ARTESANO",
+        "content": "Caña de soplar con masa de vidrio incandescente, forma de jarrón naranja brillante, horno a altísima temperatura."
+    },
+    {
+        "id": "PROFESIONES_76",
+        "number": "076",
+        "style": "PROFESIONES",
+        "title": "ANTROPÓLOGO FORENSE",
+        "content": "Examinando restos óseos con lupa, laboratorio con cráneos, ambiente de investigación científica."
+    },
+    {
+        "id": "PROFESIONES_77",
+        "number": "077",
+        "style": "PROFESIONES",
+        "title": "EDITOR DE CINE",
+        "content": "Sala de montaje a oscuras, tres monitores con líneas de tiempo complejas, auriculares profesionales de cuero."
+    },
+    {
+        "id": "PROFESIONES_78",
+        "number": "078",
+        "style": "PROFESIONES",
+        "title": "JARDINERO DE PALACIO",
+        "content": "Tijeras de poda largas, setos perfectamente rectos, laberinto de jardín francés, luz de día despejado."
+    },
+    {
+        "id": "PROFESIONES_79",
+        "number": "079",
+        "style": "PROFESIONES",
+        "title": "RESTAURADOR DE ARTE",
+        "content": "Pincel microscópico, eliminando barniz viejo de un cuadro renacentista, luz de examen ultravioleta."
+    },
+    {
+        "id": "PROFESIONES_80",
+        "number": "080",
+        "style": "PROFESIONES",
+        "title": "OPERARIO DE PLATAFORMA PETROLERA",
+        "content": "Ropa de trabajo sucia de crudo, casco, mar del norte picado al fondo, estructura metálica gigante."
+    },
+    {
+        "id": "PROFESIONES_81",
+        "number": "081",
+        "style": "PROFESIONES",
+        "title": "METEORÓLOGO",
+        "content": "Frente a pantalla de satélite con huracán, oficina con barómetros y anemómetros, luz artificial fuerte."
+    },
+    {
+        "id": "PROFESIONES_82",
+        "number": "082",
+        "style": "PROFESIONES",
+        "title": "CRUPIER DE CASINO",
+        "content": "Repartiendo cartas de póker, fichas de casino apiladas, mesa de fieltro verde, iluminación de salón de juego."
+    },
+    {
+        "id": "PROFESIONES_83",
+        "number": "083",
+        "style": "PROFESIONES",
+        "title": "TAPICERO ARTESANO",
+        "content": "Martillo de tapicero, tachuelas doradas, sillón de época a medio terminar, taller con rollos de tela y cuero."
+    },
+    {
+        "id": "PROFESIONES_84",
+        "number": "084",
+        "style": "PROFESIONES",
+        "title": "GURÚ DE YOGA",
+        "content": "Postura de loto, ropa orgánica blanca, estudio minimalista con luz suave de amanecer, incienso quemándose."
+    },
+    {
+        "id": "PROFESIONES_85",
+        "number": "085",
+        "style": "PROFESIONES",
+        "title": "CRONOMETRADOR DE CARRERAS",
+        "content": "Panel de tiempos digital, cronómetro de mano, línea de meta con corredores desenfocados, luz de día."
+    },
+    {
+        "id": "PROFESIONES_86",
+        "number": "086",
+        "style": "PROFESIONES",
+        "title": "CALÍGRAFO MAESTRO",
+        "content": "Pluma de ave, tintero, pergamino con letras góticas perfectas, luz de vela y sombras alargadas."
+    },
+    {
+        "id": "PROFESIONES_87",
+        "number": "087",
+        "style": "PROFESIONES",
+        "title": "ENCUADERNADOR DE LIBROS",
+        "content": "Prensa de madera, hilo de seda cosiendo lomos, cubiertas de cuero grabadas en oro."
+    },
+    {
+        "id": "PROFESIONES_88",
+        "number": "088",
+        "style": "PROFESIONES",
+        "title": "EXAMINADOR DE DIAMANTES",
+        "content": "Espectrómetro, diamante bajo luz polarizada, laboratorio gemológico sofisticado."
+    },
+    {
+        "id": "PROFESIONES_89",
+        "number": "089",
+        "style": "PROFESIONES",
+        "title": "APICULTOR",
+        "content": "Traje de protección blanco completo, ahumador en mano, panales de abejas dorados, entorno de campo de lavanda."
+    },
+    {
+        "id": "PROFESIONES_90",
+        "number": "090",
+        "style": "PROFESIONES",
+        "title": "SOMMELIER",
+        "content": "Catando vino, decantador de cristal, bodega con estantes de hierro y botellas antiguas nubladas de polvo."
+    },
+    {
+        "id": "PROFESIONES_91",
+        "number": "091",
+        "style": "PROFESIONES",
+        "title": "ZAPATERO DE CALZADO A MEDIDA",
+        "content": "Horma de madera, cuero de becerro, martillo de zapatero, taller con olor a pegamento y piel."
+    },
+    {
+        "id": "PROFESIONES_92",
+        "number": "092",
+        "style": "PROFESIONES",
+        "title": "INGENIERO DE SONIDO EN ESTUDIO",
+        "content": "Micrófono Neumann frente a cantante (desenfocado), cabina insonorizada, luces de señalización rojas."
+    },
+    {
+        "id": "PROFESIONES_93",
+        "number": "093",
+        "style": "PROFESIONES",
+        "title": "MUESTRISTA DE TELAS",
+        "content": "Manos acariciando seda salvaje, catálogos de textiles, estudio de diseño luminoso."
+    },
+    {
+        "id": "PROFESIONES_94",
+        "number": "094",
+        "style": "PROFESIONES",
+        "title": "LIMPIADOR DE ESCENAS DEL CRIMEN",
+        "content": "Traje NBQ azul, nebulizador desinfectante, habitación desordenada con cintas de la policía."
+    },
+    {
+        "id": "PROFESIONES_95",
+        "number": "095",
+        "style": "PROFESIONES",
+        "title": "MAESTRO DE ARTES MARCIALES",
+        "content": "Keikogi blanco, cinturón negro desgastado, dojo con suelo de madera, luz zenital."
+    },
+    {
+        "id": "PROFESIONES_96",
+        "number": "096",
+        "style": "PROFESIONES",
+        "title": "DISEÑADOR DE VIDEOJUEGOS",
+        "content": "Tableta gráfica Wacom, modelado 3D de un monstruo en pantalla, habitación con figuritas de colección."
+    },
+    {
+        "id": "PROFESIONES_97",
+        "number": "097",
+        "style": "PROFESIONES",
+        "title": "EXPERTO EN CIBERSEGURIDAD",
+        "content": "Analizando líneas de código malicioso en rojo, cortafuegos digital, atmósfera de sala de servidores fría."
+    },
+    {
+        "id": "PROFESIONES_98",
+        "number": "098",
+        "style": "PROFESIONES",
+        "title": "OPTIMIZADOR DE MOTORES",
+        "content": "Manos con grasa, ajustando carburador de coche clásico, motor V8 al descubierto, taller retro."
+    },
+    {
+        "id": "PROFESIONES_99",
+        "number": "099",
+        "style": "PROFESIONES",
+        "title": "CONSERJE DE MUSEO",
+        "content": "Uniforme oscuro, linterna en mano, patrullando sala de dinosaurios de noche, sombras largas."
+    },
+    {
+        "id": "PROFESIONES_100",
+        "number": "100",
+        "style": "PROFESIONES",
+        "title": "ASTRONAUTA EN MARTE",
+        "content": "Traje espacial con polvo rojo, huella en el suelo arenoso, paisaje marciano con cielo anaranjado."
+    }
+]
 };

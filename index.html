@@ -966,6 +966,7 @@
                             </optgroup>
                             <optgroup label="👔 Profesional y Administrativo">
                                 <option value="estilo CV profesional, administrativo, serio, responsable, biometría de confianza">Administrativo / CV</option>
+                                <option value="estilo Profesional, uniforme de trabajo impecable, entorno laboral técnico, fotorrealista 8K">PROFESIONES (General)</option>
                             </optgroup>
                             <optgroup label="📸 Fotografía de Vanguardia">
                                 <option value="estilo Fotografía de Drone, gran angular, perspectiva aérea majestuosa">Vista de Drone (Aérea)</option>
@@ -1474,7 +1475,7 @@
 
     <div id="toast">¡Copiado al portapapeles!</div>
 
-    <script src="data_prompts_v2.js?v=2026.03.25"></script>
+    <script src="data_prompts_v2.js?v=2026.03.25.v2"></script>
     <script>
         const container = document.getElementById('prompts-container');
         const nav = document.getElementById('categories-nav');
@@ -1486,10 +1487,16 @@
 
         function init() {
             const categories = Object.keys(PROMPT_DATABASE);
-            if (categories.includes('CV')) {
-                categories.splice(categories.indexOf('CV'), 1);
-                categories.unshift('CV');
-            }
+            
+            // Prioridad específica para PROFESIONES y CV
+            const specialPriority = ["PROFESIONES", "CV"];
+            specialPriority.slice().reverse().forEach(cat => {
+                const idx = categories.indexOf(cat);
+                if (idx > -1) {
+                    categories.splice(idx, 1);
+                    categories.unshift(cat);
+                }
+            });
 
             categories.forEach(cat => {
                 const btn = document.createElement('button');
