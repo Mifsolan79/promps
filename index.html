@@ -33,12 +33,21 @@
         }
 
         /* Asegurar que contenedores específicos no tengan scroll visible */
-        .sidebar, .content-area, .prompts-grid, #presets-list, #categories-nav {
+        .sidebar, .content-area, .prompts-grid, #presets-list {
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
-        .sidebar::-webkit-scrollbar, .content-area::-webkit-scrollbar, .prompts-grid::-webkit-scrollbar, #presets-list::-webkit-scrollbar, #categories-nav::-webkit-scrollbar {
+        .sidebar::-webkit-scrollbar, .content-area::-webkit-scrollbar, .prompts-grid::-webkit-scrollbar, #presets-list::-webkit-scrollbar {
             display: none;
+        }
+
+        #categories-nav::-webkit-scrollbar {
+            display: block;
+            width: 4px;
+        }
+        #categories-nav::-webkit-scrollbar-thumb {
+            background: var(--neon-blue);
+            border-radius: 10px;
         }
 
         body {
@@ -1447,7 +1456,7 @@
 
     <div id="toast">¡Copiado al portapapeles!</div>
 
-    <script src="data_prompts.js"></script>
+    <script src="data_prompts.js?v=20260325-1327"></script>
     <script>
         const container = document.getElementById('prompts-container');
         const nav = document.getElementById('categories-nav');
@@ -1458,7 +1467,13 @@
         let currentCat = '';
 
         function init() {
-            Object.keys(PROMPT_DATABASE).forEach(cat => {
+            const categories = Object.keys(PROMPT_DATABASE);
+            if (categories.includes('CV')) {
+                categories.splice(categories.indexOf('CV'), 1);
+                categories.unshift('CV');
+            }
+
+            categories.forEach(cat => {
                 const btn = document.createElement('button');
                 btn.className = 'nav-btn';
                 btn.textContent = cat;
@@ -1466,7 +1481,7 @@
                 nav.appendChild(btn);
             });
 
-            const firstCat = Object.keys(PROMPT_DATABASE)[0];
+            const firstCat = categories[0];
             if (firstCat) {
                 selectCategory(firstCat, nav.querySelector('.nav-btn'));
             }
