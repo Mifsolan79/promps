@@ -616,38 +616,41 @@
             border: 1px solid var(--neon-blue);
         }
         .mifsut-link {
-            position: fixed;
-            top: 10px;
-            left: 20px;
-            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: 0 auto 25px auto;
+            padding: 10px 25px;
+            background: rgba(0, 242, 255, 0.05);
+            border: 1px solid var(--neon-blue);
+            border-radius: 30px;
             color: var(--neon-blue);
             text-decoration: none;
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+            text-align: center;
+            letter-spacing: 2px;
             transition: all 0.3s ease;
-            background: rgba(0,0,0,0.5);
-            padding: 5px 12px;
-            border-radius: 5px;
-            backdrop-filter: blur(5px);
-            border: 1px solid var(--glass);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+            text-transform: uppercase;
         }
         .mifsut-link:hover {
+            background: rgba(0, 242, 255, 0.15);
             color: white;
-            text-shadow: 0 0 15px var(--neon-blue);
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.3);
+            transform: translateY(-2px);
+            border-color: white;
         }
     </style>
 </head>
 <body>
-    <a href="https://www.mifsut.es" target="_blank" class="mifsut-link">www.mifsut.es</a>
 
 
     <main>
         <aside class="sidebar">
+            <a href="https://www.mifsut.es" target="_blank" class="mifsut-link">www.mifsut.es</a>
             <div class="presets-section">
                 <div class="presets-header" style="margin-bottom: 15px; color: var(--neon-pink); font-family: 'Orbitron'; font-size: 0.9rem; letter-spacing: 1px;">
                     <span>📁 MIS PRESETS</span>
