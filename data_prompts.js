@@ -10528,5 +10528,707 @@ const PROMPT_DATABASE = {
             "title": "EL BOTÍN DEFINITIVO 100",
             "content": "Perspectiva de cámara de seguridad (CCTV) con grano cinematográfico y distorsión de lente. Rostro subido como referencia bajo una capucha, mirando a cámara con tensión extrema. Biometría facial de adrenalina: pupilas dilatadas y micro-sudor visible. Entorno industrial de cemento PBR. Protocolo de acción extrema #100. Calidad IMAX."
         }
+    ],
+    "CV": [
+        {
+            "id": "cv_1",
+            "number": 1,
+            "style": "CV",
+            "title": "LIDERAZGO EJECUTIVO",
+            "content": "Retrato corporativo maestro capturado con Sony Venice 2 y lente de 85mm. Personaje con rostro subido como referencia con biometría de extrema confianza y seriedad. Atuendo de traje de lino gris carbón (PBR) bajo iluminación suave de tres puntos 5600K. Fondo de oficina minimalista desenfocado (bokeh natural). Calidad técnica 8K RAW."
+        },
+        {
+            "id": "cv_2",
+            "number": 2,
+            "style": "CV",
+            "title": "GESTIÓN Y RESPONSABILIDAD",
+            "content": "Plano medio profesional con Arri Alexa 35. Administrativo con rostro subido como referencia frente a escritorio de roble pulido PBR. Iluminación de ventana lateral (Side light) resaltando la textura de la piel y un reloj de acero pulido. Atmósfera de oficina de alta gama, orden absoluto y enfoque nítido en los ojos (Iris detail)."
+        },
+        {
+            "id": "cv_3",
+            "number": 3,
+            "style": "CV",
+            "title": "COMPROMISO CORPORATIVO",
+            "content": "Primer plano de alta fidelidad con Red V-Raptor. Personaje con rostro subido como referencia con expresión de responsabilidad y determinación. Luz de estudio profesional 5500K con sombras suaves (Softbox). Piel con textura real, poros visibles y mirada directa a cámara. Calidad de imagen Masterpiece."
+        },
+        {
+            "id": "cv_4",
+            "number": 4,
+            "style": "CV",
+            "title": "ORGANIZACIÓN EJECUTIVA",
+            "content": "Escena de oficina capturada con Sony Venice. Personaje con rostro subido como referencia sosteniendo tablet de cristal templado PBR. Iluminación cenital difusa que proyecta un brillo profesional en la ropa formal de seda y lana. Biometría facial de calma y control. Nitidez absoluta en cada rasgo."
+        },
+        {
+            "id": "cv_5",
+            "number": 5,
+            "style": "CV",
+            "title": "EFICIENCIA ADMINISTRATIVA",
+            "content": "Retrato de busto con óptica Zeiss Supreme Prime. Personaje con rostro subido como referencia con sonrisa profesional contenida y seria. Iluminación Rembrandt clásica que añade profundidad y carácter. Fondo de estantería de libros legales con desenfoque óptico profundo. Estética cinematográfica corporativa."
+        },
+        {
+            "id": "cv_6",
+            "number": 6,
+            "style": "CV",
+            "title": "VISIÓN ESTRATÉGICA",
+            "content": "Plano medio corto con Arri Alexa LF. Administrativo con rostro subido como referencia en sala de juntas moderna. Luz de atardecer filtrada por grandes ventanales. Textura de camisa de algodón PBR con pliegues realistas. Mirada de visión a largo plazo y gran detalle en la córnea del ojo."
+        },
+        {
+            "id": "cv_7",
+            "number": 7,
+            "style": "CV",
+            "title": "INTEGRIDAD PROFESIONAL",
+            "content": "Primer plano con lente de 50mm Leica Noctilux. Personaje con rostro subido como referencia con expresión de honestidad y seriedad. Iluminación natural de mañana 5000K. Piel con biometría extrema, sin imperfecciones artificiales. Nitidez 8K absoluta bajo luz neutra."
+        },
+        {
+            "id": "cv_8",
+            "number": 8,
+            "style": "CV",
+            "title": "AUTORIDAD SERENA",
+            "content": "Captura con Red V-Raptor XL. Personaje con rostro subido como referencia sentado en silla de cuero PBR negro. Iluminación lateral que perfila la mandíbula (Rim light). Atuendo formal impecable. Atmósfera de despacho de dirección, silencio y responsabilidad."
+        },
+        {
+            "id": "cv_9",
+            "number": 9,
+            "style": "CV",
+            "title": "EXCELENCIA ANALÍTICA",
+            "content": "Rostro subido como referencia iluminado por el resplandor de pantallas de monitor (Cool white light). Biometría facial de concentración microscópica. Detalle en la textura de la piel bajo luz artificial. Óptica macro para captar la seriedad en los ojos y el compromiso con los datos."
+        },
+        {
+            "id": "cv_10",
+            "number": 10,
+            "style": "CV",
+            "title": "PROTOCOLOS DE ÉXITO",
+            "content": "Plano americano con Arri Alexa 35. Personaje con rostro subido como referencia con maletín de cuero PBR premium. Caminando por pasillo de mármol blanco bajo luces LED empotradas. Iluminación de alto ratio de contraste que resalta el aura de éxito y responsabilidad profesional."
+        },
+        {
+            "id": "cv_11",
+            "number": 11,
+            "style": "CV",
+            "title": "PENSAMIENTO ESTRUCTURADO",
+            "content": "Retrato con Sony Venice 2. Personaje con rostro subido como referencia apoyado en mesa de cristal con reflejos Ray-tracing. Iluminación de oficina matutina 4500K. Suéter de cachemira PBR con textura táctil visible. Mirada reflexiva y seria, biometría de calma cerebral."
+        },
+        {
+            "id": "cv_12",
+            "number": 12,
+            "style": "CV",
+            "title": "FIABILIDAD CORPORATIVA",
+            "content": "Primer plano con lente anamórfica Cooke. Personaje con rostro subido como referencia en entorno de recepción moderna. Luz volumétrica que entra por la puerta principal. Rostro de fiabilidad absoluta, piel con poros reales y vello facial detallado. Calidad técnica 8K."
+        },
+        {
+            "id": "cv_13",
+            "number": 13,
+            "style": "CV",
+            "title": "GESTIÓN DE RECURSOS",
+            "content": "Administrativo con rostro subido como referencia revisando documentos de papel fotográfico PBR. Iluminación de lámpara de escritorio (Warmer light 3200K) contrastando con la luz de día. Biometría en las manos: venas y huellas visibles. Expresión de responsabilidad meticulosa."
+        },
+        {
+            "id": "cv_14",
+            "number": 14,
+            "style": "CV",
+            "title": "VOCACIÓN DE SERVICIO",
+            "content": "Plano medio con Arri Alexa. Personaje con rostro subido como referencia con manos cruzadas, proyectando apertura y seriedad. Iluminación difusa envolvente que suaviza sombras pero mantiene el detalle de la piel. Fondo de jardín de oficina (biophilic design) con desenfoque suave."
+        },
+        {
+            "id": "cv_15",
+            "number": 15,
+            "style": "CV",
+            "title": "CONTROL DE OPERACIONES",
+            "content": "Captura con Red V-Raptor. Personaje con rostro subido como referencia con auriculares de diseño ergonómico PBR. Iluminación de sala de control con luces azules y blancas sutiles. Biometría facial de agilidad mental y responsabilidad operativa. Calidad RAW."
+        },
+        {
+            "id": "cv_16",
+            "number": 16,
+            "style": "CV",
+            "title": "PROFESIONALISMO MODERNO",
+            "content": "Retrato corporativo con lente de 100mm. Personaje con rostro subido como referencia con blazer de lana virgen PBR. Iluminación de estudio con paraguas difusor que crea un brillo elegante en ojos y mejillas. Fondo neutro con sutil degradado de luz. Perfección técnica."
+        },
+        {
+            "id": "cv_17",
+            "number": 17,
+            "style": "CV",
+            "title": "DISCIPLINA ADMINISTRATIVA",
+            "content": "Plano medio con Sony Venice 2. Personaje con rostro subido como referencia de pie frente a ventanal de rascacielos. Luz de contraluz (Kicker) que dibuja el contorno de la figura y el rostro. Biometría de disciplina y liderazgo. Textura de traje con micro-patrón visible PBR."
+        },
+        {
+            "id": "cv_18",
+            "number": 18,
+            "style": "CV",
+            "title": "PRECISIÓN Y LOGÍSTICA",
+            "content": "Primer plano con Arri Alexa 35. Rostro subido como referencia iluminado por luz de ventana clara 6000K. Piel con detalle microscópico de poros y textura. Expresión de precisión absoluta. Fondo de archivadores metálicos PBR con ligero desenfoque de movimiento."
+        },
+        {
+            "id": "cv_19",
+            "number": 19,
+            "style": "CV",
+            "title": "TALENTO ORGANIZADO",
+            "content": "Retrato con Red V-Raptor. Personaje con rostro subido como referencia con gafas de montura de titanio PBR. Iluminación lateral que resalta la estructura ósea facial y la seriedad del perfil profesional. Estética limpia, minimalista y de alta responsabilidad."
+        },
+        {
+            "id": "cv_20",
+            "number": 20,
+            "style": "CV",
+            "title": "COMPROMISO CON LA CALIDAD",
+            "content": "Plano medio corto con lente Panavision. Personaje con rostro subido como referencia en oficina de diseño industrial. Luz solar directa filtrada por persianas creando un patrón de luz y sombra (Chiaroscuro). Biometría de madurez y responsabilidad profesional."
+        },
+        {
+            "id": "cv_21",
+            "number": 21,
+            "style": "CV",
+            "title": "GESTIÓN DE EQUIPOS",
+            "content": "Personaje con rostro subido como referencia liderando mesa redonda. Iluminación cenital cálida. Textura de trajes de múltiples personas (PBR) con diferentes materiales. Rostro de liderazgo sereno capturado con Sony Venice. Profundidad de campo Masterpiece."
+        },
+        {
+            "id": "cv_22",
+            "number": 22,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN PÚBLICA",
+            "content": "Entorno oficial con banderas de fondo con textura de seda PBR. Personaje con rostro subido como referencia con expresión de servicio público y seriedad extrema. Iluminación difusa de gran salón. Captura técnica con Arri Alexa 35."
+        },
+        {
+            "id": "cv_23",
+            "number": 23,
+            "style": "CV",
+            "title": "LOGÍSTICA INTERNACIONAL",
+            "content": "Primer plano con Red V-Raptor. Personaje con rostro subido como referencia frente a mapa mundi digital con emisión de luz azul. Biometría de cansancio profesional digno y responsabilidad. Nitidez 8K en las arrugas de expresión y ojos realistas."
+        },
+        {
+            "id": "cv_24",
+            "number": 24,
+            "style": "CV",
+            "title": "SECRETARÍA DE DIRECCIÓN",
+            "content": "Plano americano con Sony Venice. Personaje con rostro subido como referencia con agenda de piel PBR y bolígrafo de oro. Iluminación puntual (Key light) que resalta la elegancia y la seriedad administrativa. Fondo de paneles de madera PBR de alta calidad."
+        },
+        {
+            "id": "cv_25",
+            "number": 25,
+            "style": "CV",
+            "title": "SOPORTE EJECUTIVO",
+            "content": "Retrato con óptica Leica 75mm. Personaje con rostro subido como referencia con mirada atenta y responsable. Iluminación suave de día nublado a través de cristal. Piel con biometría real, vello facial fino y lágrimas nítidas en el iris. Calidad cinematográfica."
+        },
+        {
+            "id": "cv_26",
+            "number": 26,
+            "style": "CV",
+            "title": "COORDINACIÓN DE PROYECTOS",
+            "content": "Personaje con rostro subido como referencia señalando pizarra de cristal con marcadores PBR. Luz de techo LED blanca pura. Biometría facial de entusiasmo controlado y seriedad analítica. Captura con Arri Alexa LF para un rango dinámico extremo."
+        },
+        {
+            "id": "cv_27",
+            "number": 27,
+            "style": "CV",
+            "title": "ÉTICA PROFESIONAL",
+            "content": "Primer plano con Sony Venice 2. Personaje con rostro subido como referencia con expresión de integridad inquebrantable. Iluminación natural sin filtros. Piel con textura Porosa PBR, realismo biométrico al 100%. Estética de retrato de prestigio."
+        },
+        {
+            "id": "cv_28",
+            "number": 28,
+            "style": "CV",
+            "title": "DESARROLLO ORGANIZATIVO",
+            "content": "Administrativo con rostro subido como referencia en plano medio. Fondo de oficina abierta con plantas y madera PBR. Iluminación lateral suave que proyecta sombras amigables pero serias. Textura de ropa de lino y algodón con detalle microscópico."
+        },
+        {
+            "id": "cv_29",
+            "number": 29,
+            "style": "CV",
+            "title": "RESPONSABILIDAD FINANCIERA",
+            "content": "Captura con Red V-Raptor XL. Personaje con rostro subido como referencia analizando hoja de cálculo en pantalla 4K. Luz azulada del monitor reflejada en la cara. Biometría facial de rigor y responsabilidad máxima. Nitidez extrema en los rasgos."
+        },
+        {
+            "id": "cv_30",
+            "number": 30,
+            "style": "CV",
+            "title": "EXCELENCIA OPERATIVA",
+            "content": "Retrato corporativo con lente de 85mm f/1.2. Personaje con rostro subido como referencia con traje de tres piezas PBR. Iluminación de estudio clásica (Butterfly lighting). Fondo de ciudad de noche con bokeh de luces urbanas. Calidad 8K RAW definitiva."
+        },
+        {
+            "id": "cv_31",
+            "number": 31,
+            "style": "CV",
+            "title": "AGILIDAD ADMINISTRATIVA",
+            "content": "Personaje con rostro subido como referencia en movimiento sutil por la oficina. Captura con Arri Alexa 35 con obturación rápida para congelar la acción profesional. Luz de fluorescentes de alta calidad. Biometría de energía y seriedad enfocada."
+        },
+        {
+            "id": "cv_32",
+            "number": 32,
+            "style": "CV",
+            "title": "FIDELIDAD A LA MARCA",
+            "content": "Primer plano de rostro subido como referencia con pin corporativo en solapa de traje de seda PBR. Iluminación Rembrandt dramática. Ojos nítidos con reflejo del logotipo de la empresa. Sentido de pertenencia y responsabilidad extrema."
+        },
+        {
+            "id": "cv_33",
+            "number": 33,
+            "style": "CV",
+            "title": "LIDERAZGO SILENCIOSO",
+            "content": "Plano americano con Sony Venice. Personaje con rostro subido como referencia observando a su equipo desde la distancia. Luz de atardecer dorada. Biometría de sabiduría y calma estratégica. Textura de gabardina de cuero PBR al hombro."
+        },
+        {
+            "id": "cv_34",
+            "number": 34,
+            "style": "CV",
+            "title": "PROTOCOLOS DE CALIDAD",
+            "content": "Retrato con óptica Zeiss Supreme. Personaje con rostro subido como referencia con guantes blancos de inspección PBR. Iluminación técnica de laboratorio/oficina. Piel con biometría de limpieza y rigor. Nitidez absoluta en cada pixel."
+        },
+        {
+            "id": "cv_35",
+            "number": 35,
+            "style": "CV",
+            "title": "COMPROMISO SOCIAL CORPORATIVO",
+            "content": "Personaje con rostro subido como referencia en evento de gala. Traje de esmoquin con textura de seda y terciopelo PBR. Iluminación de candelabros cálida. Biometría facial de empatía y seriedad profesional. Captura con Red V-Raptor."
+        },
+        {
+            "id": "cv_36",
+            "number": 36,
+            "style": "CV",
+            "title": "GESTIÓN DOCUMENTAL",
+            "content": "Primer plano extremo de rostro subido como referencia mirando a través de lupa documentos antiguos PBR. Iluminación lateral dura que resalta poros y arrugas de concentración. Estética de investigador administrativo serio."
+        },
+        {
+            "id": "cv_37",
+            "number": 37,
+            "style": "CV",
+            "title": "COORDINACIÓN GENERAL",
+            "content": "Plano medio con Arri Alexa LF. Personaje con rostro subido como referencia con múltiples teléfonos y pantallas. Iluminación de alta tecnología con toques cian. Biometría de multitarea responsable and control total. Nitidez 8K."
+        },
+        {
+            "id": "cv_38",
+            "number": 38,
+            "style": "CV",
+            "title": "FIDELIDAD Y CONFIDENCIALIDAD",
+            "content": "Retrato oscuro con Sony Venice 2. Personaje con rostro subido como referencia con dedo en los labios (signo de silencio). Iluminación de bajo perfil (Low key). Biometría de lealtad y responsabilidad absoluta. Calidad Masterpiece."
+        },
+        {
+            "id": "cv_39",
+            "number": 39,
+            "style": "CV",
+            "title": "PLANIFICACIÓN MAESTRA",
+            "content": "Administrativo con rostro subido como referencia frente a diagrama de Gannt gigante de cristal PBR. Luz retroiluminada que perfila el rostro. Biometría de inteligencia lógica y orden. Captura técnica con Red V-Raptor."
+        },
+        {
+            "id": "cv_40",
+            "number": 40,
+            "style": "CV",
+            "title": "INTEGRACIÓN CORPORATIVA",
+            "content": "Plano americano de personaje con rostro subido como referencia estrechando la mano a socio comercial. Iluminación de hall de hotel de lujo. Textura de manos con biometría real: poros, arrugas y uñas nítidas. Seriedad y éxito."
+        },
+        {
+            "id": "cv_41",
+            "number": 41,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN DE TIEMPOS",
+            "content": "Primer plano de rostro subido como referencia mirando reloj de pulsera de lujo PBR con reflejos HDR. Iluminación de tarde invernal 4000K. Biometría de puntualidad y responsabilidad profesional extrema. Arri Alexa 35."
+        },
+        {
+            "id": "cv_42",
+            "number": 42,
+            "style": "CV",
+            "title": "CONTROL DE ARCHIVO",
+            "content": "Personaje con rostro subido como referencia en pasillo de biblioteca de archivos infinitos PBR. Luz cenital puntual que crea atmósfera de conocimiento y responsabilidad. Biometría de búsqueda incansable y seriedad técnica."
+        },
+        {
+            "id": "cv_43",
+            "number": 43,
+            "style": "CV",
+            "title": "EXCELENCIA EN COMUNICACIÓN",
+            "content": "Retrato con lente de 50mm Summilux. Personaje con rostro subido como referencia hablando ante micrófono de podcast/conferencia PBR. Iluminación lateral que añade carisma y responsabilidad. Nitidez absoluta en los labios y ojos."
+        },
+        {
+            "id": "cv_44",
+            "number": 44,
+            "style": "CV",
+            "title": "SOPORTE TÉCNICO ADMINISTRATIVO",
+            "content": "Captura con Sony Venice. Personaje con rostro subido como referencia con herramientas de precisión y ordenador. Iluminación de laboratorio limpio. Biometría facial de destreza y responsabilidad técnica. Calidad 8K RAW."
+        },
+        {
+            "id": "cv_45",
+            "number": 45,
+            "style": "CV",
+            "title": "GESTIÓN DE CRISIS",
+            "content": "Primer plano de rostro subido como referencia bajo luz roja de emergencia reflejada en el sudor frío de la frente. Expresión de calma bajo presión y responsabilidad máxima. Fondo desenfocado de oficina en caos controlado."
+        },
+        {
+            "id": "cv_46",
+            "number": 46,
+            "style": "CV",
+            "title": "CULTURA ORGANIZATIVA",
+            "content": "Plano medio con Arri Alexa. Personaje con rostro subido como referencia frente a pared de premios y certificaciones con refracción de cristal PBR. Iluminación de orgullo profesional y seriedad. Textura de traje impecable."
+        },
+        {
+            "id": "cv_47",
+            "number": 47,
+            "style": "CV",
+            "title": "PROTOCOLOS DE SEGURIDAD",
+            "content": "Rostro subido como referencia escaneado por luz láser de seguridad cian. Biometría facial mapeada con puntos digitales. Iluminación técnica de alta seguridad. Estética de responsabilidad y protección de datos."
+        },
+        {
+            "id": "cv_48",
+            "number": 48,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN CREATIVA",
+            "content": "Retrato corporativo con fondo de estudio de arte moderno. Personaje con rostro subido como referencia con vestimenta semi-formal de alta calidad PBR. Iluminación de diseño con sombras artísticas pero serias. Calidad Masterpiece."
+        },
+        {
+            "id": "cv_49",
+            "number": 49,
+            "style": "CV",
+            "title": "LIDERAZGO EN VENTAS",
+            "content": "Plano americano con Red V-Raptor. Personaje con rostro subido como referencia cerrando contrato de papel PBR. Luz de éxito de mediodía 5600K. Biometría facial de ambición ética y responsabilidad comercial. Nitidez extrema."
+        },
+        {
+            "id": "cv_50",
+            "number": 50,
+            "style": "CV",
+            "title": "DIRECCIÓN DE PROYECTOS",
+            "content": "Retrato épico con Sony Venice 2. Personaje con rostro subido como referencia con traje de gala y mirada al futuro. Iluminación de gran escala tipo bloque de cine. Fondo de skyline de ciudad global. Calidad IMAX definitiva."
+        },
+        {
+            "id": "cv_51",
+            "number": 51,
+            "style": "CV",
+            "title": "COORDINADOR DE LOGÍSTICA",
+            "content": "Rostro subido como referencia con walkie-talkie PBR en puerto comercial. Iluminación dramática de atardecer con grúas de fondo. Biometría de mando y responsabilidad en campo. Arri Alexa 35, grano cinematográfico sutil."
+        },
+        {
+            "id": "cv_52",
+            "number": 52,
+            "style": "CV",
+            "title": "AUDITORÍA INTERNA",
+            "content": "Primer plano de ojos de rostro subido como referencia a través de cristales de gafas con reflejos de columnas de números. Luz de oficina nocturna blanca fría. Biometría de detección de errores y seriedad absoluta."
+        },
+        {
+            "id": "cv_53",
+            "number": 53,
+            "style": "CV",
+            "title": "SECRETARÍA EJECUTIVA",
+            "content": "Plano medio con Sony Venice. Personaje con rostro subido como referencia atendiendo llamada con smartphone de titanio PBR. Iluminación lateral que resalta la elegancia y la eficiencia administrativa rápida."
+        },
+        {
+            "id": "cv_54",
+            "number": 54,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN DE JUSTICIA",
+            "content": "Entorno de juzgado con madera de caoba PBR. Personaje con rostro subido como referencia con toga de seda y expresión de imparcialidad y responsabilidad. Iluminación formal y solemne. Captura con Arri Alexa."
+        },
+        {
+            "id": "cv_55",
+            "number": 55,
+            "style": "CV",
+            "title": "CUMPLIMIENTO NORMATIVO",
+            "content": "Retrato con lente de 35mm wide. Personaje con rostro subido como referencia rodeado de libros de leyes PBR. Iluminación de biblioteca antigua con polvo en suspensión dinámico. Biometría de rigor y seriedad ética."
+        },
+        {
+            "id": "cv_56",
+            "number": 56,
+            "style": "CV",
+            "title": "GESTIÓN DE COMPRAS",
+            "content": "Personaje con rostro subido como referencia analizando muestras de materiales PBR (Metal, tela, plástico). Iluminación de estudio de producto que resalta la biometría táctil de las manos y la seriedad del análisis."
+        },
+        {
+            "id": "cv_57",
+            "number": 57,
+            "style": "CV",
+            "title": "SOPORTE AL CLIENTE VIP",
+            "content": "Primer plano de rostro subido como referencia con auriculares discretos. Iluminación cálida de zona de espera de lujo. Biometría de paciencia infinita y responsabilidad profesional. Nitidez absoluta en el iris."
+        },
+        {
+            "id": "cv_58",
+            "number": 58,
+            "style": "CV",
+            "title": "CONTABILIDAD DE COSTES",
+            "content": "Captura con Red V-Raptor. Personaje con rostro subido como referencia con calculadora mecánica antigua de latón PBR en un despacho moderno. Contraste entre lo clásico y lo nuevo. Biometría de precisión numérica."
+        },
+        {
+            "id": "cv_59",
+            "number": 59,
+            "style": "CV",
+            "title": "DIRECCIÓN ADMINISTRATIVA",
+            "content": "Plano americano de personaje con rostro subido como referencia bajando de coche oficial de lujo PBR. Luz de flashes de cámaras. Biometría facial de autoridad y responsabilidad bajo el escrutinio público."
+        },
+        {
+            "id": "cv_60",
+            "number": 60,
+            "style": "CV",
+            "title": "CONSOLIDACIÓN DE DATOS",
+            "content": "Retrato corporativo con fondo de servidor de datos PBR con luces LED parpadeantes. Personaje con rostro subido como referencia con luz azulada lateral. Biometría de solidez mental y responsabilidad de datos. 8K RAW."
+        },
+        {
+            "id": "cv_61",
+            "number": 61,
+            "style": "CV",
+            "title": "PROTOCOLOS DE BIENESTAR",
+            "content": "Administrativo de recursos humanos con rostro subido como referencia en entorno de oficina naturalista. Iluminación suave de mañana. Biometría de empatía y seriedad en el cuidado del personal. Sony Venice 2."
+        },
+        {
+            "id": "cv_62",
+            "number": 62,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN DE VENTAS",
+            "content": "Primer plano de rostro subido como referencia con gráfico de ventas ascendente proyectado en cristales de oficina PBR. Iluminación de éxito comercial y responsabilidad. Nitidez extrema en los poros de la piel."
+        },
+        {
+            "id": "cv_63",
+            "number": 63,
+            "style": "CV",
+            "title": "COORDINADOR DE EVENTOS",
+            "content": "Personaje con rostro subido como referencia con radio comunicador y plano de montaje PBR. Hangar industrial de fondo. Iluminación de mañana fría. Biometría de organización extrema y responsabilidad logística."
+        },
+        {
+            "id": "cv_64",
+            "number": 64,
+            "style": "CV",
+            "title": "DISCRECIÓN DE DIRECCIÓN",
+            "content": "Retrato de perfil con Sony Venice. Personaje con rostro subido como referencia en zona de sombra elegante. Iluminación Rembrandt que oculta parte del rostro sugiriendo confidencialidad y seriedad administrativa."
+        },
+        {
+            "id": "cv_65",
+            "number": 65,
+            "style": "CV",
+            "title": "INSPECTOR DE CALIDAD",
+            "content": "Primer plano de rostro subido como referencia usando microscopio digital PBR. Iluminación blanca de laboratorio. Biometría facial de detalle microscópico y responsabilidad técnica absoluta. Calidad Masterpiece."
+        },
+        {
+            "id": "cv_66",
+            "number": 66,
+            "style": "CV",
+            "title": "GESTIÓN DE INFRAESTRUCTURAS",
+            "content": "Plano americano con Arri Alexa. Personaje con rostro subido como referencia con casco blanco PBR y planos de edificio. Iluminación de obra a pleno sol 5600K. Biometría de control y seriedad profesional en campo."
+        },
+        {
+            "id": "cv_67",
+            "number": 67,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN HOSPITALARIA",
+            "content": "Entorno clínico ultra-limpio. Personaje con rostro subido como referencia con uniforme médico PBR y tablet. Iluminación fría y aséptica. Biometría de responsabilidad ética y humana. Captura con Red V-Raptor."
+        },
+        {
+            "id": "cv_68",
+            "number": 68,
+            "style": "CV",
+            "title": "COORDINACIÓN DE SEGURIDAD",
+            "content": "Primer plano de rostro subido como referencia reflejado en múltiples monitores de CCTV. Iluminación de sala oscura con brillos electrónicos. Biometría de vigilancia y responsabilidad constante. Calidad 8K RAW."
+        },
+        {
+            "id": "cv_69",
+            "number": 69,
+            "style": "CV",
+            "title": "GESTIÓN PATRIMONIAL",
+            "content": "Retrato corporativo con fondo de galería de arte/subasta. Rostro subido como referencia con guantes blancos de seda PBR sosteniendo pieza antigua. Iluminación de lujo que resalta la responsabilidad y el valor."
+        },
+        {
+            "id": "cv_70",
+            "number": 70,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN DE SISTEMAS",
+            "content": "Personaje con rostro subido como referencia entre racks de servidores PBR. Iluminación de luces de estado LED. Biometría de concentración técnica y responsabilidad de infraestructura digital. Sony Venice 2."
+        },
+        {
+            "id": "cv_71",
+            "number": 71,
+            "style": "CV",
+            "title": "PROTOCOLOS DE EXPORTACIÓN",
+            "content": "Primer plano de rostro subido como referencia con sellos de aduana PBR y documentos. Iluminación de oficina exterior con contenedores de fondo. Biometría de rigor administrativo y seriedad logística internacional."
+        },
+        {
+            "id": "cv_72",
+            "number": 72,
+            "style": "CV",
+            "title": "DIRECCIÓN DE RECURSOS HUMANOS",
+            "content": "Plano medio con Arri Alexa 35. Personaje con rostro subido como referencia en entrevista seria. Iluminación que proyecta confianza y responsabilidad. Textura de traje de lana italiana PBR con micro-detalle."
+        },
+        {
+            "id": "cv_73",
+            "number": 73,
+            "style": "CV",
+            "title": "CONTROL PRESUPUESTARIO",
+            "content": "Retrato técnico con Red V-Raptor. Personaje con rostro subido como referencia rodeado de pantallas con gráficos financieros. Iluminación de oficina nocturna con luz de ciudad a través del vidrio. Responsabilidad y precisión."
+        },
+        {
+            "id": "cv_74",
+            "number": 74,
+            "style": "CV",
+            "title": "GESTIÓN DE RIESGOS",
+            "content": "Primer plano de rostro subido como referencia con expresión de análisis profundo y seriedad inquebrantable. Iluminación lateral dura. Piel con textura biométrica extrema. Estética de analista de inteligencia profesional."
+        },
+        {
+            "id": "cv_75",
+            "number": 75,
+            "style": "CV",
+            "title": "COORDINACIÓN ACADÉMICA",
+            "content": "Entorno de universidad antigua con madera y cuero PBR. Personaje con rostro subido como referencia con toga académica y expresión de responsabilidad educativa. Iluminación solemne Arri Raw."
+        },
+        {
+            "id": "cv_76",
+            "number": 76,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN DE TRANSPORTES",
+            "content": "Plano americano con Sony Venice. Personaje con rostro subido como referencia frente a flota de camiones PBR en hangar. Iluminación de amanecer industrial. Biometría de mando y responsabilidad logística masiva."
+        },
+        {
+            "id": "cv_77",
+            "number": 77,
+            "style": "CV",
+            "title": "SOSTENIBILIDAD CORPORATIVA",
+            "content": "Administrativo con rostro subido como referencia en terraza de oficina verde (PBR plants). Iluminación natural suave de tarde. Biometría de compromiso ético y responsabilidad ambiental. Calidad cinematográfica."
+        },
+        {
+            "id": "cv_78",
+            "number": 78,
+            "style": "CV",
+            "title": "GESTIÓN DE CONVENIOS",
+            "content": "Primer plano de manos firmando contrato con pluma estilográfica PBR de plata. Rostro subido como referencia desenfocado al fondo con expresión de satisfacción seria. Iluminación de despacho notarial de prestigio."
+        },
+        {
+            "id": "cv_79",
+            "number": 79,
+            "style": "CV",
+            "title": "PROTOCOLOS DE ARCHIVO DIGITAL",
+            "content": "Retrato corporativo con lente de 50mm. Personaje con rostro subido como referencia rodeado de nubes de datos virtuales (Efectos de post-procesado). Luz cian y blanca. Biometría de responsabilidad informática 8K."
+        },
+        {
+            "id": "cv_80",
+            "number": 80,
+            "style": "CV",
+            "title": "DIRECCIÓN DE OPERACIONES",
+            "content": "Plano general de centro logístico con personaje con rostro subido como referencia en el centro. Iluminación de gran escala industrial. Escala épica y responsabilidad profesional capturada con Red V-Raptor XL."
+        },
+        {
+            "id": "cv_81",
+            "number": 81,
+            "style": "CV",
+            "title": "GESTIÓN DE CALIDAD TOTAL",
+            "content": "Primer plano de rostro subido como referencia inspeccionando pieza de alta tecnología con lente de aumento. Iluminación blanca pura. Biometría de rigor microscópico y responsabilidad absoluta. Sony Venice 2."
+        },
+        {
+            "id": "cv_82",
+            "number": 82,
+            "style": "CV",
+            "title": "CONSEJERO DE ADMINISTRACIÓN",
+            "content": "Retrato de prestigio con Arri Alexa 35. Personaje con rostro subido como referencia con traje de gala clásico PBR. Iluminación Rembrandt dramática que resalta la sabiduría y la responsabilidad institucional."
+        },
+        {
+            "id": "cv_83",
+            "number": 83,
+            "style": "CV",
+            "title": "PROTOCOLOS DE INTEGRACIÓN",
+            "content": "Escena de bienvenida corporativa. Personaje con rostro subido como referencia con tarjeta de identificación PBR translúcida. Iluminación de oficina moderna y luminosa. Biometría de acogida y profesionalismo serio."
+        },
+        {
+            "id": "cv_84",
+            "number": 84,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN DE OBRA",
+            "content": "Primer plano de rostro subido como referencia con casco y gafas protectoras PBR. Polvo y chispas al fondo. Iluminación de obra real. Biometría facial de responsabilidad técnica y control de seguridad."
+        },
+        {
+            "id": "cv_85",
+            "number": 85,
+            "style": "CV",
+            "title": "GESTIÓN DE TRÁMITES",
+            "content": "Administrativo con rostro subido como referencia rodeado de carpetas de colores ordenadas PBR. Iluminación de oficina clásica de mañana. Biometría de organización extrema y responsabilidad en los detalles. 8K RAW."
+        },
+        {
+            "id": "cv_86",
+            "number": 86,
+            "style": "CV",
+            "title": "DIRECCIÓN DE COMPRAS INTERNACIONALES",
+            "content": "Plano medio con Sony Venice en terminal de aeropuerto. Personaje con rostro subido como referencia con maleta de cuero PBR. Iluminación natural de hall de cristal. Biometría de viajero profesional y responsable."
+        },
+        {
+            "id": "cv_87",
+            "number": 87,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN DE PROPIEDADES",
+            "content": "Retrato frente a edificio de cristal moderno PBR con reflejos Ray-tracing. Personaje con rostro subido como referencia con llaves magnéticas y planos digitales. Responsabilidad e integridad inmobiliaria técnica."
+        },
+        {
+            "id": "cv_88",
+            "number": 88,
+            "style": "CV",
+            "title": "COORDINACIÓN DE FLOTAS",
+            "content": "Primer plano de rostro subido como referencia reflejado en capó de coche de empresa pulido PBR. Iluminación de garaje técnico con luces LED. Biometría de mando automotriz y responsabilidad logística."
+        },
+        {
+            "id": "cv_89",
+            "number": 89,
+            "style": "CV",
+            "title": "GESTIÓN DE SUBVENCIONES",
+            "content": "Administrativo con rostro subido como referencia en sala de archivos histórica. Luz de sol a través de ventana alta filtrando el polvo. Biometría de investigación y responsabilidad financiera institucional."
+        },
+        {
+            "id": "cv_90",
+            "number": 90,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN FARMACÉUTICA",
+            "content": "Entorno estéril y blanco. Personaje con rostro subido como referencia con bata de laboratorio PBR y registro de inventario. Iluminación azulada limpia. Biometría de rigor médico y responsabilidad administrativa."
+        },
+        {
+            "id": "cv_91",
+            "number": 91,
+            "style": "CV",
+            "title": "PROTOCOLOS DE CALIDAD AERONÁUTICA",
+            "content": "Primer plano de rostro subido como referencia bajo motor de avión gigante PBR. Iluminación técnica de hangar. Biometría de responsabilidad extrema por la seguridad y mando profesional capturado con Red V-Raptor."
+        },
+        {
+            "id": "cv_92",
+            "number": 92,
+            "style": "CV",
+            "title": "DIRECCIÓN DE COMUNICACIÓN",
+            "content": "Retrato corporativo con lente de 85mm. Personaje con rostro subido como referencia en sala de prensa. Luces de focos frontales resaltando la expresión de confianza y responsabilidad comunicativa sólida."
+        },
+        {
+            "id": "cv_93",
+            "number": 93,
+            "style": "CV",
+            "title": "CONTABILIDAD GENERAL",
+            "content": "Plano medio con Arri Alexa. Personaje con rostro subido como referencia con calculadora de oficina PBR. Iluminación de día nublado que suaviza la escena pero mantiene la seriedad del contexto administrativo."
+        },
+        {
+            "id": "cv_94",
+            "number": 94,
+            "style": "CV",
+            "title": "GESTIÓN DE LICENCIAS",
+            "content": "Escena de oficina con archivadores de metal PBR e iluminación fluorescente de alta gama. Rostro subido como referencia con expresión de control normativo y responsabilidad. Nitidez absoluta en cada documento."
+        },
+        {
+            "id": "cv_95",
+            "number": 95,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN DE RECURSOS ENERGÉTICOS",
+            "content": "Fondo de parque eólico PBR bajo cielo de tormenta. Personaje con rostro subido como referencia con tablet industrial y traje técnico. Iluminación épica de responsabilidad ambiental profesional. Arri Raw."
+        },
+        {
+            "id": "cv_96",
+            "number": 96,
+            "style": "CV",
+            "title": "PROTOCOLOS DE ATENCIÓN EJECUTIVA",
+            "content": "Primer plano de rostro subido como referencia con sonrisa sutil y mirada seria. Iluminación suave de hotel 5 estrellas. Biometría de excelencia en el trato y responsabilidad institucional. Calidad fotográfica Masterpiece."
+        },
+        {
+            "id": "cv_97",
+            "number": 97,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN DE PROYECTOS TI",
+            "content": "Retrato con Sony Venice 2. Personaje con rostro subido como referencia con código de resolución reflejado en las gafas de montura PBR. Iluminación de servidor de datos. Responsabilidad digital y técnica."
+        },
+        {
+            "id": "cv_98",
+            "number": 98,
+            "style": "CV",
+            "title": "COORDINACIÓN DE TURISMO DE LUJO",
+            "content": "Plano americano con Red V-Raptor en salón de mansión histórica PBR. Personaje con rostro subido como referencia con traje impecable. Iluminación de lujo que proyecta seriedad y gestión de alto nivel."
+        },
+        {
+            "id": "cv_99",
+            "number": 99,
+            "style": "CV",
+            "title": "ADMINISTRACIÓN DE SEGUROS",
+            "content": "Primer plano de rostro subido como referencia analizando póliza de papel PBR. Luz de oficina seria 5000K. Biometría facial de protección y responsabilidad máxima por el cliente. Nitidez 8K absoluta."
+        },
+        {
+            "id": "cv_100",
+            "number": 100,
+            "style": "CV",
+            "title": "PRESIDENCIA DEL CONSEJO",
+            "content": "Retrato corporativo definitivo capturado con Arri Alexa 35. Personaje con rostro subido como referencia con traje de gala personalizado PBR. Iluminación de máxima autoridad estilo retrato presidencial. Fondo de despacho de roble y banderas con detalle microscópico. Calidad cinematográfica de élite mundial."
+        }
     ]
 };
