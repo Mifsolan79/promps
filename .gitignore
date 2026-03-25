@@ -1,0 +1,15 @@
+# Ignorar archivos locales de presets (el usuario debe importar/exportar manualmente)
+presets_almeria.json
+
+# Ignorar archivos de sistema y temporales
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de registro y logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignorar backups locales
+*.bak
+*.tmp

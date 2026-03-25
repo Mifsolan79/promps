@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROMPT ALMERÍA - Portal Maestro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00f2ff;
+            --neon-pink: #ff00c1;
+            --neon-purple: #bc13fe;
+            --neon-grad: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            --bg-dark: #0a0a0c;
+            --bg-card: rgba(20, 20, 25, 0.8);
+            --text-main: #e0e0e0;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Ocultar barra de scroll globalmente */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Asegurar que contenedores específicos no tengan scroll visible */
+        .sidebar, .content-area, .prompts-grid, #presets-list, #categories-nav {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .sidebar::-webkit-scrollbar, .content-area::-webkit-scrollbar, .prompts-grid::-webkit-scrollbar, #presets-list::-webkit-scrollbar, #categories-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 242, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 193, 0.05) 0%, transparent 40%);
+        }
+
+
+        main {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid var(--glass);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 20px;
+            height: calc(100vh - 40px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h2, .sidebar-header {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid var(--glass);
+            padding-bottom: 10px;
+            flex-shrink: 0;
+        }
+
+        #categories-nav {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 5px;
+            margin-bottom: 10px;
+        }
+
+        .nav-btn {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: var(--glass);
+            border: 1px solid transparent;
+            color: var(--text-main);
+            text-align: left;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            background: rgba(0, 242, 255, 0.1);
+            border-color: var(--neon-blue);
+            transform: translateX(5px);
+        }
+        .nav-btn.active {
+            background: linear-gradient(90deg, var(--neon-blue), transparent);
+            border-left: 4px solid var(--neon-blue);
+            font-weight: 700;
+        }
+
+        /* Preset Manager Styles */
+        .presets-section {
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--glass);
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+
+        .presets-section h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            color: var(--neon-pink);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .preset-input-group {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .preset-input-group input {
+            flex: 1;
+            padding: 8px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--glass);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .save-preset-btn {
+            padding: 8px 12px;
+            background: var(--neon-blue);
+            border: none;
+            color: black;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .save-preset-btn:hover {
+            box-shadow: 0 0 10px var(--neon-blue);
+            transform: scale(1.05);
+        }
+
+        #presets-list {
+            max-height: 250px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-right: 5px;
+        }
+
+        .preset-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 10px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .preset-item:hover {
+            background: rgba(0, 242, 255, 0.05);
+            border-color: rgba(0, 242, 255, 0.3);
+        }
+
+        .preset-name {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+        }
+
+        .preset-actions {
+            display: flex;
+            gap: 8px;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .preset-item:hover .preset-actions {
+            opacity: 1;
+        }
+
+        .preset-action-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            cursor: pointer;
+            font-size: 0.8rem;
+            padding: 2px;
+            transition: color 0.2s;
+        }
+
+        .btn-edit:hover { color: var(--neon-blue); }
+        .btn-delete:hover { color: var(--neon-pink); }
+
+        .presets-footer {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--glass);
+        }
+
+        .btn-preset-io {
+            flex: 1;
+            padding: 6px;
+            background: var(--glass);
+            border: 1px solid var(--glass);
+            color: var(--text-main);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .btn-preset-io:hover {
+            border-color: var(--neon-blue);
+            color: var(--neon-blue);
+        }
+
+        /* Variables Panel */
+        .variables-panel {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--neon-pink);
+            box-shadow: inset 0 0 15px rgba(255, 0, 193, 0.1);
+        }
+        .variables-grid {
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: end;
+        }
+
+        /* Configuración para 4 filas equilibradas (Total 20 columnas) */
+        .row-1-item { grid-column: span 4; } /* 5 elementos * 4 = 20 */
+        .row-2-item { grid-column: span 4; } /* 5 elementos * 4 = 20 */
+        .row-3-item { grid-column: span 5; } /* 4 elementos * 5 = 20 */
+        .row-4-item { grid-column: span 10; } /* 2 elementos * 10 = 20 */
+
+        .variable-item label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 700;
+            color: var(--neon-pink);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .variable-item select, .variable-item input {
+            width: 100%;
+            padding: 8px;
+            background: #1a1a20;
+            border: 1px solid var(--glass);
+            color: white;
+            border-radius: 6px;
+            outline: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .variable-item select:focus {
+            border-color: var(--neon-blue);
+        }
+
+        .variable-item select:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+        }
+
+        .random-btn-container {
+            display: flex;
+            align-items: flex-end;
+            height: 100%;
+        }
+
+        .random-btn {
+            width: 100%;
+            padding: 10px;
+            background: var(--neon-grad);
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(188, 19, 254, 0.4);
+        }
+
+        /* Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .category-title span {
+            font-size: 0.9rem;
+            background: var(--neon-blue);
+            color: black;
+            padding: 2px 10px;
+            border-radius: 3px;
+        }
+
+        .prompts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 20px;
+        }
+
+        .prompt-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            border: 1px solid var(--glass);
+            padding: 20px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .prompt-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.15);
+        }
+
+        .prompt-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--neon-blue);
+            opacity: 0.5;
+            }
+
+        .prompt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .prompt-id {
+            font-size: 0.8rem;
+            color: var(--neon-blue);
+            font-weight: 700;
+        }
+
+        .prompt-style {
+            font-size: 0.7rem;
+            background: rgba(188, 19, 254, 0.2);
+            color: var(--neon-purple);
+            padding: 2px 8px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+
+        .prompt-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .prompt-text {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #b0b0b0;
+            flex-grow: 1;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .prompt-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-copy {
+            flex-grow: 1;
+            padding: 10px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            border: none;
+            border-radius: 8px;
+            color: black;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-copy:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        .btn-copy:active {
+            transform: scale(0.95);
+        }
+
+        /* Modal / Feedback */
+        #toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 15px 30px;
+            background: var(--neon-blue);
+            color: black;
+            border-radius: 50px;
+            font-weight: 700;
+            transform: translateY(100px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 0 20px var(--neon-blue);
+        }
+
+        #toast.show {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+        .btn-random {
+            background: var(--neon-grad);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 242, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            height: 42px;
+            align-self: flex-end;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-random:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.5);
+            filter: brightness(1.2);
+        }
+
+        .btn-random svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        /* Signature Pad Styles */
+        .signature-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: var(--bg-dark);
+            border: 2px solid var(--neon-blue);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.3);
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .signature-container.show {
+            display: flex;
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        #signature-pad {
+            background: white;
+            border-radius: 8px;
+            cursor: crosshair;
+            touch-action: none;
+        }
+
+        .signature-footer {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-sig {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .btn-sig-clear { background: #333; color: white; }
+        .btn-sig-save { background: var(--neon-blue); color: black; }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1500;
+            display: none;
+        }
+        
+        .signature-preview {
+            width: 100px;
+            height: 40px;
+            background: white;
+            border-radius: 4px;
+            margin-top: 5px;
+            display: none;
+            object-fit: contain;
+            border: 1px solid var(--neon-blue);
+        }
+    </style>
+</head>
+<body>
+
+
+    <main>
+        <aside class="sidebar">
+            <div class="presets-section">
+                <div class="presets-header" style="margin-bottom: 15px; color: var(--neon-pink); font-family: 'Orbitron'; font-size: 0.9rem; letter-spacing: 1px;">
+                    <span>📁 MIS PRESETS</span>
+                </div>
+                <div class="preset-save-container" style="display: flex; gap: 5px; margin-bottom: 15px;">
+                    <input type="text" id="preset-name" placeholder="Nombre preset..." style="flex:1; padding:8px; background:rgba(0,0,0,0.3); border:1px solid var(--glass); color:white; border-radius:4px; font-size:0.8rem;">
+                    <button class="save-preset-btn" onclick="saveCurrentAsPreset()" title="Guardar actual" style="padding: 8px 12px; background: var(--neon-blue); border: none; color: black; border-radius: 4px; cursor: pointer; font-weight: 700;">💾</button>
+                </div>
+                <div id="presets-list">
+                    <!-- Presets se cargarán aquí -->
+                </div>
+                <div class="presets-footer" style="margin-top: 15px; display: flex; gap: 10px; padding-top: 10px; border-top: 1px solid var(--glass);">
+                    <button class="btn-preset-io" onclick="exportPresets()">📤 Exportar</button>
+                    <button class="btn-preset-io" onclick="importPresets()">📥 Importar</button>
+                </div>
+            </div>
+
+            <div class="sidebar-header">Categorías</div>
+            
+            <div id="categories-nav">
+                <!-- Botones de categoría se cargarán aquí -->
+            </div>
+        </aside>
+
+        <section class="content-area">
+            <div class="variables-panel">
+                <div class="variables-grid">
+                    <!-- Fila 1 (4 items) -->
+                    <div class="variable-item row-1-item">
+                        <label>Rostro de Referencia</label>
+                        <select id="var-face" onchange="toggleManual(); updateView()">
+                            <option value="un hombre con rostro subido como referencia">Por defecto (Hombre)</option>
+                            <option value="una mujer con rostro subido como referencia">Referencia Mujer</option>
+                            <option value="un anciano con rostro subido como referencia">Referencia Anciano</option>
+                            <option value="un niño con rostro subido como referencia">Referencia Niño</option>
+                            <option value="MANUAL">Manual (Insertar URL/Texto)</option>
+                        </select>
+                        <input type="text" id="var-face-manual" placeholder="URL o texto..." style="display:none; margin-top:5px; padding:5px; width:100%; font-size: 0.7rem;" oninput="updateView()">
+                    </div>
+                    <div class="variable-item row-1-item">
+                        <label>Iluminación</label>
+                        <select id="var-light" onchange="updateView()">
+                            <option value="">(Mantener original)</option>
+                            <optgroup label="🎬 Cine y Fotografía">
+                                <option value="iluminación de Anillo de Luz Anamórfico (Anamorphic Ring)">Anillo Anamórfico</option>
+                                <option value="iluminación de Contraluz Cinematográfico (Cinematic Backlight)">Contraluz Cine</option>
+                                <option value="iluminación de Escenario (Stage spotlight)">Escenario</option>
+                                <option value="iluminación de Terror (Spooky / Dutch angle light)">Terror</option>
+                                <option value="iluminación Dramática (High contrast drama)">Dramática</option>
+                                <option value="iluminación Film Noir (Hard shadows / Chiaroscuro)">Film Noir</option>
+                                <option value="iluminación Rembrandt (Classic portrait light)">Rembrandt</option>
+                                <option value="iluminación Volumétrica (God rays)">Volumétrica</option>
+                                <option value="iluminación de Estudio Profesional (3-point light)">Estudio Pro</option>
+                                <option value="iluminación de Interrogatorio (Harsh top light)">Interrogatorio</option>
+                                <option value="iluminación de Proyector de Cine (Beam light)">Proyector Cine</option>
+                                <option value="iluminación de Silueta (Backlit silhouette)">Silueta</option>
+                            </optgroup>
+                            <optgroup label="☀️ Natural y Atmósfera">
+                                <option value="iluminación de Día Nublado (Soft overcast)">Día Nublado</option>
+                                <option value="iluminación de Hora Azul (Blue hour dusk)">Hora Azul</option>
+                                <option value="iluminación de Hora Dorada (Golden hour sunset)">Hora Dorada</option>
+                                <option value="iluminación de Aurora Boreal (Northern lights)">Aurora Boreal</option>
+                                <option value="iluminación de Eclipse (Solar eclipse light)">Eclipse</option>
+                                <option value="iluminación de Luz de Luna (Moonlight glow)">Luz de Luna</option>
+                                <option value="iluminación de Luz de Relámpago (Lightning flash)">Relámpago</option>
+                                <option value="iluminación de Luz de Ventana (Window light)">Luz de Ventana</option>
+                                <option value="iluminación de Luz entre Follaje (Dappled light)">Entre Follaje</option>
+                                <option value="iluminación de Luz Estelar (Starlight / Milky way)">Luz Estelar</option>
+                                <option value="iluminación Subacuática (Underwater caustics)">Subacuática</option>
+                                <option value="iluminación de Niebla Iluminada (Glowy fog)">Niebla Iluminada</option>
+                                <option value="iluminación de Sol Cenital (Noon high sun)">Sol Cenital</option>
+                            </optgroup>
+                            <optgroup label="🌆 Urbano y Artificial">
+                                <option value="iluminación de Farolas de Calle (Street lamps)">Farolas de Calle</option>
+                                <option value="iluminación de Semáforo (Traffic light glow)">Semáforo</option>
+                                <option value="iluminación de Neón Urbano (Urban Neon)">Neón Urbano</option>
+                                <option value="iluminación en Asfalto Mojado (Wet pavement reflections)">Reflejos Asfalto</option>
+                            </optgroup>
+                            <optgroup label="🔮 Fantasía y Magia">
+                                <option value="iluminación de Aura Mágica (Magic aura glow)">Aura Mágica</option>
+                                <option value="iluminación de Brillo de Cristal (Crystal refraction)">Brillo de Cristal</option>
+                                <option value="iluminación de Brillo Etéreo (Ethereal celestial)">Brillo Etéreo</option>
+                                <option value="iluminación de Portal (Spacetime rift light)">Luz de Portal</option>
+                            </optgroup>
+                            <optgroup label="🚀 Tecnología y Sci-Fi">
+                                <option value="iluminación de Energía de Plasma (Plasma crackle)">Plasma</option>
+                                <option value="iluminación de Fibras Ópticas (Fiber optic glow)">Fibras Ópticas</option>
+                                <option value="iluminación de Láseres (Laser beams)">Láseres</option>
+                                <option value="iluminación de Agujero Negro (Accretion disk)">Agujero Negro</option>
+                                <option value="iluminación de Laboratorio (Fluorescent lab)">Laboratorio</option>
+                                <option value="iluminación de Pantalla (Screen glow)">Luz de Pantalla</option>
+                                <option value="iluminación de Propulsores (Thrusters glow)">Propulsores</option>
+                                <option value="iluminación de Luz Térmica (Thermal heat map)">Térmica</option>
+                                <option value="iluminación de Luz Ultravioleta (UV / Blacklight)">Ultravioleta</option>
+                                <option value="iluminación de Luz Negra (Fluorescent blacklight)">Luz Negra</option>
+                            </optgroup>
+                            <optgroup label="🔥 Fuego e Industrial">
+                                <option value="iluminación de Fuego de Hoguera (Campfire glow)">Hoguera</option>
+                                <option value="iluminación de Luz de Explosión (Blast flash)">Explosión</option>
+                                <option value="iluminación de Fuego de Soldadura (Welding sparks)">Soldadura</option>
+                                <option value="iluminación de Luz de Velas (Candlelight)">Velas</option>
+                                <option value="iluminación de Linterna (Flashlight beam)">Linterna</option>
+                            </optgroup>
+                            <optgroup label="🌈 Efectos Ópticos">
+                                <option value="iluminación de Arcoíris (Rainbow spectrum)">Arcoíris</option>
+                                <option value="iluminación de Ojo de Cerradura (Keyhole light)">Ojo de Cerradura</option>
+                                <option value="iluminación de Luz de Prisma (Prism spectrum)">Prisma</option>
+                                <option value="iluminación Estroboscópica (Strobe lights)">Estroboscópica</option>
+                                <option value="iluminación Psicodélica (Psychedelic liquid light)">Psicodélica</option>
+                                <option value="iluminación de Patrones de Moire (Interference patterns)">Moire</option>
+                                <option value="iluminación de Reflejo en Agua (Water reflection)">Reflejo en Agua</option>
+                                <option value="iluminación de Reflejos de Discoteca (Mirror ball)">Discoteca</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="variable-item row-1-item">
+                        <label>Calidad Final</label>
+                        <select id="var-quality" onchange="updateView()">
+                            <option value="">(Mantener original)</option>
+                            <option value="nitidez 8K absoluta, Realismo Fotográfico">8K Ultra Real</option>
+                            <option value="estética cinematográfica RAW, grano de película">Cine RAW</option>
+                            <option value="textura pictórica detallada, arte digital Masterpiece">Digital Art</option>
+                            <option value="con un rango dinámico extremo, Fotografía HDR (High Dynamic Range)">Fotografía HDR</option>
+                            <option value="con un detalle microscópico, Fotografía Hiperrealista (Hyper-realistic details)">Hiperrealista</option>
+                        </select>
+                    </div>
+                    <div class="variable-item row-1-item">
+                        <label>Visión Cine</label>
+                        <select id="var-cinema" onchange="updateView()">
+                            <option value="OFF">Desactivado</option>
+                            <option value="con visión cinematográfica Panavision">Panavision Aspect</option>
+                            <option value="con estética de Cine IMAX">IMAX Experience</option>
+                            <option value="en formato Cinemascope">Cinemascope</option>
+                            <option value="con look de película de 35mm">35mm Film Look</option>
+                            <option value="con look de película de 70mm">70mm Grandeur</option>
+                            <option value="estética Technicolor clásica">Technicolor</option>
+                        </select>
+                    </div>
+                    <div class="variable-item row-1-item">
+                        <label>Soporte / Superficie</label>
+                        <select id="var-surface" onchange="updateView()">
+                            <option value="">(Original)</option>
+                            <optgroup label="🧱 Industriales">
+                                <option value="sobre soporte de Acero de Damasco">Acero de Damasco</option>
+                                <option value="sobre soporte de Aluminio Anodizado">Aluminio Anodizado</option>
+                                <option value="sobre soporte de Cobre Oxidado">Cobre Oxidado</option>
+                                <option value="sobre soporte de Hierro Forjado">Hierro Forjado</option>
+                                <option value="sobre soporte de Hormigón Pulido">Hormigón Pulido</option>
+                                <option value="sobre soporte de Muro de Ladrillo Urbano">Muro de Ladrillo Urbano</option>
+                                <option value="sobre soporte de Laja de Pizarra">Laja de Pizarra</option>
+                                <option value="sobre soporte de Titanio Iridiscente">Titanio Iridiscente</option>
+                                <option value="sobre soporte de Placa de Latón">Placa de Latón</option>
+                            </optgroup>
+                            <optgroup label="🌳 Orgánicos">
+                                <option value="sobre soporte de Arena Compactada">Arena Compactada</option>
+                                <option value="sobre soporte de Cáscara de Huevo">Cáscara de Huevo</option>
+                                <option value="sobre soporte de Corte de Ágata">Corte de Ágata</option>
+                                <option value="sobre soporte de Corteza de Árbol">Corteza de Árbol</option>
+                                <option value="sobre soporte de Madera Barnizada">Madera Barnizada</option>
+                                <option value="sobre soporte de Mármol Pulido">Mármol Pulido</option>
+                                <option value="sobre soporte de Papel Amate">Papel Amate</option>
+                                <option value="sobre soporte de Papel de Arroz (Washi)">Papel de Arroz (Washi)</option>
+                                <option value="sobre soporte de Papel Hecho a Mano">Papel Hecho a Mano</option>
+                                <option value="sobre soporte de Papiro Antiguo">Papiro Antiguo</option>
+                                <option value="sobre soporte de Pergamino (Vellum)">Pergamino (Vellum)</option>
+                                <option value="sobre soporte de Piel de Cuero">Piel de Cuero</option>
+                                <option value="sobre soporte de Piel para Tatuaje">Piel para Tatuaje</option>
+                                <option value="sobre soporte de Roca Volcánica">Roca Volcánica</option>
+                                <option value="sobre soporte de Arpillera">Arpillera</option>
+                            </optgroup>
+                            <optgroup label="💠 Sintéticos y Pantallas">
+                                <option value="sobre soporte de Circuito Impreso">Circuito Impreso</option>
+                                <option value="sobre soporte de Cristal Líquido">Cristal Líquido</option>
+                                <option value="sobre soporte de Espejo">Espejo</option>
+                                <option value="sobre soporte de Fibra de Carbono">Fibra de Carbono</option>
+                                <option value="sobre soporte de Interfaz VR">Interfaz VR</option>
+                                <option value="sobre soporte de Pantalla de Píxeles">Pantalla de Píxeles</option>
+                                <option value="sobre soporte de Pantalla Holográfica">Pantalla Holográfica</option>
+                                <option value="sobre soporte de Pantalla LED">Pantalla LED</option>
+                                <option value="sobre soporte de Plástico Translúcido">Plástico Translúcido</option>
+                                <option value="sobre soporte de Superficie de Goma">Superficie de Goma</option>
+                                <option value="sobre soporte de Vidrio Esmerilado">Vidrio Esmerilado</option>
+                                <option value="sobre soporte de Campo de Fuerza">Campo de Fuerza</option>
+                            </optgroup>
+                            <optgroup label="🎨 Artísticos">
+                                <option value="sobre soporte de Cartón Corrugado">Cartón Corrugado</option>
+                                <option value="sobre soporte de Cartón de Acuarela">Cartón de Acuarela</option>
+                                <option value="sobre soporte de Cartulina Negra">Cartulina Negra</option>
+                                <option value="sobre soporte de Gasa">Gasa</option>
+                                <option value="sobre soporte de Hoja de Oro">Hoja de Oro</option>
+                                <option value="sobre soporte de Lienzo de Lino Clásico">Lienzo de Lino Clásico</option>
+                                <option value="sobre soporte de Lona Cruda">Lona Cruda</option>
+                                <option value="sobre soporte de Papel de Acuarela Rugoso">Papel de Acuarela Rugoso</option>
+                                <option value="sobre soporte de Papel de Calco">Papel de Calco</option>
+                                <option value="sobre soporte de Papel Fotográfico Brillante">Papel Fotográfico Brillante</option>
+                                <option value="sobre soporte de Papel Tonalizado">Papel Tonalizado</option>
+                                <option value="sobre soporte de Pizarra Negra">Pizarra Negra</option>
+                                <option value="sobre soporte de Tejido de Tapiz">Tejido de Tapiz</option>
+                            </optgroup>
+                            <optgroup label="✨ Especiales">
+                                <option value="sobre soporte de Capa de Hielo">Capa de Hielo</option>
+                                <option value="sobre soporte de Lente de Cámara">Lente de Cámara</option>
+                                <option value="sobre soporte de Proyección sobre Humo">Proyección sobre Humo</option>
+                                <option value="sobre soporte de Losa de Terracota">Losa de Terracota</option>
+                                <option value="sobre soporte de Cerámica Esmaltada">Cerámica Esmaltada</option>
+                                <option value="sobre soporte de Panel de Corcho">Panel de Corcho</option>
+                                <option value="sobre soporte de Tela de Jean (Denim)">Tela de Jean (Denim)</option>
+                                <option value="sobre soporte de Tela de Seda">Tela de Seda</option>
+                                <option value="sobre soporte de Terciopelo">Terciopelo</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <!-- Fila 2 (5 items) -->
+                    <div class="variable-item row-2-item">
+                        <label>Formato (Aspect)</label>
+                        <select id="var-ar" onchange="updateView()">
+                            <option value="">Por defecto</option>
+                            <option value="--ar 1:1">1:1 (Cuadrado)</option>
+                            <option value="--ar 16:9">16:9 (Panorámico)</option>
+                            <option value="--ar 9:16">9:16 (Vertical)</option>
+                            <option value="--ar 3:2">3:2 (Clásico)</option>
+                            <option value="--ar 21:9">21:9 (Ultrawide)</option>
+                        </select>
+                    </div>
+                    <div class="variable-item row-2-item">
+                        <label>Estilo Maestro / Género</label>
+                        <select id="var-style-master" onchange="updateView()">
+                            <option value="">(Original)</option>
+                            <optgroup label="🎬 Estudios y Marcas">
+                                <option value="estilo Ghibli, colores vibrantes, trazos suaves">Estudio Ghibli</option>
+                                <option value="estilo Disney, moderno, 3D renderizado">Estilo Disney</option>
+                                <option value="estilo Pixar, ultra detallado, iluminación volumétrica">Estilo Pixar</option>
+                                <option value="estilo Cyberpunk 2077, neones, futurismo distópico">Cyberpunk Pro</option>
+                                <option value="estilo Dark Fantasy, gótico, sombras profundas">Dark Fantasy</option>
+                                <option value="estilo Sci-Fi épico, naves, tecnología avanzada">Space Opera Pro</option>
+                            </optgroup>
+                            <optgroup label="🏛️ Clásico e Histórico">
+                                <option value="estilo Renacentista (Renaissance aesthetics)">Renacimiento</option>
+                                <option value="estilo Barroco (Baroque drama and chiaroscuro)">Barroco</option>
+                                <option value="estilo Neoclásico (Neoclassic grandeur)">Neoclasicismo</option>
+                                <option value="estilo Rococó (Rococo lightness and curves)">Rococó</option>
+                                <option value="estilo Gótico (Gothic architecture and mood)">Gótico</option>
+                                <option value="estilo Medieval (1100-1400 AD)">Medieval</option>
+                                <option value="estilo Victoriano (Victorian Era)">Victoriano</option>
+                                <option value="estilo Prehistórico (Cave art and primitive)">Prehistórico</option>
+                                <option value="estilo Romántico (Romanticism, sublime nature)">Romanticismo</option>
+                                <option value="estilo Art Nouveau (Sinuous organic lines)">Art Nouveau</option>
+                                <option value="estilo Art Déco (Geometric luxury 1920s)">Art Déco</option>
+                            </optgroup>
+                            <optgroup label="🖌️ Vanguardias Artísticas">
+                                <option value="estilo Impresionista (Light and brushstrokes)">Impresionismo</option>
+                                <option value="estilo Postimpresionista (Emotional color)">Postimpresionismo</option>
+                                <option value="estilo Expresionista (Distorted reality)">Expresionismo</option>
+                                <option value="estilo Cubista (Geometric deconstruction)">Cubismo</option>
+                                <option value="estilo Surrealista (Oniric and subconscious)">Surrealismo</option>
+                                <option value="estilo Dadaísta (Irrational and absurd)">Dadaísmo</option>
+                                <option value="estilo Futurista (Speed and technology)">Futurismo</option>
+                                <option value="estilo Bauhaus (Function and geometry)">Bauhaus</option>
+                                <option value="estilo Minimalista (Extreme simplicity)">Minimalismo</option>
+                                <option value="estilo Abstracto Geométrico (Shapes and lines)">Abstracto Geométrico</option>
+                                <option value="estilo Expresionismo Abstracto (Spontaneous action)">Expresionismo Abstracto</option>
+                                <option value="estilo Pop Art (Popular culture and vibrant colors)">Arte Pop</option>
+                            </optgroup>
+                            <optgroup label="🚀 Sci-Fi / Futurismo / Punk">
+                                <option value="estilo Cyberpunk (Neon dystopian future)">Cyberpunk</option>
+                                <option value="estilo Steampunk (Steam-powered Victorian tech)">Steampunk</option>
+                                <option value="estilo Solarpunk (Harmony between nature and tech)">Solarpunk</option>
+                                <option value="estilo Dieselpunk (Industrial motor-age deco)">Dieselpunk</option>
+                                <option value="estilo Biopunk (Genetic engineering and organic tech)">Biopunk</option>
+                                <option value="estilo Synthwave (80s neon nostalgia)">Synthwave</option>
+                                <option value="estilo Vaporwave (Digital glitch and pastel nostalgia)">Vaporwave</option>
+                                <option value="estilo Sci-Fi Retro (50s-60s space age)">Ciencia Ficción Retro</option>
+                                <option value="estilo Afrofuturismo (African diaspora future)">Afrofuturismo</option>
+                                <option value="estilo Distópico (Oppressive futuristic society)">Distópico</option>
+                                <option value="estilo Ópera Espacial (Galactic empires and battles)">Ópera Espacial</option>
+                            </optgroup>
+                            <optgroup label="🐉 Fantasía y Épico">
+                                <option value="estilo Alta Fantasía (Epic high fantasy world)">Alta Fantasía</option>
+                                <option value="estilo Fantasía Épica (Grand castels and dragons)">Fantasía Épica</option>
+                                <option value="estilo Fantasía Oscura (Dark mood and monsters)">Fantasía Oscura</option>
+                                <option value="estilo Baja Fantasía (Gritty and grounded fantasy)">Baja Fantasía</option>
+                            </optgroup>
+                            <optgroup label="🍭 Pop y Contemporáneo">
+                                <option value="estilo Kawaii (Cute and adorable characters)">Kawaii</option>
+                                <option value="estilo Graffiti (Street art and spray paint)">Graffiti</option>
+                                <option value="estilo Grunge (90s worn-out aesthetic)">Grunge</option>
+                                <option value="estilo Indie (Nostalgic film and independent cinema)">Indie</option>
+                                <option value="estilo Cine Negro (Noir atmospheric shadows)">Cine Negro (Noir)</option>
+                                <option value="estilo Tatuaje Tradicional (Old school bold lines)">Tatuaje Tradicional</option>
+                                <option value="estilo Cómic Americano (Bold inking and colors)">Cómic Americano</option>
+                                <option value="estilo Fotorrealista (Precise photographic detail)">Fotorrealismo</option>
+                                <option value="estilo Realismo Moderno (Contemporary faithful reality)">Realismo Moderno</option>
+                            </optgroup>
+                            <optgroup label="🌍 Arte Étnico y Global">
+                                <option value="estilo Arte Aborigen (Dot painting and symbols)">Arte Aborigen</option>
+                                <option value="estilo Arte Celta (Knots and spirals)">Arte Celta</option>
+                                <option value="estilo Arte Precolombino (Mesoamerican motifs)">Arte Precolombino</option>
+                                <option value="estilo Caligrafía Islámica (Intricate script patterns)">Caligrafía Islámica</option>
+                                <option value="estilo Shanshui (Chinese landscape painting)">Pintura China (Shanshui)</option>
+                                <option value="estilo Muralismo Mexicano (Social-political grand murals)">Muralismo Mexicano</option>
+                                <option value="estilo Tribal y Étnico (Indigenous world motifs)">Tribal y Étnico</option>
+                                <option value="estilo Ukiyo-e (Edo period woodblock print)">Ukiyo-e (Japonés)</option>
+                            </optgroup>
+                            <optgroup label="✨ Especiales">
+                                <option value="estilo Arte Fractal (Fractal complexity)">Arte Fractal</option>
+                                <option value="estilo Arte Generativo (Algorithmic evolution)">Arte Generativo</option>
+                                <option value="estilo de Realidad Aumentada (Augmented Reality overlays)">Realidad Aumentada</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="variable-item row-2-item">
+                        <label>Paleta de Color</label>
+                        <select id="var-color" onchange="updateView()">
+                            <option value="">(Original)</option>
+                            <option value="con paleta de Colores Neón (Cyan/Magenta)">Vibrante Neón</option>
+                            <option value="en Blanco y Negro dramático">Blanco y Negro</option>
+                            <option value="con tonos Sepia nostálgicos">Sepia Vintage</option>
+                            <option value="con paleta de Colores Pastel">Pastel Suave</option>
+                            <option value="con colores Saturados y vivos">Saturación Alta</option>
+                            <option value="con colores Desaturados y melancólicos">Desaturado</option>
+                            <option value="con paleta Monocromática elegante">Monocromático</option>
+                            <option value="con colores de Atardecer (Warm Golden)">Hora Dorada</option>
+                            <option value="con paleta de Colores Fríos (Cian/Azul)">Fríos / Glaciar</option>
+                            <option value="con paleta de Colores Tierra (Brown/Ocre)">Orgánicos / Tierra</option>
+                            <option value="con paleta de Contraste Extremo">Alto Contraste</option>
+                        </select>
+                    </div>
+                    <div class="variable-item row-2-item">
+                        <label>Estilo Dibujo</label>
+                        <select id="var-draw-style" onchange="updateView()">
+                            <option value="">(Original)</option>
+                            <optgroup label="🎨 Pintura y Color">
+                                <option value="técnica de Action Painting (Splattered energy)">Action Painting</option>
+                                <option value="estilo Acuarela Expresiva (Fluid watercolor)">Acuarela Expresiva</option>
+                                <option value="estilo Acuarela Digital Detallada (Detailed watercolor)">Acuarela Detallada</option>
+                                <option value="estilo Pintura a la Témpera (Egg tempera mat)">Témpera</option>
+                                <option value="estilo Pintura Acrílica Fluida (Flowing acrylics)">Acrílico Fluido</option>
+                                <option value="estilo Pintura al Fresco (Renaissance fresco)">Fresco</option>
+                                <option value="estilo Pintura al Óleo Clásica (Classic oil)">Óleo Clásico</option>
+                                <option value="estilo Pintura con Aerógrafo (Airbrushed detail)">Aerógrafo</option>
+                                <option value="con técnica de Pintura con Arena (Sand art)">Pintura con Arena</option>
+                                <option value="estilo Pintura con Espátula (Palette knife impasto)">Espátula</option>
+                                <option value="estilo Pintura con Gouache (Opaque watercolor)">Gouache</option>
+                                <option value="estilo Pintura Encáustica (Hot wax)">Encáustica</option>
+                                <option value="técnica de Impasto (Thick paint texture)">Impasto</option>
+                                <option value="estilo Pastel (Pastel art)">Pastel</option>
+                            </optgroup>
+                            <optgroup label="✍️ Dibujo y Trazo">
+                                <option value="estilo Boceto a Bolígrafo (Ballpoint pen sketch)">Boceto Bolígrafo</option>
+                                <option value="estilo Boceto a Lápiz Detallado (Detailed graphite)">Lápiz Detallado</option>
+                                <option value="estilo Boceto con Sanguina (Red chalk Renaissance)">Sanguina</option>
+                                <option value="estilo de Dibujo con Tinta China (Sumi-e)">Tinta China</option>
+                                <option value="estilo Dibujo con Tiza y Pastel (Chalk art)">Tiza y Pastel</option>
+                                <option value="en estilo Lápices de Colores (Colored pencils)">Lápices Colores</option>
+                                <option value="técnica de Punta de Plata (Silverpoint Renaissance)">Punta de Plata</option>
+                                <option value="estilo Carboncillo (Charcoal)">Carboncillo</option>
+                                <option value="técnica de Scratchboard (Etched black surface)">Scratchboard</option>
+                                <option value="estilo Boceto Rápido (Quick sketch)">Boceto Rápido</option>
+                            </optgroup>
+                            <optgroup label="💻 Digital y Vanguardia">
+                                <option value="estilo Arte ASCII (Text characters art)">Arte ASCII</option>
+                                <option value="estilo Pixel Art Detallado (High-res pixel art)">Pixel Art Detallado</option>
+                                <option value="técnica de Puntillismo Digital (Digital dots)">Puntillismo Digital</option>
+                                <option value="estilo Speedpainting Digital (Expressive strokes)">Speedpainting</option>
+                                <option value="con técnica de Sfumato Leonardesco (Soft smoky transitions)">Sfumato</option>
+                                <option value="estilo Cel Shading (Anime style)">Cel Shading</option>
+                                <option value="estilo de Cómic Americano (Inked)">Cómic</option>
+                                <option value="estética Digital Realista (High-end digital painting)">Digital Realista</option>
+                            </optgroup>
+                            <optgroup label="✂️ Mixtas y Papel">
+                                <option value="estilo Batik (Wax-resist dyeing)">Batik</option>
+                                <option value="estilo Decoupage (Paper cutouts)">Decoupage</option>
+                                <option value="técnica de Ensamblaje (3D found objects)">Ensamblaje (3D)</option>
+                                <option value="técnica de Frottage (Rubbing texture)">Frottage</option>
+                                <option value="estilo de Kirigami (Paper cutting)">Kirigami</option>
+                                <option value="técnica de Marmoleado de Papel (Swirly marble)">Marmoleado</option>
+                                <option value="estilo de Mosaico de Vidrieras (Stained glass)">Vidrieras</option>
+                                <option value="estilo Serigrafía (Silk screen pop art)">Serigrafía</option>
+                                <option value="estilo de Bordado Textil (Embroidery texture)">Bordado / Textil</option>
+                                <option value="con técnica de Arte con Fuego (Fumage)">Fumage / Fuego</option>
+                            </optgroup>
+                            <optgroup label="🗿 Grabado y Modelado">
+                                <option value="técnica de Aguafuerte (Etching)">Aguafuerte</option>
+                                <option value="estilo Grabado en Linóleo (Linocut)">Linograbado</option>
+                                <option value="técnica de Pirograbado (Wood burning)">Pirograbado</option>
+                                <option value="técnica de Xilografía (Woodcut)">Xilografía</option>
+                                <option value="estética de Escultura de Arcilla Digital (3D clay sculpting)">Escultura Arcilla</option>
+                                <option value="en estilo de Fotograma (Rayograph silhouette)">Fotograma (Rayograph)</option>
+                                <option value="técnica de Goma Bicromatada (19th century photo-painting)">Goma Bicromatada</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="variable-item row-2-item">
+                        <label>Tipo de Lente</label>
+                        <select id="var-lens" onchange="updateView()">
+                            <option value="">Estándar (50mm)</option>
+                            <option value="lente Anamórfico (Anamorphic lens)">Anamórfico</option>
+                            <option value="lente Cámara Antigua (Old vintage lens)">Cámara Antigua</option>
+                            <option value="lente Cine Cooke S4 (Hollywood look)">Cine Cooke S4</option>
+                            <option value="lente Enfoque Suave (Soft focus glow)">Enfoque Suave</option>
+                            <option value="lente Estenopeica (Pinhole aesthetic)">Estenopeico (Pinhole)</option>
+                            <option value="lente Gran Angular (24mm wide angle)">Gran Angular (24mm)</option>
+                            <option value="lente Helios-44 (Swirly bokeh)">Helios-44</option>
+                            <option value="lente Infrarrojo (Infrared spectrum)">Infrarrojo</option>
+                            <option value="lente de Juguete (Toy lens aesthetics)">Lente de Juguete</option>
+                            <option value="lente Macro (Extreme close-up lens)">Macro</option>
+                            <option value="lente Daguerrotipo (1839 photographic mirror)">Daguerrotipo</option>
+                            <option value="lente Lomografía (Lomo saturated look)">Lomografía</option>
+                            <option value="lente Tilt-Shift (Miniature effect)">Tilt-Shift</option>
+                        </select>
+                    </div>
+
+                    <!-- Fila 3 (5 items incl. Button) -->
+                    <!-- Fila 3 (5 items incl. Button) -->
+                    <div class="variable-item row-3-item">
+                        <label>Prof. Campo (DOF)</label>
+                        <select id="var-dof" onchange="updateView()">
+                            <option value="">(Original)</option>
+                            <option value="mucha profundidad de campo (Todo enfocado)">DOF: Enfocado</option>
+                            <option value="poca profundidad de campo (Bokeh intenso)">DOF: Bokeh</option>
+                        </select>
+                    </div>
+                    <div class="variable-item row-3-item">
+                        <label>Plano / Comp.</label>
+                        <select id="var-shot" onchange="updateView()">
+                            <option value="">(Original)</option>
+                            <option value="Ángulo Aberrante (Dutch Angle)">Ángulo Aberrante</option>
+                            <option value="Ángulo Normal (Eye level)">Ángulo Normal</option>
+                            <option value="Composición Diagonal">Composición Diagonal</option>
+                            <option value="Composición en L">Composición en L</option>
+                            <option value="Encuadre Natural">Encuadre Natural</option>
+                            <option value="Espacio Negativo">Espacio Negativo</option>
+                            <option value="Líneas Guía">Líneas Guía</option>
+                            <option value="Llenar el Encuadre (Fill the frame)">Llenar Encuadre</option>
+                            <option value="Simetría Perfecta">Simetría</option>
+                        </select>
+                    </div>
+                    <div class="variable-item row-3-item">
+                        <label>Efecto Visual</label>
+                        <select id="var-effect" onchange="updateView()">
+                            <option value="">Ninguno</option>
+                            <option value="con Aberración Cromática">Aberración Cromática</option>
+                            <option value="con efecto Bokeh">Bokeh</option>
+                            <option value="con Desenfoque Mov.">Desenfoque Mov.</option>
+                            <option value="con Destellos de Lente">Destellos Lente</option>
+                            <option value="Efecto Viñeta">Viñeta</option>
+                            <option value="Estilo Polaroid">Polaroid</option>
+                            <option value="con Fugas de Luz">Fugas de Luz</option>
+                            <option value="con Grano de Película">Grano Película</option>
+                            <option value="Efecto Prismático">Prismático</option>
+                            <option value="efecto Soft Focus">Soft Focus</option>
+                            <option value="con Doble Exposición (Double exposure overlapping)">Doble Exposición</option>
+                            <option value="con efecto de Glitch Art (Digital errors)">Glitch Art</option>
+                            <option value="capturado con Larga Exposición (Long exposure trails)">Larga Exposición</option>
+                            <option value="con un tono de Cianotipia Azul (Cyanotype blueprint)">Cianotipia Azul</option>
+                        </select>
+                    </div>
+                    <div class="variable-item row-3-item">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                            <label style="margin-bottom: 0;">Vestimenta / Atuendo</label>
+                            <button onclick="document.getElementById('var-clothing').value='MANUAL'; toggleManualClothing();" title="Entrada manual" style="background:none; border:none; color:var(--neon-blue); cursor:pointer; font-size:1rem; padding:0 5px; opacity:0.7; transition: opacity 0.3s;">🔍</button>
+                        </div>
+                        <select id="var-clothing" onchange="toggleManualClothing(); updateView()">
+                            <option value="">Por defecto / Ninguno</option>
+                            <optgroup label="🌍 Cultural y Tradicional">
+                                <option value="vistiendo Agbada (Nigeria)">Agbada (Nigeria)</option>
+                                <option value="vistiendo Ao Dai (Vietnam)">Ao Dai (Vietnam)</option>
+                                <option value="atuendo de Derviche Danzante">Derviche Danzante</option>
+                                <option value="atuendo de Gaucho">Gaucho</option>
+                                <option value="atuendo de Geisha">Geisha</option>
+                                <option value="atuendo de Guerrero Maasai">Guerrero Maasai</option>
+                                <option value="atuendo de Húsar Polaco">Húsar Polaco</option>
+                                <option value="atuendo de Mariachi">Mariachi</option>
+                                <option value="atuendo de Matador/Torero">Matador/Torero</option>
+                                <option value="atuendo de Monje Shaolin">Monje Shaolin</option>
+                                <option value="atuendo de Monje Tibetano">Monje Tibetano</option>
+                                <option value="atuendo de Montañés Escocés">Montañés Escocés</option>
+                                <option value="atuendo de Nativo Americano">Nativo Americano</option>
+                                <option value="atuendo Barong Tagalog (Filipinas)">Barong Tagalog</option>
+                                <option value="atuendo Batik (Indonesia/Malasia)">Batik</option>
+                                <option value="atuendo Boubou (África Occidental)">Boubou</option>
+                                <option value="atuendo Bunad (Noruega)">Bunad</option>
+                                <option value="vistiendo Caftán Marroquí">Caftán Marroquí</option>
+                                <option value="atuendo Cheongsam / Qipao (China)">Cheongsam / Qipao</option>
+                                <option value="atuendo Dashiki (África Occidental)">Dashiki</option>
+                                <option value="atuendo Deel (Mongolia)">Deel</option>
+                                <option value="atuendo Dhoti (India)">Dhoti</option>
+                                <option value="atuendo Djellaba (Norte de África)">Djellaba</option>
+                                <option value="atuendo Gho (Bután)">Gho</option>
+                                <option value="atuendo Guayabera (Caribe)">Guayabera</option>
+                                <option value="atuendo Hanbok (Corea)">Hanbok</option>
+                                <option value="atuendo Hanfu (China)">Hanfu</option>
+                                <option value="atuendo Huipil (Mesoamérica)">Huipil</option>
+                                <option value="vistiendo Kaftan (Oriente Medio)">Kaftan</option>
+                                <option value="vistiendo Kanzu (África Oriental)">Kanzu</option>
+                                <option value="atuendo Kente (Ghana)">Kente</option>
+                                <option value="vestido con Kilt Escocés">Kilt Escocés</option>
+                                <option value="vestido con Kimono (Japón)">Kimono</option>
+                                <option value="atuendo Lederhosen (Alemania)">Lederhosen</option>
+                                <option value="atuendo Poncho (Andino)">Poncho</option>
+                                <option value="vestido con Sari (India)">Sari</option>
+                                <option value="vistiendo Sarong (Sudeste Asiático)">Sarong</option>
+                                <option value="atuendo Shalwar Kameez (Sur de Asia)">Shalwar Kameez</option>
+                                <option value="atuendo Sherwani (Sur de Asia)">Sherwani</option>
+                                <option value="atuendo Tabardo Medieval">Tabardo</option>
+                                <option value="atuendo Tagelmust (Tuareg)">Tagelmust</option>
+                                <option value="atuendo Thobe (Oriente Medio)">Thobe</option>
+                                <option value="atuendo Tracht (Alpes Centrales)">Tracht</option>
+                                <option value="atuendo de Tsarushina (Bulgaria)">Tsarushina</option>
+                                <option value="atuendo Túnica Griega (Quitón)">Quitón Griego</option>
+                                <option value="atuendo Zoot Suit">Zoot Suit</option>
+                            </optgroup>
+                            <optgroup label="🏆 Deportivo y Activo">
+                                <option value="equipo de Alpinista profesional">Alpinista</option>
+                                <option value="atuendo de Artes Marciales (Gi)">Artes Marciales</option>
+                                <option value="maillot de Baloncesto">Baloncesto</option>
+                                <option value="equipo de Boxeador">Boxeador</option>
+                                <option value="maillot de Ciclismo profesional">Ciclismo</option>
+                                <option value="equipo de Esgrima blanca">Esgrima</option>
+                                <option value="traje de Esquí alpino">Esquí</option>
+                                <option value="equipo de Fútbol Americano">Fútbol Americano</option>
+                                <option value="leotardo de Gimnasta rítmica">Gimnasta</option>
+                                <option value="equipo de Hockey sobre Hielo">Hockey Hielo</option>
+                                <option value="traje de Judo / Karate">Judo/Karate</option>
+                                <option value="traje de Motociclismo de cuero">Motociclismo</option>
+                                <option value="traje de Natación competitivo">Natación</option>
+                                <option value="traje de Neopreno (Surfista)">Neopreno / Surf</option>
+                                <option value="traje de Patinaje sobre Hielo">Patinaje Hielo</option>
+                                <option value="traje de Piloto de Carreras F1">Piloto F1</option>
+                                <option value="atuendo de Rugbier">Rugby</option>
+                                <option value="atuendo de Tenista clásico">Tenista</option>
+                                <option value="traje de Yoga profesional">Yoga</option>
+                                <option value="atuendo de Arquero (Arquería)">Arquero</option>
+                                <option value="atuendo de Béisbol">Béisbol</option>
+                                <option value="atuendo de Buceo con escafandra">Buceo</option>
+                                <option value="atuendo de Caza técnica">Caza</option>
+                                <option value="atuendo de Cricket">Cricket</option>
+                                <option value="atuendo de Equitación (Jockey)">Equitación</option>
+                                <option value="atuendo de Fútbol">Fútbol</option>
+                                <option value="atuendo de Golf">Golf</option>
+                                <option value="atuendo de Levantamiento de Pesas">Halterofilia</option>
+                                <option value="atuendo de Lucha Libre">Lucha Libre</option>
+                                <option value="atuendo de Paracaidista (Wingsuit)">Paracaidista</option>
+                                <option value="atuendo de Polo">Polo</option>
+                                <option value="atuendo de Senderismo (Hiking)">Senderismo</option>
+                                <option value="atuendo de Snowboard">Snowboard</option>
+                            </optgroup>
+                            <optgroup label="🚀 Fantasía, Sci-Fi y Terror">
+                                <option value="atuendo de Amo del Pantano">Amo del Pantano</option>
+                                <option value="atuendo de Ángel (Alas blancas)">Ángel</option>
+                                <option value="vestido con Armadura de Mithril">Armadura Mithril</option>
+                                <option value="portando Armadura de Placas">Armadura de Placas</option>
+                                <option value="portando Armadura de Poder (Power Armor)">Power Armor</option>
+                                <option value="atuendo de Arpía">Arpía</option>
+                                <option value="atuendo de Asesino Sombrío">Asesino Sombrío</option>
+                                <option value="atuendo de Barbaro">Bárbaro</option>
+                                <option value="atuendo de Caballero Medieval">Caballero Medieval</option>
+                                <option value="vestido de Esqueleto / Calavera">Esqueleto</option>
+                                <option value="atuendo de Cazador de Demonios">Cazador de Demonios</option>
+                                <option value="atuendo de Cíborg avanzado">Cíborg</option>
+                                <option value="atuendo Cyberpunk">Cyberpunk</option>
+                                <option value="atuendo de Demonio (Cuernos)">Demonio</option>
+                                <option value="atuendo de Dios Griego">Dios Griego</option>
+                                <option value="atuendo de Elfo Silvano">Elfo Silvano</option>
+                                <option value="vestido con Exoesqueleto">Exoesqueleto</option>
+                                <option value="atuendo de Fantasma">Fantasma</option>
+                                <option value="atuendo de Guerrero Espacial">Guerrero Espacial</option>
+                                <option value="atuendo de Infiltración Táctica">Infiltración Táctica</option>
+                                <option value="atuendo de Jedi">Jedi</option>
+                                <option value="atuendo de Lich">Lich</option>
+                                <option value="atuendo de Mago Blanco">Mago Blanco</option>
+                                <option value="atuendo de Mago Oscuro">Mago Oscuro</option>
+                                <option value="atuendo de Momia">Momia</option>
+                                <option value="atuendo de Ninfa">Ninfa</option>
+                                <option value="atuendo de Orco">Orco</option>
+                                <option value="atuendo de Paladín">Paladín</option>
+                                <option value="atuendo de Pirata">Pirata</option>
+                                <option value="atuendo de Segador (La Muerte)">Segador (Muerte)</option>
+                                <option value="atuendo de Sirena / Tritón">Sirena/Tritón</option>
+                                <option value="atuendo Steampunk">Steampunk</option>
+                                <option value="atuendo de Superhéroe">Superhéroe</option>
+                                <option value="atuendo de Vampiro">Vampiro</option>
+                                <option value="atuendo de Vikingo Fantástico">Vikingo Fantasía</option>
+                                <option value="atuendo de Zombi">Zombi</option>
+                                <option value="atuendo de Alien (Extraterrestre)">Alien</option>
+                                <option value="atuendo de Banshee">Banshee</option>
+                                <option value="atuendo de Cazarrecompensas (Bounty Hunter)">Cazarrecompensas</option>
+                                <option value="atuendo de Centauro">Centauro</option>
+                                <option value="atuendo de Druida">Druida</option>
+                                <option value="atuendo de Enano">Enano</option>
+                                <option value="atuendo de Espantapájaros (Horror)">Espantapájaros</option>
+                                <option value="atuendo de Fauno / Sátiro">Fauno</option>
+                                <option value="atuendo de Gólem">Gólem</option>
+                                <option value="atuendo de Hombre Lobo">Hombre Lobo</option>
+                                <option value="atuendo de Hechicero de Batalla">Hechicero Batalla</option>
+                                <option value="atuendo de Mecha / Robot Gigante">Piloto de Mecha</option>
+                                <option value="atuendo de Minotauro">Minotauro</option>
+                                <option value="atuendo de Nigromante">Nigromante</option>
+                                <option value="atuendo de Valquiria">Valquiria</option>
+                            </optgroup>
+                            <optgroup label="👔 Profesional y Uniformes">
+                                <option value="uniforme de Astronauta NASA">Astronauta</option>
+                                <option value="bata de Científico de laboratorio">Científico</option>
+                                <option value="atuendo de Chef de alta cocina">Chef</option>
+                                <option value="uniforme de Bombero">Bombero</option>
+                                <option value="uniforme de Policía SWAT">Policía SWAT</option>
+                                <option value="uniforme Militar de camuflaje">Militar</option>
+                                <option value="bata de Médico / Cirujano">Médico</option>
+                                <option value="uniforme de Piloto de Avión">Piloto de Avión</option>
+                                <option value="atuendo de Arqueólogo / Explorador">Explorador</option>
+                                <option value="atuendo de Juez (Toga negra)">Juez</option>
+                                <option value="uniforme de Marinero">Marinero</option>
+                                <option value="overol de Mecánico">Mecánico</option>
+                                <option value="atuendo de Minero">Minero</option>
+                                <option value="uniforme de Repartidor">Repartidor</option>
+                                <option value="atuendo de Albañil / Obrero">Obrero</option>
+                                <option value="atuendo de Pintor artista">Artista Pintor</option>
+                                <option value="uniforme de Azafata">Azafata</option>
+                                <option value="uniforme de Bibliotecario">Bibliotecario</option>
+                                <option value="atuendo de Carnicero">Carnicero</option>
+                                <option value="atuendo de Carpintero">Carpintero</option>
+                                <option value="atuendo de Cartero">Cartero</option>
+                                <option value="atuendo de Conserje">Conserje</option>
+                                <option value="atuendo de Electricista">Electricista</option>
+                                <option value="atuendo de Fontanero">Fontanero</option>
+                                <option value="atuendo de Guardia de Seguridad">Guardia Seguridad</option>
+                                <option value="atuendo de Guardaparques">Guardaparques</option>
+                                <option value="atuendo de Herrero">Herrero</option>
+                                <option value="atuendo de Joyero">Joyero</option>
+                                <option value="atuendo de Pescador comercial">Pescador</option>
+                                <option value="atuendo de Reportero / Periodista">Periodista</option>
+                                <option value="atuendo de Salvavidas">Salvavidas</option>
+                                <option value="atuendo de Soldador">Soldador</option>
+                                <option value="atuendo de Veterinario">Veterinario</option>
+                                <option value="atuendo de Fontanero">Fontanero</option>
+                                <option value="atuendo de Cartero">Cartero</option>
+                            </optgroup>
+                            <optgroup label="🏙️ Moderno, Urbano y Gala">
+                                <option value="esmoquin clásico">Esmoquin</option>
+                                <option value="vestido de Gala elegante">Vestido de Gala</option>
+                                <option value="vestido de Novia">Vestido de Novia</option>
+                                <option value="atuendo Streetwear Hypebeast">Streetwear</option>
+                                <option value="atuendo Techwear funcional">Techwear</option>
+                                <option value="atuendo Gótico moderno">Gótico</option>
+                                <option value="atuendo Hipster">Hipster</option>
+                                <option value="atuendo Punk con tachuelas">Punk</option>
+                                <option value="atuendo de Skater">Skater</option>
+                                <option value="pijama de seda">Pijama</option>
+                                <option value="ropa Casual Business">Casual Business</option>
+                                <option value="atuendo Rockero (Cuero)">Rockero</option>
+                                <option value="atuendo de Hip Hop">Hip Hop</option>
+                                <option value="atuendo Grunge">Grunge</option>
+                                <option value="atuendo de Bailarina">Bailarina</option>
+                                <option value="atuendo de Drag Queen">Drag Queen</option>
+                                <option value="atuendo de Emo / Scene">Emo</option>
+                                <option value="atuendo de Flamenca">Flamenca</option>
+                                <option value="atuendo de Hippie">Hippie</option>
+                                <option value="atuendo de Payaso">Payaso</option>
+                                <option value="atuendo de Preppy">Preppy</option>
+                                <option value="atuendo de Vedette">Vedette</option>
+                            </optgroup>
+                            <optgroup label="📜 Histórico y Antiguo">
+                                <option value="toga de Senador Romano">Toga Romana</option>
+                                <option value="armadura de Gladiador">Gladiador</option>
+                                <option value="vestimenta de Vikingo (Pieles)">Vikingo</option>
+                                <option value="atuendo de Faraón Egipcio">Faraón</option>
+                                <option value="armadura de Samurái O-Yoroi">Samurái</option>
+                                <option value="vestido de Época Victoriana">Época Victoriana</option>
+                                <option value="atuendo de Mosquetero">Mosquetero</option>
+                                <option value="vestimenta de Neandertal">Neandertal</option>
+                                <option value="hábito de Monje Medieval">Monje Medieval</option>
+                                <option value="atuendo de Legionario Romano">Legionario Romano</option>
+                                <option value="atuendo de Noble del Renacimiento">Noble Renacentista</option>
+                                <option value="atuendo de Pirata del siglo XVIII">Pirata XVIII</option>
+                                <option value="atuendo de Cowboy / Lejano Oeste">Cowboy</option>
+                                <option value="atuendo de Aristócrata Francés">Aristócrata Francés</option>
+                                <option value="atuendo de Samurai (Ronin)">Samurai Ronin</option>
+                                <option value="atuendo de Guerrero Ninja (Shinobi)">Ninja</option>
+                                <option value="atuendo de Cruzado">Cruzado</option>
+                                <option value="atuendo de Conquistador Español">Conquistador</option>
+                            </optgroup>
+                            <option value="MANUAL">Manual (Escribir propia...)</option>
+                        </select>
+                        <input type="text" id="var-clothing-manual" placeholder="Ej: armadura de cristal negro..." style="display:none; margin-top:5px; padding:8px; width:100%; font-size: 0.75rem; background:rgba(0,0,0,0.3); border:1px solid var(--glass); color:white; border-radius:4px;" oninput="updateView()">
+                    </div>
+                    <div class="variable-item row-4-item">
+                        <label>✍️ FIRMA (TEXTO Y DIBUJO)</label>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <input type="text" id="var-signature" placeholder="Texto de la firma..." oninput="updateView()" 
+                                   style="flex:1; background:rgba(0,0,0,0.2); border:1px solid var(--glass); color:var(--neon-blue); padding:10px; border-radius:4px; font-family:'Outfit', sans-serif; height:42px;">
+                            <button class="save-preset-btn" onclick="openSignaturePad()" title="Dibujar a mano alzada" style="height:42px; width:42px; display:flex; align-items:center; justify-content:center; font-size:1.2rem;">🖋️</button>
+                        </div>
+                        <img id="sig-preview" class="signature-preview">
+                    </div>
+                    <div class="variable-item row-4-item">
+                        <label>&nbsp;</label>
+                        <button class="btn-random" onclick="setRandom()">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                                <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3m-3-3l-2.5-2.5"/>
+                            </svg>
+                            <span>MEZCLA ALEATORIA / RANDOM MIX</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signature Pad Modal Component -->
+            <div class="overlay" onclick="closeSignaturePad()"></div>
+            <div class="signature-container">
+                <h3 style="color: var(--neon-blue); font-family: 'Orbitron'; font-size: 1rem;">DIBUJA TU FIRMA</h3>
+                <canvas id="signature-pad"></canvas>
+                <div class="signature-footer">
+                    <button class="btn-sig btn-sig-clear" onclick="clearSignature()">Borrar</button>
+                    <button class="btn-sig btn-sig-save" onclick="saveSignature()">Guardar Firma</button>
+                </div>
+            </div>
+
+            <h1 class="category-title" id="current-category">
+                Selecciona una Colección <span id="prompt-count">0</span>
+            </h1>
+
+            <div class="prompts-grid" id="prompts-container">
+                <!-- Cards will be injected here -->
+            </div>
+        </section>
+    </main>
+
+    <div id="toast">¡Copiado al portapapeles!</div>
+
+    <script src="data_prompts.js"></script>
+    <script>
+        const container = document.getElementById('prompts-container');
+        const nav = document.getElementById('categories-nav');
+        const title = document.getElementById('current-category');
+        const count = document.getElementById('prompt-count');
+        const toast = document.getElementById('toast');
+
+        let currentCat = '';
+
+        function init() {
+            Object.keys(PROMPT_DATABASE).forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = 'nav-btn';
+                btn.textContent = cat;
+                btn.onclick = () => selectCategory(cat, btn);
+                nav.appendChild(btn);
+            });
+
+            const firstCat = Object.keys(PROMPT_DATABASE)[0];
+            if (firstCat) {
+                selectCategory(firstCat, nav.querySelector('.nav-btn'));
+            }
+        }
+
+        function selectCategory(catName, btn) {
+            currentCat = catName;
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            title.innerHTML = `${catName} <span id="prompt-count">${PROMPT_DATABASE[catName].length}</span>`;
+            renderPrompts(PROMPT_DATABASE[catName]);
+        }
+
+        function renderPrompts(prompts) {
+            container.innerHTML = '';
+            prompts.forEach(p => {
+                const cleanTitle = p.title.includes('/') ? p.title.split('/').pop().trim().toUpperCase() : p.title.toUpperCase();
+                const card = document.createElement('div');
+                card.className = 'prompt-card';
+                card.id = `card-${p.id}`;
+                card.innerHTML = `
+                    <div class="prompt-header">
+                        <span class="prompt-id">#${p.number}</span>
+                        <span class="prompt-style">${p.style}</span>
+                    </div>
+                    <div class="prompt-title">${cleanTitle}</div>
+                    <div class="prompt-text" data-base="${p.content.replace(/"/g, '&quot;')}" id="text-${p.id}">${getProcessedText(p.content)}</div>
+                    <div class="prompt-actions">
+                        <button class="btn-copy" onclick="copyPrompt('${p.id}')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                            Copiar Prompt
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function toggleManual() {
+            const select = document.getElementById('var-face');
+            const manual = document.getElementById('var-face-manual');
+            manual.style.display = select.value === 'MANUAL' ? 'block' : 'none';
+        }
+
+        function toggleManualClothing() {
+            const select = document.getElementById('var-clothing');
+            const manual = document.getElementById('var-clothing-manual');
+            manual.style.display = select.value === 'MANUAL' ? 'block' : 'none';
+            if (select.value === 'MANUAL') manual.focus();
+        }
+
+        function getProcessedText(baseText) {
+            let text = baseText;
+            const faceSelect = document.getElementById('var-face');
+            const faceManual = document.getElementById('var-face-manual');
+            let faceReplacer = faceSelect.value;
+            
+            if (faceReplacer === 'MANUAL') {
+                faceReplacer = faceManual.value || '[INTRODUCIR URL/TEXTO]';
+            }
+
+            // Fix for recursive replacement & duplication
+            const clothingSelect = document.getElementById('var-clothing');
+            const clothingManual = document.getElementById('var-clothing-manual');
+            let clothingReplacer = clothingSelect.value;
+            if (clothingReplacer === 'MANUAL') {
+                clothingReplacer = clothingManual.value ? `vistiendo ${clothingManual.value}` : '[ESCRIBIR VESTIMENTA]';
+            }
+
+            const facePatterns = [
+                /un hombre con rostro subido como referencia/gi,
+                /una mujer con rostro subido como referencia/gi,
+                /un anciano con rostro subido como referencia/gi,
+                /un niño con rostro subido como referencia/gi,
+                /rostro subido como referencia/gi
+            ];
+            
+            for (let pattern of facePatterns) {
+                if (pattern.test(text)) {
+                    text = text.replace(pattern, faceReplacer);
+                    break;
+                }
+            }
+
+            // Inyectar Estilo, Movimiento, Dibujo, Lente, DOF y Plano
+            const styleMaster = document.getElementById('var-style-master').value;
+            const colorPalette = document.getElementById('var-color').value;
+            const drawStyle = document.getElementById('var-draw-style').value;
+            const lens = document.getElementById('var-lens').value;
+            const dof = document.getElementById('var-dof').value;
+            const shot = document.getElementById('var-shot').value;
+            const effect = document.getElementById('var-effect').value;
+            const clothing = document.getElementById('var-clothing').value;
+            
+            let prefix = "";
+            if (styleMaster) prefix += styleMaster + ", ";
+            if (colorPalette) prefix += colorPalette + ", ";
+            if (drawStyle) prefix += drawStyle + ", ";
+            if (clothingReplacer) prefix += clothingReplacer + ", ";
+            if (lens) prefix += lens + ", ";
+            if (dof) prefix += dof + ", ";
+            if (shot) prefix += shot + ", ";
+            if (effect) prefix += effect + ", ";
+            
+            if (prefix) {
+                text = prefix + text;
+            }
+
+            const light = document.getElementById('var-light').value;
+            const quality = document.getElementById('var-quality').value;
+
+            if (light) {
+                if (text.toLowerCase().includes('iluminación')) {
+                    text = text.replace(/iluminación[^,.]*/gi, light);
+                } else if (text.toLowerCase().includes('ilumina')) {
+                    text = text.replace(/ilumina[^,.]*/gi, light);
+                } else {
+                    text += `. Con ${light}`;
+                }
+            }
+
+            const surface = document.getElementById('var-surface').value;
+
+            if (quality) {
+                if (text.includes('8K')) {
+                    text = text.replace(/nitidez 8K absoluta[^,.]*/gi, quality);
+                    text = text.replace(/realismo[^,.]*8K/gi, quality);
+                } else {
+                    text += `. Calidad técnica: ${quality}`;
+                }
+            }
+
+            if (surface) {
+                text += `. Representado ${surface}`;
+            }
+
+            const cinema = document.getElementById('var-cinema').value;
+            const aspect = document.getElementById('var-ar').value;
+
+            if (cinema === 'ON') {
+                text += ", cinematic lighting, anamorphic lens, movie scene, shot on 35mm, high contrast";
+            }
+
+            if (aspect) {
+                text += ` ${aspect}`;
+            }
+
+            const signatureText = document.getElementById('var-signature').value.trim();
+            if (signatureText) {
+                text += `. Included a small, discrete handwritten artist signature in the bottom corner that reads "${signatureText}", elegant script style, cursive ink strokes, authentic feel.`;
+            }
+
+            const signatureImg = localStorage.getItem('prompt_almeria_signature');
+            if (signatureImg && signatureImg !== 'null') {
+                text += ` [Hand-drawn signature enabled: authentic biometric stroke verification]`;
+            }
+
+            return text;
+        }
+
+        // --- FIRMA A MANO ALZADA ---
+        const canvas = document.getElementById('signature-pad');
+        const ctx = canvas.getContext('2d');
+        let drawing = false;
+
+        function openSignaturePad() {
+            document.querySelector('.overlay').style.display = 'block';
+            document.querySelector('.signature-container').classList.add('show');
+            resizeCanvas();
+            loadSavedSignature();
+        }
+
+        function closeSignaturePad() {
+            document.querySelector('.overlay').style.display = 'none';
+            document.querySelector('.signature-container').classList.remove('show');
+        }
+
+        function resizeCanvas() {
+            canvas.width = 400;
+            canvas.height = 200;
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 3;
+            ctx.lineCap = "round";
+        }
+
+        function startDrawing(e) {
+            drawing = true;
+            draw(e);
+        }
+
+        function stopDrawing() {
+            drawing = false;
+            ctx.beginPath();
+        }
+
+        function draw(e) {
+            if (!drawing) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = (e.clientX || e.touches[0].clientX) - rect.left;
+            const y = (e.clientY || e.touches[0].clientY) - rect.top;
+
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        }
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        window.addEventListener('mouseup', stopDrawing);
+
+        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDrawing(e); });
+        canvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e); });
+        canvas.addEventListener('touchend', stopDrawing);
+
+        function clearSignature() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            localStorage.removeItem('prompt_almeria_signature');
+            document.getElementById('sig-preview').style.display = 'none';
+            updateView();
+        }
+
+        function saveSignature() {
+            const dataUrl = canvas.toDataURL();
+            localStorage.setItem('prompt_almeria_signature', dataUrl);
+            document.getElementById('sig-preview').src = dataUrl;
+            document.getElementById('sig-preview').style.display = 'block';
+            closeSignaturePad();
+            showToast("Firma guardada correctamente");
+            updateView();
+        }
+
+        function loadSavedSignature() {
+            const saved = localStorage.getItem('prompt_almeria_signature');
+            if (saved && saved !== 'null') {
+                const img = new Image();
+                img.onload = () => ctx.drawImage(img, 0, 0);
+                img.src = saved;
+                document.getElementById('sig-preview').src = saved;
+                document.getElementById('sig-preview').style.display = 'block';
+            }
+        }
+
+        function updateView() {
+            const texts = document.querySelectorAll('.prompt-text');
+            texts.forEach(el => {
+                const baseText = el.getAttribute('data-base').replace(/&quot;/g, '"');
+                el.innerText = getProcessedText(baseText);
+            });
+        }
+
+        function setRandom() {
+            const selects = ['var-face', 'var-light', 'var-quality', 'var-cinema', 'var-surface', 'var-ar', 'var-style-master', 'var-color', 'var-draw-style', 'var-lens', 'var-dof', 'var-shot', 'var-effect', 'var-clothing'];
+            selects.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    const options = Array.from(el.querySelectorAll('option')).filter(o => o.value !== "");
+                    if (options.length > 0) {
+                        const randomIndex = Math.floor(Math.random() * options.length);
+                        el.value = options[randomIndex].value;
+                    }
+                }
+            });
+            updateView();
+            
+            const btn = document.querySelector('.random-btn');
+            btn.style.filter = 'hue-rotate(90deg)';
+            setTimeout(() => btn.style.filter = '', 300);
+        }
+
+        function copyPrompt(id) {
+            const el = document.getElementById(`text-${id}`);
+            const textToCopy = el.innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast(`Prompt #${id.split('_').pop()} Copiado`);
+            });
+        }
+
+        function showToast(msg) {
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        }
+
+        // --- GESTIÓN DE PRESETS (localStorage) ---
+        const PRESETS_KEY = 'prompt_almeria_presets';
+
+        function saveCurrentAsPreset() {
+            const nameInput = document.getElementById('preset-name');
+            const name = nameInput.value.trim();
+            if (!name) {
+                alert("Por favor, introduce un nombre para el preset.");
+                return;
+            }
+
+            const currentConfig = {
+                name: name,
+                variables: {
+                    'var-face': document.getElementById('var-face').value,
+                    'var-light': document.getElementById('var-light').value,
+                    'var-quality': document.getElementById('var-quality').value,
+                    'var-cinema': document.getElementById('var-cinema').value,
+                    'var-ar': document.getElementById('var-ar').value,
+                    'var-style-master': document.getElementById('var-style-master').value,
+                    'var-draw-style': document.getElementById('var-draw-style').value,
+                    'var-lens': document.getElementById('var-lens').value,
+                    'var-dof': document.getElementById('var-dof').value,
+                    'var-shot': document.getElementById('var-shot').value,
+                    'var-effect': document.getElementById('var-effect').value,
+                    'var-clothing': document.getElementById('var-clothing').value,
+                    'var-surface': document.getElementById('var-surface').value,
+                    'var-color': document.getElementById('var-color').value,
+                    'var-signature': document.getElementById('var-signature').value
+                }
+            };
+
+            let presets = JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]');
+            const existingIndex = presets.findIndex(p => p.name === name);
+            if (existingIndex !== -1) {
+                if (!confirm(`El preset "${name}" ya existe. ¿Deseas sobrescribirlo?`)) return;
+                presets[existingIndex] = currentConfig;
+            } else {
+                presets.push(currentConfig);
+            }
+
+            localStorage.setItem(PRESETS_KEY, JSON.stringify(presets));
+            nameInput.value = '';
+            renderPresetsList();
+        }
+
+        function loadPreset(index) {
+            const presets = JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]');
+            const preset = presets[index];
+            if (!preset) return;
+
+            Object.keys(preset.variables).forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.value = preset.variables[id] || "";
+                    if (id === 'var-face') {
+                        const manual = document.getElementById('var-face-manual');
+                        if (manual) manual.style.display = el.value === 'MANUAL' ? 'block' : 'none';
+                    }
+                }
+            });
+
+            updateView();
+        }
+
+        function deletePreset(index, event) {
+            event.stopPropagation();
+            const presets = JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]');
+            if (!confirm(`¿Seguro que quieres eliminar el preset "${presets[index].name}"?`)) return;
+            
+            presets.splice(index, 1);
+            localStorage.setItem(PRESETS_KEY, JSON.stringify(presets));
+            renderPresetsList();
+        }
+
+        function renamePreset(index, event) {
+            event.stopPropagation();
+            const presets = JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]');
+            const oldName = presets[index].name;
+            const newName = prompt(`Nuevo nombre para "${oldName}":`, oldName);
+            
+            if (newName && newName.trim() !== "" && newName !== oldName) {
+                presets[index].name = newName.trim();
+                localStorage.setItem(PRESETS_KEY, JSON.stringify(presets));
+                renderPresetsList();
+            }
+        }
+
+        function renderPresetsList() {
+            const list = document.getElementById('presets-list');
+            if (!list) return;
+            const presets = JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]');
+            
+            if (presets.length === 0) {
+                list.innerHTML = '<div style="font-size:0.7rem; opacity:0.5; padding:10px;">No hay presets guardados.</div>';
+                return;
+            }
+
+            list.innerHTML = presets.map((p, i) => `
+                <div class="preset-item" onclick="loadPreset(${i})">
+                    <span class="preset-name" title="${p.name}">${p.name}</span>
+                    <div class="preset-actions">
+                        <button class="preset-action-btn btn-edit" onclick="renamePreset(${i}, event)" title="Renombrar">✏️</button>
+                        <button class="preset-action-btn btn-delete" onclick="deletePreset(${i}, event)" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function exportPresets() {
+            const presets = localStorage.getItem(PRESETS_KEY);
+            if (!presets || presets === '[]') {
+                alert("No hay presets para exportar.");
+                return;
+            }
+
+            // Intentar usar la File System Access API (Chrome/Edge) para elegir destino exacto
+            if ('showSaveFilePicker' in window) {
+                try {
+                    const handle = await window.showSaveFilePicker({
+                        suggestedName: 'presets_almeria.json',
+                        types: [{
+                            description: 'JSON Presets',
+                            accept: { 'application/json': ['.json'] },
+                        }],
+                    });
+                    const writable = await handle.createWritable();
+                    await writable.write(presets);
+                    await writable.close();
+                    showToast("Guardado con éxito en la carpeta");
+                    return;
+                } catch (err) {
+                    console.log("Cancelado o no soportado, usando descarga estándar.");
+                }
+            }
+
+            // Fallback: descarga estándar
+            const blob = new Blob([presets], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'presets_almeria.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast("Descargado (muévelo a la carpeta del HTML)");
+        }
+
+        function importPresets() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'application/json';
+            
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    try {
+                        const imported = JSON.parse(e.target.result);
+                        if (!Array.isArray(imported)) throw new Error("Formato inválido");
+
+                        const current = JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]');
+                        
+                        if (confirm(`Se han encontrado ${imported.length} presets. ¿Deseas UNIRLOS a los actuales? (Aceptar) o REEMPLAZARLOS por completo (Cancelar)?`)) {
+                            // Merge: evitar duplicados por nombre
+                            const merged = [...current];
+                            imported.forEach(p => {
+                                const idx = merged.findIndex(m => m.name === p.name);
+                                if (idx === -1) merged.push(p);
+                                else merged[idx] = p; // Sobrescribir si existe
+                            });
+                            localStorage.setItem(PRESETS_KEY, JSON.stringify(merged));
+                        } else {
+                            if (confirm("Se perderán todos los presets actuales. ¿Continuar?")) {
+                                localStorage.setItem(PRESETS_KEY, JSON.stringify(imported));
+                            }
+                        }
+                        
+                        renderPresetsList();
+                        showToast("Presets importados con éxito");
+                    } catch (err) {
+                        alert("Error al importar: El archivo no es un preset válido.");
+                    }
+                };
+                reader.readAsText(file);
+            };
+            input.click();
+        }
+
+        init();
+        renderPresetsList();
+    </script>
+</body>
+</html>
+
