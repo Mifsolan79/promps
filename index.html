@@ -270,17 +270,20 @@
         }
         .variables-grid {
             display: grid;
-            grid-template-columns: repeat(20, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 15px;
             margin-bottom: 20px;
             align-items: end;
         }
 
-        /* Configuración para 4 filas equilibradas (Total 20 columnas) */
-        .row-1-item { grid-column: span 4; } /* 5 elementos * 4 = 20 */
-        .row-2-item { grid-column: span 4; } /* 5 elementos * 4 = 20 */
-        .row-3-item { grid-column: span 5; } /* 4 elementos * 5 = 20 */
-        .row-4-item { grid-column: span 10; } /* 2 elementos * 10 = 20 */
+        .variable-item {
+            grid-column: span 1;
+        }
+
+        .random-btn-container {
+            grid-column: span 5;
+            margin-top: 10px;
+        }
 
         .variable-item label {
             display: block;
@@ -947,68 +950,96 @@
                             <option value="con paleta de Contraste Extremo">Alto Contraste</option>
                         </select>
                     </div>
-                    <div class="variable-item row-2-item">
-                        <label>Estilo Dibujo</label>
-                        <select id="var-draw-style" onchange="updateView()">
+                    <div class="variable-item">
+                        <label>Técnica / Estilo</label>
+                        <select id="var-technique" onchange="updateView()">
                             <option value="">(Original)</option>
                             <optgroup label="🎨 Pintura y Color">
                                 <option value="técnica de Action Painting (Splattered energy)">Action Painting</option>
                                 <option value="estilo Acuarela Expresiva (Fluid watercolor)">Acuarela Expresiva</option>
-                                <option value="estilo Acuarela Digital Detallada (Detailed watercolor)">Acuarela Detallada</option>
-                                <option value="estilo Pintura a la Témpera (Egg tempera mat)">Témpera</option>
-                                <option value="estilo Pintura Acrílica Fluida (Flowing acrylics)">Acrílico Fluido</option>
-                                <option value="estilo Pintura al Fresco (Renaissance fresco)">Fresco</option>
-                                <option value="estilo Pintura al Óleo Clásica (Classic oil)">Óleo Clásico</option>
-                                <option value="estilo Pintura con Aerógrafo (Airbrushed detail)">Aerógrafo</option>
+                                <option value="técnica de Pintura a la Témpera (Egg tempera mat)">Pintura a la Témpera</option>
+                                <option value="estilo Pintura Acrílica Fluida (Flowing acrylics)">Pintura Acrílica Fluida</option>
+                                <option value="estilo Pintura al Fresco (Renaissance fresco)">Pintura al Fresco</option>
+                                <option value="estilo Pintura al Óleo Clásica (Classic oil)">Pintura al Óleo Clásica</option>
+                                <option value="estilo Pintura con Aerógrafo (Airbrushed detail)">Pintura con Aerógrafo</option>
                                 <option value="con técnica de Pintura con Arena (Sand art)">Pintura con Arena</option>
-                                <option value="estilo Pintura con Espátula (Palette knife impasto)">Espátula</option>
-                                <option value="estilo Pintura con Gouache (Opaque watercolor)">Gouache</option>
-                                <option value="estilo Pintura Encáustica (Hot wax)">Encáustica</option>
-                                <option value="técnica de Impasto (Thick paint texture)">Impasto</option>
-                                <option value="estilo Pastel (Pastel art)">Pastel</option>
+                                <option value="estilo Pintura con Espátula (Palette knife impasto)">Pintura con Espátula</option>
+                                <option value="estilo Pintura con Gouache (Opaque watercolor)">Pintura con Gouache</option>
+                                <option value="estilo Pintura en Miniatura (Detailed micro-art)">Pintura en Miniatura</option>
+                                <option value="estilo Pintura Encáustica (Hot wax)">Pintura Encáustica</option>
+                                <option value="estilo Pintura sobre Vidrio (Glass painting)">Pintura sobre Vidrio</option>
+                                <option value="técnica de Impasto (Thick paint texture)">Técnica de Impasto</option>
+                                <option value="estilo de Puntillismo Digital (Seurat style)">Puntillismo Digital</option>
+                                <option value="con técnica de Sfumato Leonardesco (Soft smoky transitions)">Sfumato Leonardesco</option>
+                            </optgroup>
+                            <optgroup label="📸 Fotografía y Luz">
+                                <option value="estilo Cianotipia Azul (Cyanotype blueprint)">Cianotipia Azul</option>
+                                <option value="técnica de Daguerrotipo (1839 photographic mirror)">Daguerrotipo</option>
+                                <option value="con técnica de Doble Exposición (Double exposure overlapping)">Doble Exposición</option>
+                                <option value="estilo Fotografía Clave Alta (High Key lighting)">Fotografía Clave Alta</option>
+                                <option value="estilo Fotografía Clave Baja (Low Key lighting)">Fotografía Clave Baja</option>
+                                <option value="con técnica de Fotografía de Humo (Smoke patterns)">Fotografía de Humo</option>
+                                <option value="estilo Fotografía Estenopeica (Pinhole aesthetic)">Fotografía Estenopeica</option>
+                                <option value="con técnica Fotografía HDR (High Dynamic Range)">Fotografía HDR</option>
+                                <option value="estilo Fotografía Hiperrealista (Ultra-detailed clarity)">Fotografía Hiperrealista</option>
+                                <option value="estilo Fotografía Infrarroja (Infrared spectrum)">Fotografía Infrarroja</option>
+                                <option value="técnica de Fotografía Larga Exposición (Long exposure trails)">Fotografía Larga Exposición</option>
+                                <option value="estilo Fotografía Tilt-Shift (Miniature effect)">Fotografía Tilt-Shift</option>
+                                <option value="en estilo de Fotograma (Rayograph silhouette)">Fotograma (Rayograph)</option>
+                                <option value="técnica de Goma Bicromatada (19th century photo-painting)">Goma Bicromatada</option>
+                                <option value="estilo Lomografía (Lomo saturated look)">Lomografía</option>
                             </optgroup>
                             <optgroup label="✍️ Dibujo y Trazo">
-                                <option value="estilo Boceto a Bolígrafo (Ballpoint pen sketch)">Boceto Bolígrafo</option>
-                                <option value="estilo Boceto a Lápiz Detallado (Detailed graphite)">Lápiz Detallado</option>
-                                <option value="estilo Boceto con Sanguina (Red chalk Renaissance)">Sanguina</option>
-                                <option value="estilo de Dibujo con Tinta China (Sumi-e)">Tinta China</option>
-                                <option value="estilo Dibujo con Tiza y Pastel (Chalk art)">Tiza y Pastel</option>
-                                <option value="en estilo Lápices de Colores (Colored pencils)">Lápices Colores</option>
+                                <option value="estética de Arte con Carboncillo (Charcoal charcoal)">Arte con Carboncillo</option>
+                                <option value="estilo Boceto a Bolígrafo (Ballpoint pen sketch)">Boceto a Bolígrafo</option>
+                                <option value="estilo Boceto a Lápiz Detallado (Detailed graphite)">Boceto a Lápiz Detallado</option>
+                                <option value="estilo Boceto con Sanguina (Red chalk Renaissance)">Boceto con Sanguina</option>
+                                <option value="estética de Caligrama (Typography art)">Caligrama</option>
+                                <option value="estilo Dibujo a Contraluz (Backlit silhouette drawing)">Dibujo a Contraluz</option>
+                                <option value="estilo de Dibujo con Tinta China (Sumi-e)">Dibujo con Tinta China</option>
+                                <option value="estilo Dibujo con Tiza y Pastel (Chalk art)">Dibujo con Tiza y Pastel</option>
+                                <option value="estética de Ilustración Botánica (Scientific plant art)">Ilustración Botánica</option>
+                                <option value="en estilo Lápices de Colores (Colored pencils)">Lápices de Colores</option>
                                 <option value="técnica de Punta de Plata (Silverpoint Renaissance)">Punta de Plata</option>
-                                <option value="estilo Carboncillo (Charcoal)">Carboncillo</option>
                                 <option value="técnica de Scratchboard (Etched black surface)">Scratchboard</option>
                                 <option value="estilo Boceto Rápido (Quick sketch)">Boceto Rápido</option>
                             </optgroup>
                             <optgroup label="💻 Digital y Vanguardia">
+                                <option value="estética de Arte Digital Mate (Matte painting background)">Arte Digital Mate</option>
+                                <option value="estética de Arte Fractal (Mathematical patterns)">Arte Fractal</option>
+                                <option value="estilo de Arte Generativo (Algorithmic art)">Arte Generativo</option>
                                 <option value="estilo Arte ASCII (Text characters art)">Arte ASCII</option>
+                                <option value="estética de Caricatura Estilizada (Humorous exaggeration)">Caricatura Estilizada</option>
+                                <option value="estética de Anime/Manga (Japanese contemporary style)">Estilo Anime/Manga</option>
+                                <option value="estética de Realidad Aumentada (AR digital overlays)">Estilo Realidad Aumentada</option>
+                                <option value="estilo de Glitch Art (Digital errors)">Glitch Art</option>
+                                <option value="estilo de Ilustración con Rotuladores (Marker art)">Ilustración con Rotuladores</option>
+                                <option value="estética de Ilustración Vectorial (Clean graphic design)">Ilustración Vectorial</option>
+                                <option value="estética Low Poly Art (Geometric polygons)">Low Poly Art</option>
                                 <option value="estilo Pixel Art Detallado (High-res pixel art)">Pixel Art Detallado</option>
-                                <option value="técnica de Puntillismo Digital (Digital dots)">Puntillismo Digital</option>
-                                <option value="estilo Speedpainting Digital (Expressive strokes)">Speedpainting</option>
-                                <option value="con técnica de Sfumato Leonardesco (Soft smoky transitions)">Sfumato</option>
-                                <option value="estilo Cel Shading (Anime style)">Cel Shading</option>
-                                <option value="estilo de Cómic Americano (Inked)">Cómic</option>
-                                <option value="estética Digital Realista (High-end digital painting)">Digital Realista</option>
+                                <option value="estilo Speedpainting Digital (Expressive strokes)">Speedpainting Digital</option>
+                                <option value="estética de Voxel Art (3D cubic blocks)">Voxel Art</option>
+                                <option value="estética Digital Realista (High-end digital painting)">Pintura Digital Realista</option>
                             </optgroup>
                             <optgroup label="✂️ Mixtas y Papel">
                                 <option value="estilo Batik (Wax-resist dyeing)">Batik</option>
+                                <option value="estilo Collage Surrealista (Dreams-like illogical composition)">Collage Surrealista</option>
                                 <option value="estilo Decoupage (Paper cutouts)">Decoupage</option>
-                                <option value="técnica de Ensamblaje (3D found objects)">Ensamblaje (3D)</option>
+                                <option value="técnica de Ensamblaje (3D found objects)">Ensamblaje</option>
                                 <option value="técnica de Frottage (Rubbing texture)">Frottage</option>
                                 <option value="estilo de Kirigami (Paper cutting)">Kirigami</option>
-                                <option value="técnica de Marmoleado de Papel (Swirly marble)">Marmoleado</option>
-                                <option value="estilo de Mosaico de Vidrieras (Stained glass)">Vidrieras</option>
+                                <option value="técnica de Marmoleado de Papel (Swirly marble)">Marmoleado de Papel</option>
+                                <option value="estilo de Mosaico de Vidrieras (Stained glass)">Mosaico de Vidrieras</option>
                                 <option value="estilo Serigrafía (Silk screen pop art)">Serigrafía</option>
-                                <option value="estilo de Bordado Textil (Embroidery texture)">Bordado / Textil</option>
-                                <option value="con técnica de Arte con Fuego (Fumage)">Fumage / Fuego</option>
+                                <option value="estilo de Bordado Textil (Embroidery texture)">Arte Textil (Bordado)</option>
+                                <option value="con técnica de Arte con Fuego (Fumage)">Arte con Fuego (Fumage)</option>
                             </optgroup>
                             <optgroup label="🗿 Grabado y Modelado">
                                 <option value="técnica de Aguafuerte (Etching)">Aguafuerte</option>
-                                <option value="estilo Grabado en Linóleo (Linocut)">Linograbado</option>
+                                <option value="estilo Grabado en Linóleo (Linocut)">Grabado en Linóleo</option>
                                 <option value="técnica de Pirograbado (Wood burning)">Pirograbado</option>
-                                <option value="técnica de Xilografía (Woodcut)">Xilografía</option>
-                                <option value="estética de Escultura de Arcilla Digital (3D clay sculpting)">Escultura Arcilla</option>
-                                <option value="en estilo de Fotograma (Rayograph silhouette)">Fotograma (Rayograph)</option>
-                                <option value="técnica de Goma Bicromatada (19th century photo-painting)">Goma Bicromatada</option>
+                                <option value="estética de Escultura de Arcilla Digital (3D clay sculpting)">Escultura de Arcilla Digital</option>
+                                <option value="con técnica de Anamorfosis (Distorted perspective)">Anamorfosis</option>
                             </optgroup>
                         </select>
                     </div>
@@ -1031,9 +1062,6 @@
                             <option value="lente Tilt-Shift (Miniature effect)">Tilt-Shift</option>
                         </select>
                     </div>
-
-                    <!-- Fila 3 (5 items incl. Button) -->
-                    <!-- Fila 3 (5 items incl. Button) -->
                     <div class="variable-item row-3-item">
                         <label>Prof. Campo (DOF)</label>
                         <select id="var-dof" onchange="updateView()">
@@ -1046,15 +1074,36 @@
                         <label>Plano / Comp.</label>
                         <select id="var-shot" onchange="updateView()">
                             <option value="">(Original)</option>
-                            <option value="Ángulo Aberrante (Dutch Angle)">Ángulo Aberrante</option>
-                            <option value="Ángulo Normal (Eye level)">Ángulo Normal</option>
-                            <option value="Composición Diagonal">Composición Diagonal</option>
-                            <option value="Composición en L">Composición en L</option>
-                            <option value="Encuadre Natural">Encuadre Natural</option>
-                            <option value="Espacio Negativo">Espacio Negativo</option>
-                            <option value="Líneas Guía">Líneas Guía</option>
-                            <option value="Llenar el Encuadre (Fill the frame)">Llenar Encuadre</option>
-                            <option value="Simetría Perfecta">Simetría</option>
+                            <optgroup label="🎥 Planos Cinematográficos">
+                                <option value="Plano Americano (Cowboy shot)">Plano Americano</option>
+                                <option value="Plano Detalle (Extreme close-up / Detail shot)">Plano Detalle</option>
+                                <option value="Plano Entero (Full body shot)">Plano Entero</option>
+                                <option value="Plano Escorzo (Over the shoulder)">Plano Escorzo</option>
+                                <option value="Plano General Amplio (Wide shot / Long shot)">Plano General Amplio</option>
+                                <option value="Plano Medio (Medium shot / Waist up)">Plano Medio</option>
+                                <option value="Plano Medio Corto (Medium close-up / Bust shot)">Plano Medio Corto</option>
+                                <option value="Primer Plano (Close-up / Headshot)">Primer Plano</option>
+                                <option value="Primerísimo Plano (Extreme close-up)">Primerísimo Plano</option>
+                            </optgroup>
+                            <optgroup label="📐 Ángulos de Cámara">
+                                <option value="Ángulo Aberrante (Dutch Angle)">Ángulo Aberrante</option>
+                                <option value="Ángulo Normal (Eye level)">Ángulo Normal</option>
+                                <option value="Plano Cenital (Top down / Bird's eye view)">Plano Cenital</option>
+                                <option value="Plano Contrapicado (Low angle shot)">Plano Contrapicado</option>
+                                <option value="Plano Nadir (Extremely low angle / From ground)">Plano Nadir</option>
+                                <option value="Plano Picado (High angle shot)">Plano Picado</option>
+                            </optgroup>
+                            <optgroup label="🖼️ Reglas de Composición">
+                                <option value="Composición Diagonal">Composición Diagonal</option>
+                                <option value="Composición en L">Composición en L</option>
+                                <option value="Encuadre Natural">Encuadre Natural</option>
+                                <option value="Espacio Negativo">Espacio Negativo</option>
+                                <option value="Líneas Guía">Líneas Guía</option>
+                                <option value="Llenar el Encuadre (Fill the frame)">Llenar Encuadre</option>
+                                <option value="Proporción Áurea (Golden ratio composition)">Proporción Áurea</option>
+                                <option value="Regla de los Tercios (Rule of thirds)">Regla de los Tercios</option>
+                                <option value="Simetría Perfecta">Simetría</option>
+                            </optgroup>
                         </select>
                     </div>
                     <div class="variable-item row-3-item">
@@ -1075,6 +1124,20 @@
                             <option value="con efecto de Glitch Art (Digital errors)">Glitch Art</option>
                             <option value="capturado con Larga Exposición (Long exposure trails)">Larga Exposición</option>
                             <option value="con un tono de Cianotipia Azul (Cyanotype blueprint)">Cianotipia Azul</option>
+                        </select>
+                    </div>
+                    <div class="variable-item row-3-item">
+                        <label>Atmósfera</label>
+                        <select id="var-atmosphere" onchange="updateView()">
+                            <option value="">Ninguno</option>
+                            <option value="con atmósfera Alegre (Happy and bright)">Alegre</option>
+                            <option value="con atmósfera Caótica (Chaotic and energetic)">Caótico</option>
+                            <option value="con atmósfera Épica (Epic and monumental)">Épico</option>
+                            <option value="con atmósfera Melancólica (Melancholic and nostalgic)">Melancólico</option>
+                            <option value="con atmósfera Misteriosa (Mysterious and intriguing)">Misterioso</option>
+                            <option value="con atmósfera Nostálgica (Nostalgic and warm)">Nostálgico</option>
+                            <option value="con atmósfera Onírica (Dreamy and ethereal)">Onírico</option>
+                            <option value="con atmósfera Romántica (Romantic and soft)">Romántico</option>
                         </select>
                     </div>
                     <div class="variable-item row-3-item">
@@ -1254,8 +1317,6 @@
                                 <option value="atuendo de Salvavidas">Salvavidas</option>
                                 <option value="atuendo de Soldador">Soldador</option>
                                 <option value="atuendo de Veterinario">Veterinario</option>
-                                <option value="atuendo de Fontanero">Fontanero</option>
-                                <option value="atuendo de Cartero">Cartero</option>
                             </optgroup>
                             <optgroup label="🏙️ Moderno, Urbano y Gala">
                                 <option value="esmoquin clásico">Esmoquin</option>
@@ -1305,7 +1366,11 @@
                         </select>
                         <input type="text" id="var-clothing-manual" placeholder="Ej: armadura de cristal negro..." style="display:none; margin-top:5px; padding:8px; width:100%; font-size: 0.75rem; background:rgba(0,0,0,0.3); border:1px solid var(--glass); color:white; border-radius:4px;" oninput="updateView()">
                     </div>
-                    <div class="variable-item row-4-item">
+                </div>
+
+                <!-- Controles Extra (Firma y Mezcla) -->
+                <div class="extra-controls" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--glass);">
+                    <div class="variable-item">
                         <label>✍️ FIRMA (TEXTO Y DIBUJO)</label>
                         <div style="display: flex; gap: 10px; align-items: center;">
                             <input type="text" id="var-signature" placeholder="Texto de la firma..." oninput="updateView()" 
@@ -1314,10 +1379,10 @@
                         </div>
                         <img id="sig-preview" class="signature-preview">
                     </div>
-                    <div class="variable-item row-4-item">
+                    <div class="variable-item">
                         <label>&nbsp;</label>
-                        <button class="btn-random" onclick="setRandom()">
-                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                        <button class="btn-random" onclick="setRandom()" style="height:42px; width:100%;">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" style="width:20px;">
                                 <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3m-3-3l-2.5-2.5"/>
                             </svg>
                             <span>MEZCLA ALEATORIA / RANDOM MIX</span>
@@ -1453,20 +1518,21 @@
                 }
             }
 
-            // Inyectar Estilo, Movimiento, Dibujo, Lente, DOF y Plano
+            // Inyectar Estilo, Movimiento, Técnica, Lente, DOF, Plano, Efecto y Atmósfera
             const styleMaster = document.getElementById('var-style-master').value;
             const colorPalette = document.getElementById('var-color').value;
-            const drawStyle = document.getElementById('var-draw-style').value;
+            const technique = document.getElementById('var-technique').value;
+            const atmosphere = document.getElementById('var-atmosphere').value;
             const lens = document.getElementById('var-lens').value;
             const dof = document.getElementById('var-dof').value;
             const shot = document.getElementById('var-shot').value;
             const effect = document.getElementById('var-effect').value;
-            const clothing = document.getElementById('var-clothing').value;
             
             let prefix = "";
+            if (technique) prefix += technique + ", ";
+            if (atmosphere) prefix += atmosphere + ", ";
             if (styleMaster) prefix += styleMaster + ", ";
             if (colorPalette) prefix += colorPalette + ", ";
-            if (drawStyle) prefix += drawStyle + ", ";
             if (clothingReplacer) prefix += clothingReplacer + ", ";
             if (lens) prefix += lens + ", ";
             if (dof) prefix += dof + ", ";
@@ -1621,11 +1687,11 @@
         }
 
         function setRandom() {
-            const selects = ['var-face', 'var-light', 'var-quality', 'var-cinema', 'var-surface', 'var-ar', 'var-style-master', 'var-color', 'var-draw-style', 'var-lens', 'var-dof', 'var-shot', 'var-effect', 'var-clothing'];
+            const selects = ['var-face', 'var-light', 'var-quality', 'var-cinema', 'var-surface', 'var-ar', 'var-style-master', 'var-color', 'var-technique', 'var-atmosphere', 'var-lens', 'var-dof', 'var-shot', 'var-effect', 'var-clothing'];
             selects.forEach(id => {
                 const el = document.getElementById(id);
                 if (el) {
-                    const options = Array.from(el.querySelectorAll('option')).filter(o => o.value !== "");
+                    const options = Array.from(el.querySelectorAll('option')).filter(o => o.value !== "" && o.value !== "MANUAL");
                     if (options.length > 0) {
                         const randomIndex = Math.floor(Math.random() * options.length);
                         el.value = options[randomIndex].value;
@@ -1634,9 +1700,11 @@
             });
             updateView();
             
-            const btn = document.querySelector('.random-btn');
-            btn.style.filter = 'hue-rotate(90deg)';
-            setTimeout(() => btn.style.filter = '', 300);
+            const btn = document.querySelector('.btn-random');
+            if (btn) {
+                btn.style.filter = 'hue-rotate(90deg)';
+                setTimeout(() => btn.style.filter = '', 300);
+            }
         }
 
         function copyPrompt(id) {
@@ -1673,7 +1741,8 @@
                     'var-cinema': document.getElementById('var-cinema').value,
                     'var-ar': document.getElementById('var-ar').value,
                     'var-style-master': document.getElementById('var-style-master').value,
-                    'var-draw-style': document.getElementById('var-draw-style').value,
+                    'var-technique': document.getElementById('var-technique').value,
+                    'var-atmosphere': document.getElementById('var-atmosphere').value,
                     'var-lens': document.getElementById('var-lens').value,
                     'var-dof': document.getElementById('var-dof').value,
                     'var-shot': document.getElementById('var-shot').value,
