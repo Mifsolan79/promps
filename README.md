@@ -1,18 +1,14 @@
 # PROMPT ALMERÍA - Portal Maestro
 
-Sistema avanzado de gestión y generación de prompts cinematográficos para artistas y creadores de IA.
+Sistema avanzado de gestión y generación de prompts optimizados para IA.
 
-## 🚀 Características
-- **Base de Datos Masiva:** Miles de prompts categorizados (Fantasía, Cyberpunk, Espionaje, etc.).
-- **Control Total:** Ajuste dinámico de iluminación, lentes, estilos y vestimenta.
-- **Entrada Manual:** Lupa integrada para personalización total de variables.
-- **Gestión de Presets:** Guarda y carga tus configuraciones favoritas localmente.
-- **Firma Digital:** Genera prompts con tu marca personal o firma dibujada.
+## 🚀 Instalación y Uso
 
-## 🛠️ Instalación y Uso
 1. Descarga el repositorio.
-2. Abre `prompt_almeria_v1.html` en cualquier navegador moderno.
-3. ¡Empieza a crear!
+2. Abre [index.html](index.html) en cualquier navegador moderno.
+
+### Acceso Rápido
+- **Portal Principal:** [Acceder aquí](https://mifsolan79.github.io/promps/)
 
 ---
 *Desarrollado para la optimización de flujos de trabajo en generación de imágenes.*
