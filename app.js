@@ -1,10 +1,19 @@
 function escapeHTML(str) {
-            if (typeof str !== 'string') return str;
-            return str.replace(/[&<>'"]/g, function(tag) {
-                const chars = {'&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'};
-                return chars[tag] || tag;
-            });
-        }
+    if (typeof str !== 'string') return str;
+    return str.replace(/[&<>'"]/g, function(tag) {
+        const chars = {'&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'};
+        return chars[tag] || tag;
+    });
+}
+
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+}
 
         const container = document.getElementById('prompts-container');
         const nav = document.getElementById('categories-nav');
@@ -657,7 +666,7 @@ function escapeHTML(str) {
         // Botones de alternancia manual
         document.getElementById('btn-toggle-face')?.addEventListener('click', () => {
             document.getElementById('var-face').value = 'MANUAL';
-            toggleManualFace();
+            toggleManual();
         });
         document.getElementById('btn-toggle-clothing')?.addEventListener('click', () => {
             document.getElementById('var-clothing').value = 'MANUAL';
@@ -676,7 +685,7 @@ function escapeHTML(str) {
         // Escuchar cambios en todos los selects para actualizar la vista
         document.querySelectorAll('.variables-grid select').forEach(select => {
             select.addEventListener('change', () => {
-                if (select.id === 'var-face') toggleManualFace();
+                if (select.id === 'var-face') toggleManual();
                 if (select.id === 'var-clothing') toggleManualClothing();
                 updateView();
             });
