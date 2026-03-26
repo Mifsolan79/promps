@@ -1,4 +1,715 @@
 window.PROMPT_DATABASE = {
+    "VFX & Efectos Especiales": [
+        {
+            "id": "vfx_1",
+            "number": 1,
+            "style": "VFX & Efectos Especiales",
+            "title": "EXPLOSIÓN CINEMATOGRÁFICA COLOSAL",
+            "content": "Impacto masivo capturado con Red V-Raptor XL y lente anamórfica Cooke/i. Un hombre con rostro subido como referencia es proyectado por la onda expansiva. Bolas de fuego con gradiente dinámico de negro a naranja 2000K, humo volumétrico denso y chispas físicas (PBR). Motion blur realista, briznas de ceniza dinámicas y distorsión por calor (Heat haze). Calidad IMAX 8K RAW."
+        },
+        {
+            "id": "vfx_2",
+            "number": 2,
+            "style": "VFX & Efectos Especiales",
+            "title": "MANIPULACIÓN DE LUZ CUÁNTICA",
+            "content": "Retrato maestro con Arri Alexa 35. Personaje con rostro subido como referencia sosteniendo una esfera de energía pulsante. Partículas de luz con emisión cian y ráfagas de fotones (Emission map). Iluminación de contorno (Rim light) agresiva que resalta poros y biometría facial. Efecto de lente anamórfico con destellos horizontales azules. Estética sci-fi técnica."
+        },
+        {
+            "id": "vfx_3",
+            "number": 3,
+            "style": "VFX & Efectos Especiales",
+            "title": "INFLAMACIÓN DE PIROTECNIA PRÁCTICA",
+            "content": "Plano corto capturado con Sony Venice 2. Rostro subido como referencia iluminado por bengalas de magnesio 6000K. Se aprecia el humo blanco espeso y la textura de la piel bajo luz cruda. Detalle en la caída de chispas reales con desenfoque de movimiento. Calidad cinematográfica de efectos especiales de la vieja escuela (Practical Effects)."
+        },
+        {
+            "id": "vfx_4",
+            "number": 4,
+            "style": "VFX & Efectos Especiales",
+            "title": "DESINTEGRACIÓN EN PARTÍCULAS",
+            "content": "Efecto de desvanecimiento digital (VFX). Hombre con rostro subido como referencia convirtiéndose en briznas de arena negra y fragmentos geométricos. Luz volumétrica filtrándose a través de los huecos del cuerpo. Biometría facial intacta en las zonas aún sólidas. Nitidez 8K, renderizado Octane-style con profundidad de campo Zeiss f/1.4."
+        },
+        {
+            "id": "vfx_5",
+            "number": 5,
+            "style": "VFX & Efectos Especiales",
+            "title": "SIMULACIÓN DE FLUIDOS ELECTRIFICADOS",
+            "content": "Personaje con rostro subido como referencia bajo una lluvia de combustible neón. Refracción HDR en las gotas de líquido viscoso. Rayos internos (Tesla arcs) iluminando la piel desde el interior de los fluidos. Texturas PBR de humedad extrema. Captura con Arri Alexa y lente macro para detalle biométrico en cejas y pestañas mojadas."
+        },
+        {
+            "id": "vfx_6",
+            "number": 6,
+            "style": "VFX & Efectos Especiales",
+            "title": "LLUVIA DE CENIZA VOLCÁNICA",
+            "content": "Atmósfera opresiva con partículas de ceniza en suspensión. Personaje con rostro subido como referencia con máscara de gas parcial, ojos con biometría de fatiga extrema. Iluminación naranja de fondo (Kicker light) sugiriendo un volcán cercano. Textura de hollín y polvo en la ropa de cuero PBR. Calidad RAW cinematográfica."
+        },
+        {
+            "id": "vfx_7",
+            "number": 7,
+            "style": "VFX & Efectos Especiales",
+            "title": "MAGIA DE PORTAL DIMENSIONAL",
+            "content": "Plano general de un portal circular de energía pura. Personaje con rostro subido como referencia cruzando el umbral. Refracción del aire, distorsión gravitacional y destellos luminosos intensos. Colores místico-tecnológicos (Índigo y Oro). Biometría facial bajo luz de arco eléctrico. Sony Venice 2."
+        },
+        {
+            "id": "vfx_8",
+            "number": 8,
+            "style": "VFX & Efectos Especiales",
+            "title": "SANGRE DE MERCURIO CIBERNÉTICO",
+            "content": "Detalle de herida con fluido metálico brillante (Liquid metal PBR). Rostro subido como referencia con biometría de dolor frío. Refracciones cromadas nítidas en la piel. Iluminación técnica de laboratorio con sombras duras. Estética de cyberpunk avanzado con calidad de textura 8K."
+        },
+        {
+            "id": "vfx_9",
+            "number": 9,
+            "style": "VFX & Efectos Especiales",
+            "title": "TORMENTA DE ARENA CINEMATOGRÁFICA",
+            "content": "Efecto de viento extremo (Wind physics). Personaje con rostro subido como referencia protegiéndose de ráfagas de arena ultra-detallada. Luz de sol de mediodía filtrada por el polvo. Detalle en los poros obstruidos por la arena y en la textura del pañuelo de lino PBR. Arri Alexa 35."
+        },
+        {
+            "id": "vfx_10",
+            "number": 10,
+            "style": "VFX & Efectos Especiales",
+            "title": "AURA DE CONGELACIÓN INSTANTÁNEA",
+            "content": "Crecimiento de cristales de hielo en tiempo real sobre el rostro subido como referencia. Refracción gélida, escarcha en las pestañas y vaho denso. Iluminación azul cian 10000K. Biometría facial de hipotermia heroica. Calidad IMAX con nitidez microscópica en la formación de la escarcha."
+        },
+        {
+            "id": "vfx_11",
+            "number": 11,
+            "style": "VFX & Efectos Especiales",
+            "title": "IMPACTO DE BALA EN CÁMARA LENTA",
+            "content": "Efecto de tiempo bala (Bullet time). Proyectil deformando el aire con ondas de choque volumétricas. Personaje con rostro subido como referencia esquivando al límite. Iluminación de alto contraste, briznas de escombros de hormigón PBR y destellos de pólvora. Sony Venice 2 con lente de 14mm."
+        },
+        {
+            "id": "vfx_12",
+            "number": 12,
+            "style": "VFX & Efectos Especiales",
+            "title": "LLAMADA DE RAYOS ATMOSFÉRICOS",
+            "content": "Iluminación estroboscópica blanca pura. Personaje con rostro subido como referencia bajo una tormenta eléctrica colosal. El rayo perfila la silueta con un resplandor de alto rango dinámico (HDR). Biometría de los ojos con reflejo de la descarga. Atmósfera de ozono y humedad volumétrica. Red V-Raptor XL."
+        },
+        {
+            "id": "vfx_13",
+            "number": 13,
+            "style": "VFX & Efectos Especiales",
+            "title": "DRAGÓN DE HUMO VOLUMÉTRICO",
+            "content": "Representación física de una criatura formada por humo industrial gris y carbón. Hombre con rostro subido como referencia frente a la entidad. Luz de fuego rítmica desde abajo. Texturas de humo con sombreado volumétrico avanzado (VDB-style). Estética de fantasía oscura técnica."
+        },
+        {
+            "id": "vfx_14",
+            "number": 14,
+            "style": "VFX & Efectos Especiales",
+            "title": "ESTALLIDO DE PINTURA EXPLOSIVA",
+            "content": "Efecto visual de arte dinámico. Personaje con rostro subido como referencia bañado en una explosión de pigmentos fluorescentes líquidos. Colisiones físicas realistas, salpicaduras con biometría de la piel visible bajo la pintura. Iluminación UV negra que hace brillar los colores. Calidad Masterpiece."
+        },
+        {
+            "id": "vfx_15",
+            "number": 15,
+            "style": "VFX & Efectos Especiales",
+            "title": "REPARACIÓN NANOTECNOLÓGICA",
+            "content": "Enjambre de nanobots plateados reconstruyendo un hombro herido. Rostro subido como referencia mirando con asombro. Luz láser roja de escaneado recorriendo la piel. Detalle en la textura de metal microscópico y en la biometría facial detallada. Arri Alexa 35."
+        },
+        {
+            "id": "vfx_16",
+            "number": 16,
+            "style": "VFX & Efectos Especiales",
+            "title": "ONDAS DE SONIDO VISIBLES",
+            "content": "Efecto de distorsión sónica. Ondas de choque que deforman el aire y el entorno. Personaje con rostro subido como referencia gritando en el centro de la onda. Pelo agitado dinámicamente, vibración en la piel capturada con nitidez 8K. Estética de post-procesamiento cinematográfico agresivo."
+        },
+        {
+            "id": "vfx_17",
+            "number": 17,
+            "style": "VFX & Efectos Especiales",
+            "title": "MANTO DE FUEGO MÍSTICO",
+            "content": "Llamas que no queman pero emiten luz ámbar intensa. Personaje con rostro subido como referencia con túnica envuelta en fuego sagrado. Biometría facial con reflejos anaranjados móviles. Partículas de ceniza dorada flotando en cámara lenta. Calidad de render HDR de alta gama."
+        },
+        {
+            "id": "vfx_18",
+            "number": 18,
+            "style": "VFX & Efectos Especiales",
+            "title": "COLISION DE AGUA Y LAVA",
+            "content": "Efecto de vapor volumétrico denso y explosión de vapor. Hombre con rostro subido como referencia en la orilla de un duelo elemental. Contraste térmico extremo: luz azul fría y roja ígnea. Texturas de roca volcánica PBR y agua cristalina con espuma realista."
+        },
+        {
+            "id": "vfx_19",
+            "number": 19,
+            "style": "VFX & Efectos Especiales",
+            "title": "HOLOGRADA DE SEGURIDAD BIOMÉTRICO",
+            "content": "Interfaz de luz cian proyectada directamente sobre el rostro subido como referencia. Escaneo de retina visible en los ojos reales. Biometría facial diseccionada por glifos de luz. Estética de Minority Report con calidad de detalle 8K. Sombras suaves de laboratorio futurista."
+        },
+        {
+            "id": "vfx_20",
+            "number": 20,
+            "style": "VFX & Efectos Especiales",
+            "title": "ESTA NO ES UNA PERSONA REAL",
+            "content": "Efecto de 'Uncanny Valley' intencionado (VFX). Rostro subido como referencia con piel de porcelana agrietada que revela circuitos internos. Una lágrima de aceite negro cae por la mejilla. Iluminación Chiaroscuro dramática que resalta la textura artificial PBR. Sony Venice 2."
+        },
+        {
+            "id": "vfx_21",
+            "number": 21,
+            "style": "VFX & Efectos Especiales",
+            "title": "INVASIÓN DE ESPORAS BRILLANTES",
+            "content": "Bosque nocturno con millones de partículas orgánicas bioluminiscentes. Personaje con rostro subido como referencia inhalando briznas de luz. Biometría de labios y nariz bajo iluminación interna puntual. Profundidad de campo Zeiss para un bokeh de esporas mágico. 8K RAW."
+        },
+        {
+            "id": "vfx_22",
+            "number": 22,
+            "style": "VFX & Efectos Especiales",
+            "title": "EFECTO DE VIAJE EN EL TIEMPO",
+            "content": "Distorsión de lente (Whirl effect) y briznas de cronones dorados. Rostro subido como referencia estirándose ligeramente por la física temporal. Iluminación de vacío estelar con arco iris de refracción. Calidad cinematográfica de Christopher Nolan. Red V-Raptor XL."
+        },
+        {
+            "id": "vfx_23",
+            "number": 23,
+            "style": "VFX & Efectos Especiales",
+            "title": "COLOSAL ESCUDO DE ENERGÍA",
+            "content": "Escena de asedio. Cúpula de luz hexagonal protegiendo al personaje con rostro subido como referencia de misiles entrantes. Luz de explosiones externas filtrada por el escudo (Blue tint). Reflejos físicos de la energía en la armadura PBR y en la piel real."
+        },
+        {
+            "id": "vfx_24",
+            "number": 24,
+            "style": "VFX & Efectos Especiales",
+            "title": "MAQUILLAJE DE PRÓTESIS DE HORROR",
+            "content": "Efecto especial práctico de primer nivel. Rostro subido como referencia fusionado con texturas de carne quemada y hueso expuesto (PBR materials). Sangre falsa viscosa (Glossy finish) e iluminación de sótano lúgubre. Calidad de efectos especiales de Stan Winston."
+        },
+        {
+            "id": "vfx_25",
+            "number": 25,
+            "style": "VFX & Efectos Especiales",
+            "title": "INVISIBILIDAD PREDATOR-STYLE",
+            "content": "Efecto de refracción activa que camufla el cuerpo con el entorno. Solo se percibe la silueta distorsionada y los ojos reales del rostro subido como referencia. Luz ambiental de jungla profunda. Estética de camuflaje térmico y digital avanzado. Arri Alexa 35."
+        }
+    ],
+    "Fantasía": [
+        {
+            "id": "fantasia_1",
+            "number": 1,
+            "style": "Fantasía",
+            "title": "EL GRAN SALÓN DEL TRONO",
+            "content": "Retrato maestro capturado con Arri Alexa 35 y lente Zeiss Supreme Prime. Un hombre con rostro subido como referencia con biometría extrema: poros de la piel visibles, micro-transpiración y vello facial fino. Camina por un pasillo de piedra volcánica (textura PBR) bajo iluminación Rembrandt dramática a 3200K. Calidad de fotograma IMAX, profundidad de color de 12 bits."
+        },
+        {
+            "id": "vfx_26",
+            "number": 26,
+            "style": "VFX & Efectos Especiales",
+            "title": "EXPLOSIÓN DE NEBULOSA ESPACIAL",
+            "content": "Gas interestelar fluorescente expandiéndose en 360 grados. Personaje con rostro subido como referencia flotando en el centro. Refracción de luz estelar en el traje PBR. Partículas de polvo cósmico con brillo propio. Captura con Sony Venice 2 en modo gran angular masivo. 8K RAW."
+        },
+        {
+            "id": "vfx_27",
+            "number": 27,
+            "style": "VFX & Efectos Especiales",
+            "title": "LLUVIA DE CRISTAL ROTO",
+            "content": "Efecto de fragmentación masiva en cámara lenta. Miles de cristales con refracción HDR cayendo alrededor del rostro subido como referencia. Destellos prismáticos (Caustics) reflejados en la piel. Biometría facial con detalle en los ojos cerrados. Arri Alexa 35 con profundidad de campo Zeiss f/1.2."
+        },
+        {
+            "id": "vfx_28",
+            "number": 28,
+            "style": "VFX & Efectos Especiales",
+            "title": "ENJAMBRE DE ABEJAS DRON",
+            "content": "Millones de micro-drones con luces rojas formando una nube inteligente. Personaje con rostro subido como referencia bajo la sombra del enjambre. Luz técnica de búsqueda (Searchlight) recorriendo el escenario. Texturas metálicas PBR y desenfoque de movimiento rápido. Estética de ciencia ficción bélica."
+        },
+        {
+            "id": "vfx_29",
+            "number": 29,
+            "style": "VFX & Efectos Especiales",
+            "title": "FUSIÓN DE ORO LÍQUIDO",
+            "content": "Rostro subido como referencia cubriéndose progresivamente por metal precioso fundido. Refracciones doradas cálidas, viscosidad realista (Fluid simulation). Iluminación de estudio dramática con reflejos especulares nítidos. Biometría facial visible bajo la capa de oro. Calidad cinematográfica 8K."
+        },
+        {
+            "id": "vfx_30",
+            "number": 30,
+            "style": "VFX & Efectos Especiales",
+            "title": "TELETRANSPORTACIÓN DE DATOS",
+            "content": "Efecto de desmaterialización en cubos digitales de luz neón. Personaje con rostro subido como referencia desapareciendo. Estelas de código binario flotante (Digital rain style). Iluminación cian y magenta 80s Cyberpunk. Captura con Red V-Raptor XL para máxima definición de partículas."
+        },
+        {
+            "id": "vfx_31",
+            "number": 31,
+            "style": "VFX & Efectos Especiales",
+            "title": "CASCADA DE LAVA VOLUMÉTRICA",
+            "content": "Fuego líquido fluyendo en un entorno subterráneo. Hombre con rostro subido como referencia en una silueta heroica. Iluminación global (GI) generada por la propia lava. Humo denso y brasas dinámicas. Textura de roca incandescente PBR. 8K High Definition."
+        },
+        {
+            "id": "vfx_32",
+            "number": 32,
+            "style": "VFX & Efectos Especiales",
+            "title": "ONDAS DE CHOQUE SUBACUÁTICAS",
+            "content": "Explosión bajo el agua (Fluid dynamics). Burbujas masivas, distorsión por presión y luz azul profunda filtrada por el océano. Rostro subido como referencia con biometría de inmersión extrema. Partículas de sedimentos en suspensión. Lente Sony macro para detalle subacuático."
+        },
+        {
+            "id": "vfx_33",
+            "number": 33,
+            "style": "VFX & Efectos Especiales",
+            "title": "AURORA BOREAL ARTIFICIAL",
+            "content": "Cielos nocturnos con cortinas de luz verde y púrpura generadas por satélites. Personaje con rostro subido como referencia mirando al cielo. Reflejo de la aurora en las pupilas (Biometría detallada). Atmósfera fría y nítida. Captura con Arri Alexa y sensor de bajo ruido."
+        },
+        {
+            "id": "vfx_34",
+            "number": 34,
+            "style": "VFX & Efectos Especiales",
+            "title": "DESIERTO DE CRISTAL LUMINOSO",
+            "content": "Dunas formadas por arena de cuarzo reflectante. Luz de luna reflejada que crea destellos en el rostro subido como referencia. Sombras azules largas y biometría facial suave. Textura de cristales PBR con dispersión de luz. Calidad Masterpiece 8K."
+        },
+        {
+            "id": "vfx_35",
+            "number": 35,
+            "style": "VFX & Efectos Especiales",
+            "title": "ESCUDO DE PLASMA PULSANTE",
+            "content": "Energía azul eléctrica fluyendo por un campo de fuerza invisible. Esferas de plasma colisionando. Personaje con rostro subido como referencia detrás del escudo. Distorsión geométrica en el fondo. Iluminación técnica futurista con alto rango dinámico."
+        },
+        {
+            "id": "vfx_36",
+            "number": 36,
+            "style": "VFX & Efectos Especiales",
+            "title": "TORNADO DE HOJAS NEGRAS",
+            "content": "Vórtice violento de vegetación oscura y ceniza. Rostro subido como referencia con expresión de lucha. Iluminación nublada 4000K, sombras profundas. Biometría facial con poros dilatados por el esfuerzo. Cinematografía de fantasía épica moderna. Red V-Raptor."
+        },
+        {
+            "id": "vfx_37",
+            "number": 37,
+            "style": "VFX & Efectos Especiales",
+            "title": "SANGRE DE LAVA (VFX)",
+            "content": "Primer plano de herida que emite luz roja incandescente. Rostro subido como referencia con biometría de dolor térmico. Vapor saliendo de la piel (Smoke simulation). Iluminación interna que resalta la estructura ósea facial. Estética de horror sci-fi técnico."
+        },
+        {
+            "id": "vfx_38",
+            "number": 38,
+            "style": "VFX & Efectos Especiales",
+            "title": "SISTEMA SOLAR HOLOGRÁFICO",
+            "content": "Planetas en miniatura orbitando alrededor del rostro subido como referencia. Luz emitida por cada astro que ilumina la piel. Partículas de anillos planetarios PBR. Biometría facial bajo luz multicolor dinámica. Captura con Arri Alexa 35."
+        },
+        {
+            "id": "vfx_39",
+            "number": 39,
+            "style": "VFX & Efectos Especiales",
+            "title": "NIEBLA DE NITROGENO LÍQUIDO",
+            "content": "Vapor blanco ultra-frío a ras de suelo. Personaje con rostro subido como referencia caminando a través de la densa niebla. Iluminación cian desde abajo. Escarcha en el calzado de cuero PBR y biometría de frío extremo en la cara. Estética de thriller de laboratorios."
+        },
+        {
+            "id": "vfx_40",
+            "number": 40,
+            "style": "VFX & Efectos Especiales",
+            "title": "COLAPSO DE EDIFICIO EN CGI",
+            "content": "Fondo de metrópolis destruyéndose con físicas de partículas de escombros. Rostro subido como referencia en primer plano, impasible. Polvo volumétrico, ráfagas de viento y chispas eléctricas. Calidad cinematográfica de gran presupuesto. Sony Venice 2."
+        },
+        {
+            "id": "vfx_41",
+            "number": 41,
+            "style": "VFX & Efectos Especiales",
+            "title": "HOLOGRADA DE ADN FLOTANTE",
+            "content": "Doble hélice de luz blanca girando frente a los ojos. Rostro subido como referencia analizando la estructura biológica. Reflejos de la hélice en las córneas (Biometría extrema). Iluminación clínica aséptica. 8K RAW con textura de piel microscópica."
+        },
+        {
+            "id": "vfx_42",
+            "number": 42,
+            "style": "VFX & Efectos Especiales",
+            "title": "MAR DE NUBES INCANDESCENTES",
+            "content": "Vuelo a través de nubes iluminadas por un atardecer atómico (Volumetric lighting). Personaje con rostro subido como referencia en la cabina de un jet. Destellos de lente (Lens flare) anaranjados. Biometría facial bajo luz solar intensa. Red V-Raptor XL."
+        },
+        {
+            "id": "vfx_43",
+            "number": 43,
+            "style": "VFX & Efectos Especiales",
+            "title": "SIMULADOR DE REALIDAD ROTA",
+            "content": "Efecto de glitched reality. El entorno se pixela mientras el rostro subido como referencia permanece sólido. Colores aberrantes en los bordes. Biometría de confusión profunda. Iluminación técnica cambiante. Estética de Matrix avanzada."
+        },
+        {
+            "id": "vfx_44",
+            "number": 44,
+            "style": "VFX & Efectos Especiales",
+            "title": "LLUVIA DE FLORES CIBERNÉTICAS",
+            "content": "Pétalos metálicos con luces LED integradas cayendo del cielo. Rostro subido como referencia bajo la lluvia tecnológica. Refracciones cromadas y luces neón suaves. Biometría facial infantil o delicada. Captura con Sony Venice 2. 8K Masterpiece."
+        },
+        {
+            "id": "vfx_45",
+            "number": 45,
+            "style": "VFX & Efectos Especiales",
+            "title": "ESTELA DE VELOCIDAD LUZ",
+            "content": "Personaje corriendo con ráfagas de luz lineales (Motion trail). Rostro subido como referencia enfocado mientras el fondo es un túnel de luz. Biometría de concentración extrema. Iluminación técnica de alto contraste. Estética de superhéroe técnico."
+        },
+        {
+            "id": "vfx_46",
+            "number": 46,
+            "style": "VFX & Efectos Especiales",
+            "title": "FUEGO AZUL DE METANO",
+            "content": "Llamas cian intensas rodeando un templo de hielo. Rostro subido como referencia con armadura de cristal PBR. Iluminación fría con sombras duras. Biometría facial con reflejos de luz azul. Calidad de render Octane 8K."
+        },
+        {
+            "id": "vfx_47",
+            "number": 47,
+            "style": "VFX & Efectos Especiales",
+            "title": "RECONSTRUCCIÓN POR LÁSER 3D",
+            "content": "Líneas de escaneo láser verde construyendo el cuerpo desde los pies. Rostro subido como referencia casi completo. Luz técnica de laboratorio médico. Biometría de la piel en transición hacia datos. Estética de sci-fi minimalista. Arri Alexa 35."
+        },
+        {
+            "id": "vfx_48",
+            "number": 48,
+            "style": "VFX & Efectos Especiales",
+            "title": "EXPLOSIÓN DE DIAMANTES",
+            "content": "Millones de gemas preciosas estallando desde un cofre. Rostro subido como referencia iluminado por miles de puntos de luz refractada. Destellos espectrales (Chromatic aberration). Biometría facial bajo iluminación de lujo extremo. 8K Cinematic."
+        },
+        {
+            "id": "vfx_49",
+            "number": 49,
+            "style": "VFX & Efectos Especiales",
+            "title": "TORMENTA DE CÓDIGO NEÓN",
+            "content": "Viento formado por letras y números brillantes. Personaje con rostro subido como referencia protegiéndose en un entorno digital. Iluminación verde matriz 2.0. Biometría facial con reflejos de glifos. Captura con Red V-Raptor XL."
+        },
+        {
+            "id": "vfx_50",
+            "number": 50,
+            "style": "VFX & Efectos Especiales",
+            "title": "COLOSO DE PIEDRA Y MAGMA",
+            "content": "CGI de una criatura gigante de roca volcánica. Rostro subido como referencia escalando la espalda del monstruo. Luz de magma interna que ilumina al personaje. Texturas PBR de lava y piedra basáltica. Calidad cinematográfica nivel blockbuster."
+        },
+        {
+            "id": "vfx_51",
+            "number": 51,
+            "style": "VFX & Efectos Especiales",
+            "title": "LLUVIA DE FUEGO CELESTIAL",
+            "content": "Meteoritos incandescentes impactando en una llanura. Personaje con rostro subido como referencia corriendo entre columnas de fuego. Iluminación naranja 3000K, humo volumétrico y distorsión por calor (Heat haze). Biometría facial con sudor y hollín PBR. Calidad IMAX 8K."
+        },
+        {
+            "id": "vfx_52",
+            "number": 52,
+            "style": "VFX & Efectos Especiales",
+            "title": "INMERSIÓN EN ABISMO BIOLUMINISCENTE",
+            "content": "Entorno submarino profundo con criaturas de luz neón. Rostro subido como referencia bajo una burbuja de oxígeno técnica. Reflejos cian y magenta en los ojos (Biometría detallada). Partículas de nieve marina (Marine snow). Sony Venice 2 con lente macro para detalle microscópico."
+        },
+        {
+            "id": "vfx_53",
+            "number": 53,
+            "style": "VFX & Efectos Especiales",
+            "title": "EXPLOSIÓN DE VIDRIO VOLCÁNICO",
+            "content": "Fragmentos de obsidiana estallando en el aire. Rostro subido como referencia con armadura de escamas metálicas PBR. Iluminación Chiaroscuro dramática. Refracciones negras nítidas y chispas de lava. Captura con Arri Alexa 35."
+        },
+        {
+            "id": "vfx_54",
+            "number": 54,
+            "style": "VFX & Efectos Especiales",
+            "title": "TORNADO DE ENERGÍA OSCURA",
+            "content": "Vórtice de partículas violetas que absorben la luz. Personaje con rostro subido como referencia en el epicentro. Distorsión de lente (Anamorphic stretch). Biometría facial con cabello flotando en gravedad cero. Estética de ciencia ficción oscura 8K."
+        },
+        {
+            "id": "vfx_55",
+            "number": 55,
+            "style": "VFX & Efectos Especiales",
+            "title": "MAQUILLAJE DE CYBORG AVANZADO",
+            "content": "Rostro subido como referencia con placas de titanio insertadas bajo la piel. LEDs internos iluminando los bordes de la biometría. Textura de metal cepillado PBR y poros de la piel ultra-reales. Captura con Red V-Raptor XL para máxima definición cinematográfica."
+        },
+        {
+            "id": "vfx_56",
+            "number": 56,
+            "style": "VFX & Efectos Especiales",
+            "title": "LLAMARADA SOLAR EN LA TIERRA",
+            "content": "Luz blanca cegadora que quema los bordes del encuadre (Overexposure VFX). Rostro subido como referencia protegiéndose los ojos. Destellos de lente prismáticos. Biometría facial bajo una luz de 15000 nits. Calidad de fotograma de Christopher Nolan."
+        },
+        {
+            "id": "vfx_57",
+            "number": 57,
+            "style": "VFX & Efectos Especiales",
+            "title": "ESFERAS DE LÍQUIDO FERROMAGNÉTICO",
+            "content": "Gotas de metal negro danzando alrededor del rostro subido como referencia. Puntas afiladas de fluido (Spike effect) reaccionando a un imán invisible. Refracciones cromadas perfectas. Iluminación técnica de laboratorio. 8K Masterpiece."
+        },
+        {
+            "id": "vfx_58",
+            "number": 58,
+            "style": "VFX & Efectos Especiales",
+            "title": "BOSQUE DE CORAL GENERADO POR IA",
+            "content": "CGI de una jungla submarina con colores imposibles. Personaje con rostro subido como referencia explorando. Iluminación cáustica (Underwater rays). Texturas de coral orgánico ultra-detallado. Captura con Sony Venice 2."
+        },
+        {
+            "id": "vfx_59",
+            "number": 59,
+            "style": "VFX & Efectos Especiales",
+            "title": "DESINTEGRACIÓN EN CENIZAS BLANCAS",
+            "content": "Efecto de Thanos-style inverso. Personaje con rostro subido como referencia formándose a partir de briznas de papel quemado blanco. Luz suave volumétrica. Biometría facial con ojos cerrados en paz. Nitidez 8K cinematográfica."
+        },
+        {
+            "id": "vfx_60",
+            "number": 60,
+            "style": "VFX & Efectos Especiales",
+            "title": "ONDAS DE CALOR EN EL DESIERTO",
+            "content": "Distorsión atmosférica extrema (Mirage effect). Rostro subido como referencia sudoroso, biometría de cansancio real. Ropa de lino con textura PBR. Iluminación de sol ardiente 5000K. Arri Alexa 35 con lente de 85mm."
+        },
+        {
+            "id": "vfx_61",
+            "number": 61,
+            "style": "VFX & Efectos Especiales",
+            "title": "CÚPULA DE DATOS BIOMÉTRICOS",
+            "content": "Personaje rodeado de miles de pantallas holográficas con su propio ADN. Rostro subido como referencia en el centro, iluminado por el brillo azul de los datos. Reflejos dinámicos en la piel. Estética de post-producción de alto nivel."
+        },
+        {
+            "id": "vfx_62",
+            "number": 62,
+            "style": "VFX & Efectos Especiales",
+            "title": "EXPLOSIÓN DE PÓLVORA EN CÁMARA LENTA",
+            "content": "Detalle de una descarga de fusil. Humo gris denso, chispas doradas y llama de boca (Muzzle flash). Rostro subido como referencia en el fondo desenfocado (Bokeh). Texturas de metal y madera PBR. Red V-Raptor XL."
+        },
+        {
+            "id": "vfx_63",
+            "number": 63,
+            "style": "VFX & Efectos Especiales",
+            "title": "CONGELACIÓN DE MERCURIO",
+            "content": "Fluido plateado volviéndose sólido en formas góticas. Personaje con rostro subido como referencia tocando el metal. Biometría de la mano y el rostro con reflejos metálicos. Iluminación técnica fría. Calidad 8K RAW."
+        },
+        {
+            "id": "vfx_64",
+            "number": 64,
+            "style": "VFX & Efectos Especiales",
+            "title": "NUBE DE MARIPOSAS DE LUZ",
+            "content": "VFX orgánico. Miles de insectos brillantes iluminando un rostro subido como referencia. Biometría de admiración y calma. Iluminación de cuento de hadas técnico. Profundidad de campo Zeiss f/1.4."
+        },
+        {
+            "id": "vfx_65",
+            "number": 65,
+            "style": "VFX & Efectos Especiales",
+            "title": "COLAPSO GRAVITACIONAL",
+            "content": "Objetos flotando y rompiéndose en una habitación. Personaje con rostro subido como referencia suspendido en el aire. Escombros de madera y piedra PBR. Iluminación cinematográfica de suspenso. Sony Venice 2."
+        },
+        {
+            "id": "vfx_66",
+            "number": 66,
+            "style": "VFX & Efectos Especiales",
+            "title": "REPARACIÓN EN TIEMPO REAL (SCARS)",
+            "content": "Efecto digital donde una cicatriz en el rostro subido como referencia se cierra con hilos de luz dorada. Biometría de la piel reconstruyéndose. Iluminación macro detallada. Arri Alexa 35."
+        },
+        {
+            "id": "vfx_67",
+            "number": 67,
+            "style": "VFX & Efectos Especiales",
+            "title": "TORMENTA DE RAYOS DE COLORES",
+            "content": "Electricidad estática multicolor recorriendo el cabello del personaje. Rostro subido como referencia con biometría de poder elemental. Iluminación estroboscópica HDR. Estética de cómic futurista técnica."
+        },
+        {
+            "id": "vfx_68",
+            "number": 68,
+            "style": "VFX & Efectos Especiales",
+            "title": "SIMULADOR DE LLUVIAS DE CRISTAL",
+            "content": "Gotas de agua que se convierten en diamantes al tocar al personaje. Rostro subido como referencia con expresión de sorpresa. Refracciones y cáusticas complejas. Captura con Red V-Raptor XL."
+        },
+        {
+            "id": "vfx_69",
+            "number": 69,
+            "style": "VFX & Efectos Especiales",
+            "title": "INTERFAZ DE CONTROL MENTAL",
+            "content": "Sondas de luz entrando en las sienes del rostro subido como referencia. Visualización de impulsos eléctricos cerebrales fluyendo por la cara. Biometría facial tensa. Iluminación de quirófano futurista."
+        },
+        {
+            "id": "vfx_70",
+            "number": 70,
+            "style": "VFX & Efectos Especiales",
+            "title": "HOLOGRADA DE CIUDAD PERDIDA",
+            "content": "Mapa 3D masivo proyectado en una sala oscura. Personaje con rostro subido como referencia tocando los rascacielos de luz. Iluminación volumétrica verde. Biometría facial bajo luz de fósforo. 8K Cinematic."
+        },
+        {
+            "id": "vfx_71",
+            "number": 71,
+            "style": "VFX & Efectos Especiales",
+            "title": "INVASIÓN DE RAÍCES METÁLICAS",
+            "content": "Cuerdas de metal saliendo del suelo y envolviendo al personaje. Rostro subido como referencia con armadura PBR integrada. Iluminación industrial de alto contraste. Sony Venice 2."
+        },
+        {
+            "id": "vfx_72",
+            "number": 72,
+            "style": "VFX & Efectos Especiales",
+            "title": "ESTALLIDO DE PÉTALOS DE HIELO",
+            "content": "Explosión gélida que suelta flores cristalinas. Rostro subido como referencia en el centro del haz de luz fría. Refracciones blancas y sombras azules. Calidad de render Octane 8K."
+        },
+        {
+            "id": "vfx_73",
+            "number": 73,
+            "style": "VFX & Efectos Especiales",
+            "title": "SANGRE DE PIXELS MALDITOS",
+            "content": "Herida que gotea cuadros de error digital (Glitch effect). Rostro subido como referencia con biometría de horror existencial. Iluminación de pantalla de ordenador rota. Estética de horror tecnológico moderno."
+        },
+        {
+            "id": "vfx_74",
+            "number": 74,
+            "style": "VFX & Efectos Especiales",
+            "title": "AURICULAR DE COMUNICACIÓN LÁSER",
+            "content": "Detalle de dispositivo en la oreja que proyecta un rayo de datos hacia el ojo. Rostro subido como referencia con biometría de enfoque total. Luz roja intensa. Arri Alexa 35 con lente macro."
+        },
+        {
+            "id": "vfx_75",
+            "number": 75,
+            "style": "VFX & Efectos Especiales",
+            "title": "EXPLOSIÓN DE HUMO DE COLORES (HOLI)",
+            "content": "VFX de partículas densas de polvo rosa y azul estallando. Personaje con rostro subido como referencia cubierto por el pigmento. Iluminación solar de mediodía. Captura con Sony Venice 2 en alta velocidad."
+        },
+        {
+            "id": "vfx_76",
+            "number": 76,
+            "style": "VFX & Efectos Especiales",
+            "title": "EXPLOSIÓN DE PÍXELES EN EL AIRE",
+            "content": "Efecto de fragmentación digital 3D. Un objeto cotidiano estalla en miles de cubos neón frente al rostro subido como referencia. Iluminación técnica de alto contraste. Biometría facial con reflejos de la luz de los píxeles. Calidad de render 8K RAW."
+        },
+        {
+            "id": "vfx_77",
+            "number": 77,
+            "style": "VFX & Efectos Especiales",
+            "title": "AURA DE PROTECCIÓN MÁGICA",
+            "content": "Cúpula de luz dorada semi-transparente rodeando al personaje. Runas antiguas flotando en el aire (VFX). Rostro subido como referencia con expresión de poder. Iluminación cálida 2500K. Captura con Arri Alexa 35 y lente de 35mm."
+        },
+        {
+            "id": "vfx_78",
+            "number": 78,
+            "style": "VFX & Efectos Especiales",
+            "title": "MÁSCARA DE GAS ELECTRÓNICA",
+            "content": "Detalle de dispositivo técnico en el rostro subido como referencia. Pantallas LED integradas mostrando datos en tiempo real. Biometría de los ojos a través del visor. Texturas de plástico y metal PBR. Estética de cyberpunk táctico."
+        },
+        {
+            "id": "vfx_79",
+            "number": 79,
+            "style": "VFX & Efectos Especiales",
+            "title": "LLUVIA DE DATOS EN CÁMARA LENTA",
+            "content": "Estelas de luz blanca cayendo como gotas de agua. Personaje con rostro subido como referencia mirando hacia arriba. Iluminación volumétrica y reflejos en la piel. Biometría facial detallada. Sony Venice 2. 8K High Definition."
+        },
+        {
+            "id": "vfx_80",
+            "number": 80,
+            "style": "VFX & Efectos Especiales",
+            "title": "TORMENTA DE ARENA DIGITAL",
+            "content": "Vórtice de partículas de código binario en un desierto futurista. Rostro subido como referencia oculto parcialmente por la tormenta. Iluminación naranja y verde. Texturas de arena de datos PBR. Calidad cinematográfica 8K."
+        },
+        {
+            "id": "vfx_81",
+            "number": 81,
+            "style": "VFX & Efectos Especiales",
+            "title": "REPARACIÓN DE CUERPO ROBÓTICO",
+            "content": "Brazos mecánicos soldando piezas en el hombro del personaje. Chispas reales y luz de soldadura blanca pura. Rostro subido como referencia impasible, biometría de calma extrema. Arri Alexa 35 con lente macro."
+        },
+        {
+            "id": "vfx_82",
+            "number": 82,
+            "style": "VFX & Efectos Especiales",
+            "title": "EXPLOSIÓN DE FLORES DE NEÓN",
+            "content": "Sinfonía visual de pétalos brillantes estallando en el aire. Rostro subido como referencia iluminado por ráfagas multicolores. Refracciones y suavidad cinematográfica. Biometría facial de asombro. Red V-Raptor XL."
+        },
+        {
+            "id": "vfx_83",
+            "number": 83,
+            "style": "VFX & Efectos Especiales",
+            "title": "INTERFACE DE COMBATE HOLOGRÁFICA",
+            "content": "Visualización de objetivos y datos de disparo flotando frente al rostro subido como referencia. Luz roja agresiva iluminando la piel. Biometría de concentración total. Estética de juego de guerra futurista."
+        },
+        {
+            "id": "vfx_84",
+            "number": 84,
+            "style": "VFX & Efectos Especiales",
+            "title": "EFECTO DE CONGELACIÓN TEMPORAL",
+            "content": "El tiempo se detiene mientras el personaje con rostro subido como referencia se mueve lentamente. El aire se cristaliza en formas geométricas transparentes. Iluminación azul cian. 8K RAW cinematográfico."
+        },
+        {
+            "id": "vfx_85",
+            "number": 85,
+            "style": "VFX & Efectos Especiales",
+            "title": "SISTEMA NERVIOSO DE LUZ",
+            "content": "Efecto X-ray donde se ven los nervios del rostro subido como referencia brillando en azul. Biometría facial externa integrada con la luz interna. Iluminación de laboratorio de alta gama. Arri Alexa 35."
+        },
+        {
+            "id": "vfx_86",
+            "number": 86,
+            "style": "VFX & Efectos Especiales",
+            "title": "LLUVIA DE CENIZAS DE DIAMANTE",
+            "content": "Partículas brillantes y refractarias cayendo del cielo nocturno. Rostro subido como referencia con ropa de seda PBR. Iluminación de luna llena y destellos prismáticos. Biometría facial suave. 8K Masterpiece."
+        },
+        {
+            "id": "vfx_87",
+            "number": 87,
+            "style": "VFX & Efectos Especiales",
+            "title": "COLAPSO DE REALIDAD VIRTUAL",
+            "content": "El entorno se desvanece en una cuadrícula digital (Grid). Personaje con rostro subido como referencia cayendo al vacío. Iluminación de neón parpadeante. Biometría de desesperación. Sony Venice 2."
+        },
+        {
+            "id": "vfx_88",
+            "number": 88,
+            "style": "VFX & Efectos Especiales",
+            "title": "MAQUILLAJE DE GUERRERO DE PLASMA",
+            "content": "Tatuajes de luz azul fluyendo por el rostro subido como referencia. Emisión de luz propia (Self-illumination). Biometría facial con poros dilatados. Texturas de piel y energía PBR. Calidad 8K RAW."
+        },
+        {
+            "id": "vfx_89",
+            "number": 89,
+            "style": "VFX & Efectos Especiales",
+            "title": "VÓRTICE DE AGUA CINEMATOGRÁFICO",
+            "content": "Físicas de fluidos avanzadas. Un tornado de agua rodeando al personaje. Rostro subido como referencia mojado, biometría de resistencia extrema. Iluminación azul turquesa. Red V-Raptor XL."
+        },
+        {
+            "id": "vfx_90",
+            "number": 90,
+            "style": "VFX & Efectos Especiales",
+            "title": "SCANNER DE IDENTIDAD LÁSER",
+            "content": "Corte de luz roja horizontal recorriendo el rostro subido como referencia. Glifos de datos proyectados en las mejillas. Biometría de seguridad avanzada. Iluminación técnica minimalista. Arri Alexa 35."
+        },
+        {
+            "id": "vfx_91",
+            "number": 91,
+            "style": "VFX & Efectos Especiales",
+            "title": "EXPLOSIÓN DE HUMO TÉCNICO",
+            "content": "Granadas de humo de colores estallando simétricamente. Personaje con rostro subido como referencia en el centro en pose de acción. Iluminación lateral dramática. Texturas de tela y humo PBR. Sony Venice 2."
+        },
+        {
+            "id": "vfx_92",
+            "number": 92,
+            "style": "VFX & Efectos Especiales",
+            "title": "AURICULARES DE REALIDAD AUMENTADA",
+            "content": "Lentes técnicas mostrando un mundo alternativo. Rostro subido como referencia con enfoque total. Reflejos de la interfaz en los cristales de las gafas. Biometría facial de concentración. 8K Cinematic."
+        },
+        {
+            "id": "vfx_93",
+            "number": 93,
+            "style": "VFX & Efectos Especiales",
+            "title": "SANGRE DE PUREZA ANGELICAL (VFX)",
+            "content": "Fluido de luz blanca dorada brotando de una herida. Rostro subido como referencia con biometría de divinidad. Iluminación suave que borra las sombras duras. Efesto místico de alta gama. Arri Alexa 35."
+        },
+        {
+            "id": "vfx_94",
+            "number": 94,
+            "style": "VFX & Efectos Especiales",
+            "title": "ESCUDO DE GRAVEDAD INVERSA",
+            "content": "Objetos pesados levitando alrededor del personaje. Rostro subido como referencia calmado. Escombros de metal y piedra PBR. Iluminación de suspensión temporal. Captura con Sony Venice 2."
+        },
+        {
+            "id": "vfx_95",
+            "number": 95,
+            "style": "VFX & Efectos Especiales",
+            "title": "TRANSFORMACIÓN EN LUZ PURA",
+            "content": "Personaje convirtiéndose en un haz de luz ascendente. Rostro subido como referencia casi etéreo. Iluminación de alto brillo con destellos de lente. Biometría facial en transición. 8K Masterpiece."
+        },
+        {
+            "id": "vfx_96",
+            "number": 96,
+            "style": "VFX & Efectos Especiales",
+            "title": "SIMULADOR DE TORMENTAS ELÉCTRICAS",
+            "content": "Rayos internos fluyendo bajo la piel del rostro subido como referencia. Emisión cian rítmica. Biometría facial ultra-detallada. Iluminación técnica de alto rango dinámico. Red V-Raptor XL."
+        },
+        {
+            "id": "vfx_97",
+            "number": 97,
+            "style": "VFX & Efectos Especiales",
+            "title": "EFECTO DE DESAPARICIÓN NINJA",
+            "content": "Humo negro denso y briznas de sombra envolviendo al personaje. Solo se ven los ojos reales del rostro subido como referencia. Iluminación nocturna de bajo brillo. Texturas de cuero y seda PBR. Arri Alexa 35."
+        },
+        {
+            "id": "vfx_98",
+            "number": 98,
+            "style": "VFX & Efectos Especiales",
+            "title": "INTERFAZ DE CONTROL ESPACIAL 3D",
+            "content": "Planos coordinados de luz blanca proyectados en el aire. Rostro subido como referencia manipulando los datos. Iluminación técnica de puente de mando. Biometría facial detallada. Sony Venice 2."
+        },
+        {
+            "id": "vfx_99",
+            "number": 99,
+            "style": "VFX & Efectos Especiales",
+            "title": "EXPLOSIÓN DE ENERGÍA SUPREMA",
+            "content": "Onda de choque circular que arrasa con el entorno. Personaje con rostro subido como referencia en el centro en modo omnipotente. Iluminación estroboscópica HDR. Calidad cinematográfica nivel final de película."
+        },
+        {
+            "id": "vfx_100",
+            "number": 100,
+            "style": "VFX & Efectos Especiales",
+            "title": "EL ÚLTIMO MAESTRO DE LOS PROMPTS",
+            "content": "Retrato definitivo absoluto. Rostro subido como referencia rodeado por todos los elementos VFX anteriores (Fuego, Agua, Luz, Datos). Biometría facial nivel realismo biológico. Iluminación Rembrandt perfecta a 3200K. Captura con Arri Alexa 35, lente Zeiss Supreme Prime. El pináculo de la creación visual en 8K."
+        }
+    ],
     "Fantasía": [
         {
             "id": "fantasia_1",
@@ -47,7 +758,7 @@ window.PROMPT_DATABASE = {
             "number": 7,
             "style": "Fantasía",
             "title": "EL RITUAL BAJO LA LUNA",
-            "content": "Plano general con Sony Venice 2. Sacerdotisa con rostro subido como referencia en círculo de piedras. Iluminación plateada de luna llena con sombras profundas tipo \"Moonlight blue\". Túnica de seda blanca PBR with brillo sutil. Atmósfera de bruma de cine (haze) y partículas de energía mística."
+            "content": "Plano general con Sony Venice 2. Sacerdotisa con rostro subido como referencia en círculo de piedras. Iluminación plateada de luna llena con sombras profundas tipo \'Moonlight blue\'. Túnica de seda blanca PBR with brillo sutil. Atmósfera de bruma de cine (haze) y partículas de energía mística."
         },
         {
             "id": "fantasia_8",
@@ -103,7 +814,7 @@ window.PROMPT_DATABASE = {
             "number": 15,
             "style": "Fantasía",
             "title": "LA VISIÓN DE LA PITONISA",
-            "content": "Primer plano extremo del rostro subido como referencia reflejado en cuenco de agua oscura. Iluminación cenital dura tipo \"Noir\". El agua muestra visiones de fuego (Reflectance maps). Biometría: reflejo nítido del futuro en la córnea del ojo."
+            "content": "Primer plano extremo del rostro subido como referencia reflejado en cuenco de agua oscura. Iluminación cenital dura tipo \'Noir\'. El agua muestra visiones de fuego (Reflectance maps). Biometría: reflejo nítido del futuro en la córnea del ojo."
         },
         {
             "id": "fantasia_16",
@@ -285,14 +996,14 @@ window.PROMPT_DATABASE = {
             "number": 41,
             "style": "Fantasía",
             "title": "EL RENACER DEL FÉNIX",
-            "content": "Iluminación naranja y roja cegadora. Personaje con rostro subido como referencia presenciando estallido de fuego místico. Efecto de \"Bloom\" intenso y partículas de ceniza brillante. Calidad dinámica HDR10+."
+            "content": "Iluminación naranja y roja cegadora. Personaje con rostro subido como referencia presenciando estallido de fuego místico. Efecto de \'Bloom\' intenso y partículas de ceniza brillante. Calidad dinámica HDR10+."
         },
         {
             "id": "fantasia_42",
             "number": 42,
             "style": "Fantasía",
             "title": "EL PIE DEL GIGANTE DE PIEDRA",
-            "content": "Escala épica con lente de 14mm. Personaje con rostro subido como referencia junto a \"dedo\" de piedra con musgo PBR. Luz de bosque filtrada. La nitidez permite ver las texturas de la piedra y de la bota del viajero."
+            "content": "Escala épica con lente de 14mm. Personaje con rostro subido como referencia junto a \'dedo\' de piedra con musgo PBR. Luz de bosque filtrada. La nitidez permite ver las texturas de la piedra y de la bota del viajero."
         },
         {
             "id": "fantasia_43",
@@ -411,7 +1122,7 @@ window.PROMPT_DATABASE = {
             "number": 59,
             "style": "Fantasía",
             "title": "LA ROCA DE LA SIRENA",
-            "content": "Náufrago con rostro subido como referencia en arena negra volcánica PBR. Amanecer brumoso desaturado. Figura de sirena desenfocada al fondo. Iluminación suave y melancólica tipo \"Pale morning\"."
+            "content": "Náufrago con rostro subido como referencia en arena negra volcánica PBR. Amanecer brumoso desaturado. Figura de sirena desenfocada al fondo. Iluminación suave y melancólica tipo \'Pale morning\'."
         },
         {
             "id": "fantasia_60",
@@ -698,7 +1409,7 @@ window.PROMPT_DATABASE = {
             "number": 100,
             "style": "Fantasía",
             "title": "EL ÚLTIMO REINO",
-            "content": "De pie en acantilado viendo la última ciudad humana amurallada. Atardecer épico tipo \"The Lord of the Rings\". Rostro subido como referencia con esperanza y melancolía. Arri Alexa 35, calidad definitiva de póster de cine."
+            "content": "De pie en acantilado viendo la última ciudad humana amurallada. Atardecer épico tipo \'The Lord of the Rings\'. Rostro subido como referencia con esperanza y melancolía. Arri Alexa 35, calidad definitiva de póster de cine."
         }
     ],
     "Space Opera": [
@@ -1409,7 +2120,7 @@ window.PROMPT_DATABASE = {
             "number": 1,
             "style": "Post-Apocalíptico",
             "title": "LA RECONQUISTA DE LA NATURALEZA",
-            "content": "Plano general de una avenida de Manhattan devorada por hiedra y árboles. Captura con Red V-Raptor y lente vintage Panavision. Personaje con rostro subido como referencia con ropa de lona desgastada (PBR) observando un ciervo entre coches oxidados. Iluminación de \"hora dorada\" filtrada por edificios en ruinas. Biometría facial con sudor y polvo fino. Calidad 8K fotorrealista."
+            "content": "Plano general de una avenida de Manhattan devorada por hiedra y árboles. Captura con Red V-Raptor y lente vintage Panavision. Personaje con rostro subido como referencia con ropa de lona desgastada (PBR) observando un ciervo entre coches oxidados. Iluminación de \'hora dorada\' filtrada por edificios en ruinas. Biometría facial con sudor y polvo fino. Calidad 8K fotorrealista."
         },
         {
             "id": "post-apocaliptico_2",
@@ -2018,7 +2729,7 @@ window.PROMPT_DATABASE = {
             "number": 88,
             "style": "Post-Apocalíptico",
             "title": "GLADIADOR POST-APOCALÍPTICO",
-            "content": "Armado con un bate con clavos y escudo de señal de \"Stop\". Rostro subido como referencia gritando en el coliseo de chatarra. Luz de focos enemigos. Biometría de furia combativa."
+            "content": "Armado con un bate con clavos y escudo de señal de \'Stop\'. Rostro subido como referencia gritando en el coliseo de chatarra. Luz de focos enemigos. Biometría de furia combativa."
         },
         {
             "id": "post-apocaliptico_89",
@@ -3345,7 +4056,7 @@ window.PROMPT_DATABASE = {
             "number": 77,
             "style": "Coches",
             "title": "EL CAMIONERO CLÁSICO",
-            "content": "En un Peterbilt cromado inmenso. Rostro subido como referencia con barba y tatuaje de \"Born to race\". Luz de amanecer en la carretera nacional. Biometría de leyenda del asfalto. Sony Venice 2."
+            "content": "En un Peterbilt cromado inmenso. Rostro subido como referencia con barba y tatuaje de \'Born to race\'. Luz de amanecer en la carretera nacional. Biometría de leyenda del asfalto. Sony Venice 2."
         },
         {
             "id": "coches_78",
@@ -3522,7 +4233,7 @@ window.PROMPT_DATABASE = {
             "number": 2,
             "style": "Motos",
             "title": "VIAJE EN CHOPPER CLÁSICA",
-            "content": "Rostro subido como referencia con barba y tatuajes de \"Ruta 66\" al manillar de una Harley-Davidson con horquilla extendida cromada (Ray-tracing). Luz de atardecer de 3000K sobre el desierto. Biometría facial de libertad y asfalto. Textura de cuero de la chaqueta con remaches y metal pulido PBR. Calidad Masterpiece."
+            "content": "Rostro subido como referencia con barba y tatuajes de \'Ruta 66\' al manillar de una Harley-Davidson con horquilla extendida cromada (Ray-tracing). Luz de atardecer de 3000K sobre el desierto. Biometría facial de libertad y asfalto. Textura de cuero de la chaqueta con remaches y metal pulido PBR. Calidad Masterpiece."
         },
         {
             "id": "motos_3",
@@ -4919,7 +5630,7 @@ window.PROMPT_DATABASE = {
             "number": 1,
             "style": "Ghibli",
             "title": "EL JARDÍN DE LA ISLA FLOTANTE",
-            "content": "Paisaje épico de una isla suspendida en un cielo azul vibrante con nubes de algodón volumétricas. Estética Studio Ghibli en 8K. Personaje con rostro subido como referencia con vestido blanco ondeando al viento. Iluminación \"Shinkai-style\" con destellos de sol (Lens flare) y colores HDR. Texturas de flores y césped pintadas a mano pero con detalle microscópico. Calidad Masterpiece."
+            "content": "Paisaje épico de una isla suspendida en un cielo azul vibrante con nubes de algodón volumétricas. Estética Studio Ghibli en 8K. Personaje con rostro subido como referencia con vestido blanco ondeando al viento. Iluminación \'Shinkai-style\' con destellos de sol (Lens flare) y colores HDR. Texturas de flores y césped pintadas a mano pero con detalle microscópico. Calidad Masterpiece."
         },
         {
             "id": "ghibli_2",
@@ -6337,7 +7048,7 @@ window.PROMPT_DATABASE = {
             "number": 3,
             "style": "Horror Psicológico",
             "title": "EL REFLEJO DISTORSIONADO",
-            "content": "Retrato maestro con Sony Venice 2. Personaje con rostro subido como referencia reflejado en un espejo agrietado y sucio (Ray-tracing). La distorsión en el cristal crea una sensación de gemelo maligno. Iluminación tipo \"Noir\" con negros profundos y una luz puntual en la mirada. Biometría facial con expresión de locura sutil."
+            "content": "Retrato maestro con Sony Venice 2. Personaje con rostro subido como referencia reflejado en un espejo agrietado y sucio (Ray-tracing). La distorsión en el cristal crea una sensación de gemelo maligno. Iluminación tipo \'Noir\' con negros profundos y una luz puntual en la mirada. Biometría facial con expresión de locura sutil."
         },
         {
             "id": "terror_psicologico_4",
@@ -8259,7 +8970,7 @@ window.PROMPT_DATABASE = {
             "number": 277,
             "style": "Slasher 80s",
             "title": "LA MIRADA DE LA MUERTE DEL ARCADE",
-            "content": "Retrato de personaje juvenil con rostro subido como referencia con luz de juegos de arcade (Cian, Magenta, Amarillo) proyectada en su piel con biometría de terror. Reflejo de \"GAME OVER\" en los ojos. Calidad 8K HDR."
+            "content": "Retrato de personaje juvenil con rostro subido como referencia con luz de juegos de arcade (Cian, Magenta, Amarillo) proyectada en su piel con biometría de terror. Reflejo de \'GAME OVER\' en los ojos. Calidad 8K HDR."
         },
         {
             "id": "slasher_80s_78",
