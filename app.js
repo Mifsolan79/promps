@@ -702,5 +702,8 @@ function debounce(func, wait) {
         document.getElementById('btn-clear-sig')?.addEventListener('click', clearSignature);
         document.getElementById('btn-save-sig')?.addEventListener('click', saveSignature);
 
-        init();
-        renderPresetsList();
+        // --- INICIALIZACIÓN FINAL ---
+        document.addEventListener('DOMContentLoaded', () => {
+            init();
+            renderPresetsList();
+        });
