@@ -1,4 +1,4 @@
-# PROMPT ALMERÍA - Portal Maestro
+# PORTAL MAESTRO DE PROMPTS
 
 Sistema avanzado de gestión y generación de prompts optimizados para IA.
 

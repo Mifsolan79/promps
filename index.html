@@ -3,745 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROMPT ALMERÍA - Portal Maestro</title>
+    <title>PORTAL MAESTRO DE PROMPTS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --neon-blue: #00f2ff;
-            --neon-pink: #ff00c1;
-            --neon-purple: #bc13fe;
-            --neon-grad: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
-            --bg-dark: #0a0a0c;
-            --bg-card: rgba(20, 20, 25, 0.8);
-            --text-main: #e0e0e0;
-            --glass: rgba(255, 255, 255, 0.05);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            /* Ocultar barra de scroll globalmente */
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        *::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* Asegurar que contenedores específicos no tengan scroll visible */
-        .sidebar, .content-area, .prompts-grid, #presets-list {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .sidebar::-webkit-scrollbar, .content-area::-webkit-scrollbar, .prompts-grid::-webkit-scrollbar, #presets-list::-webkit-scrollbar {
-            display: none;
-        }
-
-        #categories-nav::-webkit-scrollbar {
-            display: block;
-            width: 4px;
-        }
-        #categories-nav::-webkit-scrollbar-thumb {
-            background: var(--neon-blue);
-            border-radius: 10px;
-        }
-
-        body {
-            font-family: 'Rajdhani', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(0, 242, 255, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(255, 0, 193, 0.05) 0%, transparent 40%);
-        }
-
-
-        main {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            min-height: 100vh;
-            gap: 20px;
-            padding: 20px;
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            background: var(--bg-card);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid var(--glass);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 20px;
-            height: calc(100vh - 40px);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .sidebar h2, .sidebar-header {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--neon-blue);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 1px solid var(--glass);
-            padding-bottom: 10px;
-            flex-shrink: 0;
-        }
-
-        #categories-nav {
-            flex: 1;
-            overflow-y: auto;
-            padding-right: 5px;
-            margin-bottom: 10px;
-        }
-
-        .nav-btn {
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            background: var(--glass);
-            border: 1px solid transparent;
-            color: var(--text-main);
-            text-align: left;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            font-weight: 500;
-        }
-
-        .nav-btn:hover {
-            background: rgba(0, 242, 255, 0.1);
-            border-color: var(--neon-blue);
-            transform: translateX(5px);
-        }
-        .nav-btn.active {
-            background: linear-gradient(90deg, var(--neon-blue), transparent);
-            border-left: 4px solid var(--neon-blue);
-            font-weight: 700;
-        }
-
-        /* Search Styles */
-        .search-container {
-            margin-bottom: 20px;
-            position: relative;
-            flex-shrink: 0;
-            padding: 0 5px;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 12px 40px 12px 15px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--glass);
-            border-radius: 8px;
-            color: white;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            outline: none;
-        }
-
-        .search-input:focus {
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
-            background: rgba(0, 0, 0, 0.6);
-        }
-
-        .search-icon {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--neon-blue);
-            pointer-events: none;
-            opacity: 0.7;
-            font-size: 1.1rem;
-        }
-
-        .clear-search {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--neon-pink);
-            cursor: pointer;
-            font-size: 1.4rem;
-            display: none;
-            line-height: 1;
-            padding: 0 5px;
-            text-shadow: 0 0 5px var(--neon-pink);
-        }
-        
-        .clear-search:hover {
-            color: white;
-            transform: translateY(-50%) scale(1.2);
-        }
-
-        /* Preset Manager Styles */
-        .presets-section {
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--glass);
-            margin-bottom: 20px;
-            flex-shrink: 0;
-        }
-
-        .presets-section h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
-            color: var(--neon-pink);
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .preset-input-group {
-            display: flex;
-            gap: 5px;
-            margin-bottom: 15px;
-        }
-
-        .preset-input-group input {
-            flex: 1;
-            padding: 8px;
-            background: rgba(0,0,0,0.3);
-            border: 1px solid var(--glass);
-            color: white;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-
-        .save-preset-btn {
-            padding: 8px 12px;
-            background: var(--neon-blue);
-            border: none;
-            color: black;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 0.8rem;
-            transition: all 0.3s ease;
-        }
-
-        .save-preset-btn:hover {
-            box-shadow: 0 0 10px var(--neon-blue);
-            transform: scale(1.05);
-        }
-
-        #presets-list {
-            max-height: 250px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            padding-right: 5px;
-        }
-
-        .preset-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px 10px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid transparent;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .preset-item:hover {
-            background: rgba(0, 242, 255, 0.05);
-            border-color: rgba(0, 242, 255, 0.3);
-        }
-
-        .preset-name {
-            font-size: 0.85rem;
-            color: var(--text-main);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            flex: 1;
-        }
-
-        .preset-actions {
-            display: flex;
-            gap: 8px;
-            opacity: 0.6;
-            transition: opacity 0.3s;
-        }
-
-        .preset-item:hover .preset-actions {
-            opacity: 1;
-        }
-
-        .preset-action-btn {
-            background: none;
-            border: none;
-            color: var(--text-main);
-            cursor: pointer;
-            font-size: 0.8rem;
-            padding: 2px;
-            transition: color 0.2s;
-        }
-
-        .btn-edit:hover { color: var(--neon-blue); }
-        .btn-delete:hover { color: var(--neon-pink); }
-
-        .presets-footer {
-            margin-top: 15px;
-            display: flex;
-            gap: 10px;
-            padding-top: 10px;
-            border-top: 1px solid var(--glass);
-        }
-
-        .btn-preset-io {
-            flex: 1;
-            padding: 6px;
-            background: var(--glass);
-            border: 1px solid var(--glass);
-            color: var(--text-main);
-            border-radius: 4px;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .btn-preset-io:hover {
-            border-color: var(--neon-blue);
-            color: var(--neon-blue);
-        }
-
-        /* Variables Panel */
-        .variables-panel {
-            background: var(--bg-card);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid var(--neon-pink);
-            box-shadow: inset 0 0 15px rgba(255, 0, 193, 0.1);
-        }
-        .variables-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
-            align-items: end;
-        }
-
-        .variable-item {
-            grid-column: span 1;
-        }
-
-        .random-btn-container {
-            grid-column: span 5;
-            margin-top: 10px;
-        }
-
-        .variable-item label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 700;
-            color: var(--neon-pink);
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .variable-item select, .variable-item input {
-            width: 100%;
-            padding: 8px;
-            background: #1a1a20;
-            border: 1px solid var(--glass);
-            color: white;
-            border-radius: 6px;
-            outline: none;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: all 0.3s ease;
-        }
-
-        .variable-item select:focus {
-            border-color: var(--neon-blue);
-        }
-
-        .variable-item select:hover {
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
-        }
-
-        .random-btn-container {
-            display: flex;
-            align-items: flex-end;
-            height: 100%;
-        }
-
-        .random-btn {
-            width: 100%;
-            padding: 10px;
-            background: var(--neon-grad);
-            border: none;
-            color: white;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(188, 19, 254, 0.4);
-        }
-
-        /* Content Area */
-        .content-area {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .category-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .category-title span {
-            font-size: 0.9rem;
-            background: var(--neon-blue);
-            color: black;
-            padding: 2px 10px;
-            border-radius: 3px;
-        }
-
-        .prompts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 20px;
-        }
-
-        .prompt-card {
-            background: var(--bg-card);
-            border-radius: 15px;
-            border: 1px solid var(--glass);
-            padding: 20px;
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .prompt-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--neon-blue);
-            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.15);
-        }
-
-        .prompt-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--neon-blue);
-            opacity: 0.5;
-            }
-
-        .prompt-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .prompt-id {
-            font-size: 0.8rem;
-            color: var(--neon-blue);
-            font-weight: 700;
-        }
-
-        .prompt-style {
-            font-size: 0.7rem;
-            background: rgba(188, 19, 254, 0.2);
-            color: var(--neon-purple);
-            padding: 2px 8px;
-            border-radius: 3px;
-            text-transform: uppercase;
-        }
-
-        .prompt-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: white;
-            line-height: 1.2;
-        }
-
-        .prompt-text {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: #b0b0b0;
-            flex-grow: 1;
-            margin-bottom: 20px;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            line-clamp: 4;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .prompt-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn-copy {
-            flex-grow: 1;
-            padding: 10px;
-            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
-            border: none;
-            border-radius: 8px;
-            color: black;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .btn-copy:hover {
-            filter: brightness(1.2);
-            box-shadow: 0 0 15px var(--neon-blue);
-        }
-
-        .btn-copy:active {
-            transform: scale(0.95);
-        }
-
-        /* Modal / Feedback */
-        #toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            padding: 15px 30px;
-            background: var(--neon-blue);
-            color: black;
-            border-radius: 50px;
-            font-weight: 700;
-            transform: translateY(100px);
-            transition: transform 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 0 20px var(--neon-blue);
-        }
-
-        #toast.show {
-            transform: translateY(0);
-        }
-
-        @media (max-width: 900px) {
-            main {
-                grid-template-columns: 1fr;
-            }
-            .sidebar {
-                position: relative;
-                top: 0;
-            }
-        }
-        .btn-random {
-            background: var(--neon-grad);
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-weight: 700;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 242, 255, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            height: 42px;
-            align-self: flex-end;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-random:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.5);
-            filter: brightness(1.2);
-        }
-
-        .btn-random svg {
-            width: 18px;
-            height: 18px;
-            flex-shrink: 0;
-        }
-
-        /* Signature Pad Styles */
-        .signature-container {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            background: var(--bg-dark);
-            border: 2px solid var(--neon-blue);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 50px rgba(0, 242, 255, 0.3);
-            z-index: 2000;
-            display: none;
-            flex-direction: column;
-            gap: 15px;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .signature-container.show {
-            display: flex;
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
-        }
-
-        #signature-pad {
-            background: white;
-            border-radius: 8px;
-            cursor: crosshair;
-            touch-action: none;
-        }
-
-        .signature-footer {
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn-sig {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .btn-sig-clear { background: #333; color: white; }
-        .btn-sig-save { background: var(--neon-blue); color: black; }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(5px);
-            z-index: 1500;
-            display: none;
-        }
-        
-        .signature-preview {
-            width: 100px;
-            height: 40px;
-            background: white;
-            border-radius: 4px;
-            margin-top: 5px;
-            display: none;
-            object-fit: contain;
-            border: 1px solid var(--neon-blue);
-        }
-        .mifsut-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: fit-content;
-            margin: 0 auto 25px auto;
-            padding: 10px 25px;
-            background: rgba(0, 242, 255, 0.05);
-            border: 1px solid var(--neon-blue);
-            border-radius: 30px;
-            color: var(--neon-blue);
-            text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-align: center;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
-            text-transform: uppercase;
-        }
-        .mifsut-link:hover {
-            background: rgba(0, 242, 255, 0.15);
-            color: white;
-            box-shadow: 0 0 25px rgba(0, 242, 255, 0.3);
-            transform: translateY(-2px);
-            border-color: white;
-        }
-    </style>
+    <script src="lib/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="styles.css?v=2026.03.26">
+    
 </head>
 <body>
 
 
     <main>
         <aside class="sidebar">
-            <a href="https://www.mifsut.es" target="_blank" class="mifsut-link">www.mifsut.es</a>
+
             <div class="presets-section">
                 <div class="presets-header" style="margin-bottom: 15px; color: var(--neon-pink); font-family: 'Orbitron'; font-size: 0.9rem; letter-spacing: 1px;">
                     <span>📁 MIS PRESETS</span>
                 </div>
                 <div class="preset-save-container" style="display: flex; gap: 5px; margin-bottom: 15px;">
                     <input type="text" id="preset-name" placeholder="Nombre preset..." style="flex:1; padding:8px; background:rgba(0,0,0,0.3); border:1px solid var(--glass); color:white; border-radius:4px; font-size:0.8rem;">
-                    <button class="save-preset-btn" onclick="saveCurrentAsPreset()" title="Guardar actual" style="padding: 8px 12px; background: var(--neon-blue); border: none; color: black; border-radius: 4px; cursor: pointer; font-weight: 700;">💾</button>
+                    <button id="btn-save-preset" class="save-preset-btn" title="Guardar actual" style="padding: 8px 12px; background: var(--neon-blue); border: none; color: black; border-radius: 4px; cursor: pointer; font-weight: 700;">💾</button>
                 </div>
                 <div id="presets-list">
                     <!-- Presets se cargarán aquí -->
                 </div>
                 <div class="presets-footer" style="margin-top: 15px; display: flex; gap: 10px; padding-top: 10px; border-top: 1px solid var(--glass);">
-                    <button class="btn-preset-io" onclick="exportPresets()">📤 Exportar</button>
-                    <button class="btn-preset-io" onclick="importPresets()">📥 Importar</button>
+                    <button id="btn-export-presets" class="btn-preset-io">📤 Exportar</button>
+                    <button id="btn-import-presets" class="btn-preset-io">📥 Importar</button>
                 </div>
             </div>
 
-            <div class="sidebar-header">PROMPT ALMERÍA</div>
+            <div class="sidebar-header">PORTAL MAESTRO</div>
             
             <div class="search-container">
-                <input type="text" id="prompt-search" class="search-input" placeholder="Buscar prompts..." oninput="handleSearch(this.value)">
+                <input type="text" id="search-input-sidebar" class="search-input" placeholder="Buscar prompts...">
                 <span class="search-icon" id="search-icon">🔍</span>
-                <button class="clear-search" id="clear-search" onclick="clearSearch()">×</button>
+                <button class="clear-search" id="clear-search">×</button>
             </div>
 
             <div id="categories-nav">
@@ -755,18 +53,18 @@
                     <!-- Fila 1 (4 items) -->
                     <div class="variable-item row-1-item">
                         <label>Rostro de Referencia</label>
-                        <select id="var-face" onchange="toggleManual(); updateView()">
+                        <select id="var-face">
                             <option value="un hombre con rostro subido como referencia">Por defecto (Hombre)</option>
                             <option value="una mujer con rostro subido como referencia">Referencia Mujer</option>
                             <option value="un anciano con rostro subido como referencia">Referencia Anciano</option>
                             <option value="un niño con rostro subido como referencia">Referencia Niño</option>
                             <option value="MANUAL">Manual (Insertar URL/Texto)</option>
                         </select>
-                        <input type="text" id="var-face-manual" placeholder="URL o texto..." style="display:none; margin-top:5px; padding:5px; width:100%; font-size: 0.7rem;" oninput="updateView()">
+                        <input type="text" id="var-face-manual" placeholder="URL o texto..." style="display:none; margin-top:5px; padding:5px; width:100%; font-size: 0.7rem;">
                     </div>
                     <div class="variable-item row-1-item">
                         <label>Iluminación</label>
-                        <select id="var-light" onchange="updateView()">
+                        <select id="var-light">
                             <option value="">(Mantener original)</option>
                             <optgroup label="🎬 Cine y Fotografía">
                                 <option value="iluminación de Anillo de Luz Anamórfico (Anamorphic Ring)">Anillo Anamórfico</option>
@@ -842,7 +140,7 @@
                     </div>
                     <div class="variable-item row-1-item">
                         <label>Calidad Final</label>
-                        <select id="var-quality" onchange="updateView()">
+                        <select id="var-quality">
                             <option value="">(Mantener original)</option>
                             <option value="nitidez 8K absoluta, Realismo Fotográfico">8K Ultra Real</option>
                             <option value="estética cinematográfica RAW, grano de película">Cine RAW</option>
@@ -853,7 +151,7 @@
                     </div>
                     <div class="variable-item row-1-item">
                         <label>Visión Cine</label>
-                        <select id="var-cinema" onchange="updateView()">
+                        <select id="var-cinema">
                             <option value="OFF">Desactivado</option>
                             <option value="con visión cinematográfica Panavision">Panavision Aspect</option>
                             <option value="con estética de Cine IMAX">IMAX Experience</option>
@@ -865,7 +163,7 @@
                     </div>
                     <div class="variable-item row-1-item">
                         <label>Soporte / Superficie</label>
-                        <select id="var-surface" onchange="updateView()">
+                        <select id="var-surface">
                             <option value="">(Original)</option>
                             <optgroup label="🧱 Industriales">
                                 <option value="sobre soporte de Acero de Damasco">Acero de Damasco</option>
@@ -941,7 +239,7 @@
                     <!-- Fila 2 (5 items) -->
                     <div class="variable-item row-2-item">
                         <label>Formato (Aspect)</label>
-                        <select id="var-ar" onchange="updateView()">
+                        <select id="var-ar">
                             <option value="">Por defecto</option>
                             <option value="--ar 1:1">1:1 (Cuadrado)</option>
                             <option value="--ar 16:9">16:9 (Panorámico)</option>
@@ -952,7 +250,7 @@
                     </div>
                     <div class="variable-item row-2-item">
                         <label>Estilo Maestro / Género</label>
-                        <select id="var-style-master" onchange="updateView()">
+                        <select id="var-style-master">
                             <option value="">(Original)</option>
                             <optgroup label="🎬 Estudios y Marcas">
                                 <option value="estilo Ghibli, colores vibrantes, trazos suaves">Estudio Ghibli</option>
@@ -1061,7 +359,7 @@
                     </div>
                     <div class="variable-item row-2-item">
                         <label>Paleta de Color</label>
-                        <select id="var-color" onchange="updateView()">
+                        <select id="var-color">
                             <option value="">(Original)</option>
                             <option value="con paleta de Colores Neón (Cyan/Magenta)">Vibrante Neón</option>
                             <option value="en Blanco y Negro dramático">Blanco y Negro</option>
@@ -1078,7 +376,7 @@
                     </div>
                     <div class="variable-item">
                         <label>Técnica / Estilo</label>
-                        <select id="var-technique" onchange="updateView()">
+                        <select id="var-technique">
                             <option value="">(Original)</option>
                             <optgroup label="🎨 Pintura y Color">
                                 <option value="técnica de Action Painting (Splattered energy)">Action Painting</option>
@@ -1171,7 +469,7 @@
                     </div>
                     <div class="variable-item row-2-item">
                         <label>Tipo de Lente</label>
-                        <select id="var-lens" onchange="updateView()">
+                        <select id="var-lens">
                             <option value="">Estándar (50mm)</option>
                             <option value="lente Anamórfico (Anamorphic lens)">Anamórfico</option>
                             <option value="lente Cámara Antigua (Old vintage lens)">Cámara Antigua</option>
@@ -1190,7 +488,7 @@
                     </div>
                     <div class="variable-item row-3-item">
                         <label>Prof. Campo (DOF)</label>
-                        <select id="var-dof" onchange="updateView()">
+                        <select id="var-dof">
                             <option value="">(Original)</option>
                             <option value="mucha profundidad de campo (Todo enfocado)">DOF: Enfocado</option>
                             <option value="poca profundidad de campo (Bokeh intenso)">DOF: Bokeh</option>
@@ -1198,7 +496,7 @@
                     </div>
                     <div class="variable-item row-3-item">
                         <label>Plano / Comp.</label>
-                        <select id="var-shot" onchange="updateView()">
+                        <select id="var-shot">
                             <option value="">(Original)</option>
                             <optgroup label="🎥 Planos Cinematográficos">
                                 <option value="Plano Americano (Cowboy shot)">Plano Americano</option>
@@ -1234,7 +532,7 @@
                     </div>
                     <div class="variable-item row-3-item">
                         <label>Efecto Visual</label>
-                        <select id="var-effect" onchange="updateView()">
+                        <select id="var-effect">
                             <option value="">Ninguno</option>
                             <option value="con Aberración Cromática">Aberración Cromática</option>
                             <option value="con efecto Bokeh">Bokeh</option>
@@ -1254,7 +552,7 @@
                     </div>
                     <div class="variable-item row-3-item">
                         <label>Atmósfera</label>
-                        <select id="var-atmosphere" onchange="updateView()">
+                        <select id="var-atmosphere">
                             <option value="">Ninguno</option>
                             <option value="con atmósfera Alegre (Happy and bright)">Alegre</option>
                             <option value="con atmósfera Caótica (Chaotic and energetic)">Caótico</option>
@@ -1269,9 +567,9 @@
                     <div class="variable-item row-3-item">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                             <label style="margin-bottom: 0;">Vestimenta / Atuendo</label>
-                            <button onclick="document.getElementById('var-clothing').value='MANUAL'; toggleManualClothing();" title="Entrada manual" style="background:none; border:none; color:var(--neon-blue); cursor:pointer; font-size:1rem; padding:0 5px; opacity:0.7; transition: opacity 0.3s;">🔍</button>
+                            <button id="btn-toggle-clothing" title="Entrada manual" style="background:none; border:none; color:var(--neon-blue); cursor:pointer; font-size:1rem; padding:0 5px; opacity:0.7; transition: opacity 0.3s;">🔍</button>
                         </div>
-                        <select id="var-clothing" onchange="toggleManualClothing(); updateView()">
+                        <select id="var-clothing">
                             <option value="">Por defecto / Ninguno</option>
                             <optgroup label="🌍 Cultural y Tradicional">
                                 <option value="vistiendo Agbada (Nigeria)">Agbada (Nigeria)</option>
@@ -1490,7 +788,7 @@
                             </optgroup>
                             <option value="MANUAL">Manual (Escribir propia...)</option>
                         </select>
-                        <input type="text" id="var-clothing-manual" placeholder="Ej: armadura de cristal negro..." style="display:none; margin-top:5px; padding:8px; width:100%; font-size: 0.75rem; background:rgba(0,0,0,0.3); border:1px solid var(--glass); color:white; border-radius:4px;" oninput="updateView()">
+                        <input type="text" id="var-clothing-manual" placeholder="Ej: armadura de cristal negro..." style="display:none; margin-top:5px; padding:8px; width:100%; font-size: 0.75rem; background:rgba(0,0,0,0.3); border:1px solid var(--glass); color:white; border-radius:4px;">
                     </div>
                 </div>
 
@@ -1499,15 +797,15 @@
                     <div class="variable-item">
                         <label>✍️ FIRMA (TEXTO Y DIBUJO)</label>
                         <div style="display: flex; gap: 10px; align-items: center;">
-                            <input type="text" id="var-signature" placeholder="Texto de la firma..." oninput="updateView()" 
+                            <input type="text" id="var-signature" placeholder="Texto de la firma..." 
                                    style="flex:1; background:rgba(0,0,0,0.2); border:1px solid var(--glass); color:var(--neon-blue); padding:10px; border-radius:4px; font-family:'Outfit', sans-serif; height:42px;">
-                            <button class="save-preset-btn" onclick="openSignaturePad()" title="Dibujar a mano alzada" style="height:42px; width:42px; display:flex; align-items:center; justify-content:center; font-size:1.2rem;">🖋️</button>
+                            <button id="btn-open-sig" class="save-preset-btn" title="Dibujar a mano alzada" style="height:42px; width:42px; display:flex; align-items:center; justify-content:center; font-size:1.2rem;">🖋️</button>
                         </div>
                         <img id="sig-preview" class="signature-preview">
                     </div>
                     <div class="variable-item">
                         <label>&nbsp;</label>
-                        <button class="btn-random" onclick="setRandom()" style="height:42px; width:100%;">
+                        <button id="btn-random" class="btn-random" style="height:42px; width:100%;">
                             <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" style="width:20px;">
                                 <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3m-3-3l-2.5-2.5"/>
                             </svg>
@@ -1518,13 +816,13 @@
             </div>
 
             <!-- Signature Pad Modal Component -->
-            <div class="overlay" onclick="closeSignaturePad()"></div>
+            <div id="btn-close-sig" class="overlay"></div>
             <div class="signature-container">
                 <h3 style="color: var(--neon-blue); font-family: 'Orbitron'; font-size: 1rem;">DIBUJA TU FIRMA</h3>
                 <canvas id="signature-pad"></canvas>
                 <div class="signature-footer">
-                    <button class="btn-sig btn-sig-clear" onclick="clearSignature()">Borrar</button>
-                    <button class="btn-sig btn-sig-save" onclick="saveSignature()">Guardar Firma</button>
+                    <button id="btn-clear-sig" class="btn-sig btn-sig-clear">Borrar</button>
+                    <button id="btn-save-sig" class="btn-sig btn-sig-save">Guardar Firma</button>
                 </div>
             </div>
 
@@ -1540,597 +838,11 @@
 
     <div id="toast">¡Copiado al portapapeles!</div>
 
+    <!-- Contenedor Invisible para Exportación -->
+    <div id="export-temp-container"></div>
+
     <script src="data_prompts_v2.js?v=2026.03.25.v2"></script>
-    <script>
-        const container = document.getElementById('prompts-container');
-        const nav = document.getElementById('categories-nav');
-        const title = document.getElementById('current-category');
-        const count = document.getElementById('prompt-count');
-        const toast = document.getElementById('toast');
-
-        let currentCat = '';
-
-        function handleSearch(query) {
-            const clearBtn = document.getElementById('clear-search');
-            const searchIcon = document.getElementById('search-icon');
-            
-            if (query.trim().length > 0) {
-                clearBtn.style.display = 'block';
-                searchIcon.style.display = 'none';
-                
-                // Realizar búsqueda global
-                let results = [];
-                Object.keys(PROMPT_DATABASE).forEach(cat => {
-                    const filtered = PROMPT_DATABASE[cat].filter(p => 
-                        p.title.toLowerCase().includes(query.toLowerCase()) || 
-                        p.content.toLowerCase().includes(query.toLowerCase())
-                    );
-                    results = results.concat(filtered);
-                });
-                
-                renderSearchResults(results, query);
-            } else {
-                clearBtn.style.display = 'none';
-                searchIcon.style.display = 'block';
-                // Volver a la categoría actual o la primera por defecto
-                if (currentCat) {
-                    const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.textContent === currentCat);
-                    if (activeBtn) {
-                        selectCategory(currentCat, activeBtn);
-                    } else {
-                        // Si no hay botón activo (ej: tras búsqueda), re-inicializar
-                        const firstBtn = document.querySelector('.nav-btn');
-                        if (firstBtn) selectCategory(firstBtn.textContent, firstBtn);
-                    }
-                }
-            }
-        }
-
-        function clearSearch() {
-            const searchInput = document.getElementById('prompt-search');
-            searchInput.value = '';
-            handleSearch('');
-        }
-
-        function renderSearchResults(results, query) {
-            // Deseleccionar botones de categoría
-            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            
-            title.innerHTML = `Resultados: <span style="color:var(--neon-blue)">${query}</span> <span id="prompt-count">${results.length}</span>`;
-            
-            container.innerHTML = '';
-            if (results.length === 0) {
-                container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: var(--neon-pink); font-size: 1.5rem; opacity: 0.7; font-family: 'Orbitron', sans-serif;">NO SE ENCONTRARON RESULTADOS</div>`;
-                return;
-            }
-            
-            // Reutilizamos la lógica de renderPrompts pero directamente aquí para el set filtrado
-            results.forEach(p => {
-                const cleanTitle = p.title.includes('/') ? p.title.split('/').pop().trim().toUpperCase() : p.title.toUpperCase();
-                const card = document.createElement('div');
-                card.className = 'prompt-card';
-                card.id = `card-${p.id}`;
-                card.innerHTML = `
-                    <div class="prompt-header">
-                        <span class="prompt-id">#${p.number}</span>
-                        <span class="prompt-style">${p.style}</span>
-                    </div>
-                    <div class="prompt-title">${cleanTitle}</div>
-                    <div class="prompt-text" data-base="${p.content.replace(/"/g, '&quot;')}" id="text-${p.id}">${getProcessedText(p.content)}</div>
-                    <div class="prompt-actions">
-                        <button class="btn-copy" onclick="copyPrompt('${p.id}')">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-                            Copiar Prompt
-                        </button>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        function init() {
-            const categories = Object.keys(PROMPT_DATABASE);
-            
-            // Prioridad específica para PROFESIONES y CV
-            const specialPriority = ["PROFESIONES", "CV"];
-            specialPriority.slice().reverse().forEach(cat => {
-                const idx = categories.indexOf(cat);
-                if (idx > -1) {
-                    categories.splice(idx, 1);
-                    categories.unshift(cat);
-                }
-            });
-
-            categories.forEach(cat => {
-                const btn = document.createElement('button');
-                btn.className = 'nav-btn';
-                btn.textContent = cat;
-                btn.onclick = () => selectCategory(cat, btn);
-                nav.appendChild(btn);
-            });
-
-            const firstCat = categories[0];
-            if (firstCat) {
-                selectCategory(firstCat, nav.querySelector('.nav-btn'));
-            }
-        }
-
-        function selectCategory(catName, btn) {
-            currentCat = catName;
-            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            title.innerHTML = `${catName} <span id="prompt-count">${PROMPT_DATABASE[catName].length}</span>`;
-            renderPrompts(PROMPT_DATABASE[catName]);
-        }
-
-        function renderPrompts(prompts) {
-            container.innerHTML = '';
-            prompts.forEach(p => {
-                const cleanTitle = p.title.includes('/') ? p.title.split('/').pop().trim().toUpperCase() : p.title.toUpperCase();
-                const card = document.createElement('div');
-                card.className = 'prompt-card';
-                card.id = `card-${p.id}`;
-                card.innerHTML = `
-                    <div class="prompt-header">
-                        <span class="prompt-id">#${p.number}</span>
-                        <span class="prompt-style">${p.style}</span>
-                    </div>
-                    <div class="prompt-title">${cleanTitle}</div>
-                    <div class="prompt-text" data-base="${p.content.replace(/"/g, '&quot;')}" id="text-${p.id}">${getProcessedText(p.content)}</div>
-                    <div class="prompt-actions">
-                        <button class="btn-copy" onclick="copyPrompt('${p.id}')">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-                            Copiar Prompt
-                        </button>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        function toggleManual() {
-            const select = document.getElementById('var-face');
-            const manual = document.getElementById('var-face-manual');
-            manual.style.display = select.value === 'MANUAL' ? 'block' : 'none';
-        }
-
-        function toggleManualClothing() {
-            const select = document.getElementById('var-clothing');
-            const manual = document.getElementById('var-clothing-manual');
-            manual.style.display = select.value === 'MANUAL' ? 'block' : 'none';
-            if (select.value === 'MANUAL') manual.focus();
-        }
-
-        function getProcessedText(baseText) {
-            let text = baseText;
-            const faceSelect = document.getElementById('var-face');
-            const faceManual = document.getElementById('var-face-manual');
-            let faceReplacer = faceSelect.value;
-            
-            if (faceReplacer === 'MANUAL') {
-                faceReplacer = faceManual.value || '[INTRODUCIR URL/TEXTO]';
-            }
-
-            // Fix for recursive replacement & duplication
-            const clothingSelect = document.getElementById('var-clothing');
-            const clothingManual = document.getElementById('var-clothing-manual');
-            let clothingReplacer = clothingSelect.value;
-            if (clothingReplacer === 'MANUAL') {
-                clothingReplacer = clothingManual.value ? `vistiendo ${clothingManual.value}` : '[ESCRIBIR VESTIMENTA]';
-            }
-
-            const facePatterns = [
-                /un hombre con rostro subido como referencia/gi,
-                /una mujer con rostro subido como referencia/gi,
-                /un anciano con rostro subido como referencia/gi,
-                /un niño con rostro subido como referencia/gi,
-                /rostro subido como referencia/gi
-            ];
-            
-            for (let pattern of facePatterns) {
-                if (pattern.test(text)) {
-                    text = text.replace(pattern, faceReplacer);
-                    break;
-                }
-            }
-
-            // Inyectar Estilo, Movimiento, Técnica, Lente, DOF, Plano, Efecto y Atmósfera
-            const styleMaster = document.getElementById('var-style-master').value;
-            const colorPalette = document.getElementById('var-color').value;
-            const technique = document.getElementById('var-technique').value;
-            const atmosphere = document.getElementById('var-atmosphere').value;
-            const lens = document.getElementById('var-lens').value;
-            const dof = document.getElementById('var-dof').value;
-            const shot = document.getElementById('var-shot').value;
-            const effect = document.getElementById('var-effect').value;
-            
-            let prefix = "";
-            if (technique) prefix += technique + ", ";
-            if (atmosphere) prefix += atmosphere + ", ";
-            if (styleMaster) prefix += styleMaster + ", ";
-            if (colorPalette) prefix += colorPalette + ", ";
-            if (clothingReplacer) prefix += clothingReplacer + ", ";
-            if (lens) prefix += lens + ", ";
-            if (dof) prefix += dof + ", ";
-            if (shot) prefix += shot + ", ";
-            if (effect) prefix += effect + ", ";
-            
-            if (prefix) {
-                text = prefix + text;
-            }
-
-            const light = document.getElementById('var-light').value;
-            const quality = document.getElementById('var-quality').value;
-
-            if (light) {
-                if (text.toLowerCase().includes('iluminación')) {
-                    text = text.replace(/iluminación[^,.]*/gi, light);
-                } else if (text.toLowerCase().includes('ilumina')) {
-                    text = text.replace(/ilumina[^,.]*/gi, light);
-                } else {
-                    text += `. Con ${light}`;
-                }
-            }
-
-            const surface = document.getElementById('var-surface').value;
-
-            if (quality) {
-                if (text.includes('8K')) {
-                    text = text.replace(/nitidez 8K absoluta[^,.]*/gi, quality);
-                    text = text.replace(/realismo[^,.]*8K/gi, quality);
-                } else {
-                    text += `. Calidad técnica: ${quality}`;
-                }
-            }
-
-            if (surface) {
-                text += `. Representado ${surface}`;
-            }
-
-            const cinema = document.getElementById('var-cinema').value;
-            const aspect = document.getElementById('var-ar').value;
-
-            if (cinema === 'ON') {
-                text += ", cinematic lighting, anamorphic lens, movie scene, shot on 35mm, high contrast";
-            }
-
-            if (aspect) {
-                text += ` ${aspect}`;
-            }
-
-            const signatureText = document.getElementById('var-signature').value.trim();
-            if (signatureText) {
-                text += `. Included a small, discrete handwritten artist signature in the bottom corner that reads "${signatureText}", elegant script style, cursive ink strokes, authentic feel.`;
-            }
-
-            const signatureImg = localStorage.getItem('prompt_almeria_signature');
-            if (signatureImg && signatureImg !== 'null') {
-                text += ` [Hand-drawn signature enabled: authentic biometric stroke verification]`;
-            }
-
-            return text;
-        }
-
-        // --- FIRMA A MANO ALZADA ---
-        const canvas = document.getElementById('signature-pad');
-        const ctx = canvas.getContext('2d');
-        let drawing = false;
-
-        function openSignaturePad() {
-            document.querySelector('.overlay').style.display = 'block';
-            document.querySelector('.signature-container').classList.add('show');
-            resizeCanvas();
-            loadSavedSignature();
-        }
-
-        function closeSignaturePad() {
-            document.querySelector('.overlay').style.display = 'none';
-            document.querySelector('.signature-container').classList.remove('show');
-        }
-
-        function resizeCanvas() {
-            canvas.width = 400;
-            canvas.height = 200;
-            ctx.strokeStyle = "black";
-            ctx.lineWidth = 3;
-            ctx.lineCap = "round";
-        }
-
-        function startDrawing(e) {
-            drawing = true;
-            draw(e);
-        }
-
-        function stopDrawing() {
-            drawing = false;
-            ctx.beginPath();
-        }
-
-        function draw(e) {
-            if (!drawing) return;
-            const rect = canvas.getBoundingClientRect();
-            const x = (e.clientX || e.touches[0].clientX) - rect.left;
-            const y = (e.clientY || e.touches[0].clientY) - rect.top;
-
-            ctx.lineTo(x, y);
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-        }
-
-        canvas.addEventListener('mousedown', startDrawing);
-        canvas.addEventListener('mousemove', draw);
-        window.addEventListener('mouseup', stopDrawing);
-
-        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDrawing(e); });
-        canvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e); });
-        canvas.addEventListener('touchend', stopDrawing);
-
-        function clearSignature() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            localStorage.removeItem('prompt_almeria_signature');
-            document.getElementById('sig-preview').style.display = 'none';
-            updateView();
-        }
-
-        function saveSignature() {
-            const dataUrl = canvas.toDataURL();
-            localStorage.setItem('prompt_almeria_signature', dataUrl);
-            document.getElementById('sig-preview').src = dataUrl;
-            document.getElementById('sig-preview').style.display = 'block';
-            closeSignaturePad();
-            showToast("Firma guardada correctamente");
-            updateView();
-        }
-
-        function loadSavedSignature() {
-            const saved = localStorage.getItem('prompt_almeria_signature');
-            if (saved && saved !== 'null') {
-                const img = new Image();
-                img.onload = () => ctx.drawImage(img, 0, 0);
-                img.src = saved;
-                document.getElementById('sig-preview').src = saved;
-                document.getElementById('sig-preview').style.display = 'block';
-            }
-        }
-
-        function updateView() {
-            const texts = document.querySelectorAll('.prompt-text');
-            texts.forEach(el => {
-                const baseText = el.getAttribute('data-base').replace(/&quot;/g, '"');
-                el.innerText = getProcessedText(baseText);
-            });
-        }
-
-        function setRandom() {
-            const selects = ['var-face', 'var-light', 'var-quality', 'var-cinema', 'var-surface', 'var-ar', 'var-style-master', 'var-color', 'var-technique', 'var-atmosphere', 'var-lens', 'var-dof', 'var-shot', 'var-effect', 'var-clothing'];
-            selects.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    const options = Array.from(el.querySelectorAll('option')).filter(o => o.value !== "" && o.value !== "MANUAL");
-                    if (options.length > 0) {
-                        const randomIndex = Math.floor(Math.random() * options.length);
-                        el.value = options[randomIndex].value;
-                    }
-                }
-            });
-            updateView();
-            
-            const btn = document.querySelector('.btn-random');
-            if (btn) {
-                btn.style.filter = 'hue-rotate(90deg)';
-                setTimeout(() => btn.style.filter = '', 300);
-            }
-        }
-
-        function copyPrompt(id) {
-            const el = document.getElementById(`text-${id}`);
-            const textToCopy = el.innerText;
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                showToast(`Prompt #${id.split('_').pop()} Copiado`);
-            });
-        }
-
-        function showToast(msg) {
-            toast.textContent = msg;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2000);
-        }
-
-        // --- GESTIÓN DE PRESETS (localStorage) ---
-        const PRESETS_KEY = 'prompt_almeria_presets';
-
-        function saveCurrentAsPreset() {
-            const nameInput = document.getElementById('preset-name');
-            const name = nameInput.value.trim();
-            if (!name) {
-                alert("Por favor, introduce un nombre para el preset.");
-                return;
-            }
-
-            const currentConfig = {
-                name: name,
-                variables: {
-                    'var-face': document.getElementById('var-face').value,
-                    'var-light': document.getElementById('var-light').value,
-                    'var-quality': document.getElementById('var-quality').value,
-                    'var-cinema': document.getElementById('var-cinema').value,
-                    'var-ar': document.getElementById('var-ar').value,
-                    'var-style-master': document.getElementById('var-style-master').value,
-                    'var-technique': document.getElementById('var-technique').value,
-                    'var-atmosphere': document.getElementById('var-atmosphere').value,
-                    'var-lens': document.getElementById('var-lens').value,
-                    'var-dof': document.getElementById('var-dof').value,
-                    'var-shot': document.getElementById('var-shot').value,
-                    'var-effect': document.getElementById('var-effect').value,
-                    'var-clothing': document.getElementById('var-clothing').value,
-                    'var-surface': document.getElementById('var-surface').value,
-                    'var-color': document.getElementById('var-color').value,
-                    'var-signature': document.getElementById('var-signature').value
-                }
-            };
-
-            let presets = JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]');
-            const existingIndex = presets.findIndex(p => p.name === name);
-            if (existingIndex !== -1) {
-                if (!confirm(`El preset "${name}" ya existe. ¿Deseas sobrescribirlo?`)) return;
-                presets[existingIndex] = currentConfig;
-            } else {
-                presets.push(currentConfig);
-            }
-
-            localStorage.setItem(PRESETS_KEY, JSON.stringify(presets));
-            nameInput.value = '';
-            renderPresetsList();
-        }
-
-        function loadPreset(index) {
-            const presets = JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]');
-            const preset = presets[index];
-            if (!preset) return;
-
-            Object.keys(preset.variables).forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    el.value = preset.variables[id] || "";
-                    if (id === 'var-face') {
-                        const manual = document.getElementById('var-face-manual');
-                        if (manual) manual.style.display = el.value === 'MANUAL' ? 'block' : 'none';
-                    }
-                }
-            });
-
-            updateView();
-        }
-
-        function deletePreset(index, event) {
-            event.stopPropagation();
-            const presets = JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]');
-            if (!confirm(`¿Seguro que quieres eliminar el preset "${presets[index].name}"?`)) return;
-            
-            presets.splice(index, 1);
-            localStorage.setItem(PRESETS_KEY, JSON.stringify(presets));
-            renderPresetsList();
-        }
-
-        function renamePreset(index, event) {
-            event.stopPropagation();
-            const presets = JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]');
-            const oldName = presets[index].name;
-            const newName = prompt(`Nuevo nombre para "${oldName}":`, oldName);
-            
-            if (newName && newName.trim() !== "" && newName !== oldName) {
-                presets[index].name = newName.trim();
-                localStorage.setItem(PRESETS_KEY, JSON.stringify(presets));
-                renderPresetsList();
-            }
-        }
-
-        function renderPresetsList() {
-            const list = document.getElementById('presets-list');
-            if (!list) return;
-            const presets = JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]');
-            
-            if (presets.length === 0) {
-                list.innerHTML = '<div style="font-size:0.7rem; opacity:0.5; padding:10px;">No hay presets guardados.</div>';
-                return;
-            }
-
-            list.innerHTML = presets.map((p, i) => `
-                <div class="preset-item" onclick="loadPreset(${i})">
-                    <span class="preset-name" title="${p.name}">${p.name}</span>
-                    <div class="preset-actions">
-                        <button class="preset-action-btn btn-edit" onclick="renamePreset(${i}, event)" title="Renombrar">✏️</button>
-                        <button class="preset-action-btn btn-delete" onclick="deletePreset(${i}, event)" title="Eliminar">🗑️</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        async function exportPresets() {
-            const presets = localStorage.getItem(PRESETS_KEY);
-            if (!presets || presets === '[]') {
-                alert("No hay presets para exportar.");
-                return;
-            }
-
-            // Intentar usar la File System Access API (Chrome/Edge) para elegir destino exacto
-            if ('showSaveFilePicker' in window) {
-                try {
-                    const handle = await window.showSaveFilePicker({
-                        suggestedName: 'presets_almeria.json',
-                        types: [{
-                            description: 'JSON Presets',
-                            accept: { 'application/json': ['.json'] },
-                        }],
-                    });
-                    const writable = await handle.createWritable();
-                    await writable.write(presets);
-                    await writable.close();
-                    showToast("Guardado con éxito en la carpeta");
-                    return;
-                } catch (err) {
-                    console.log("Cancelado o no soportado, usando descarga estándar.");
-                }
-            }
-
-            // Fallback: descarga estándar
-            const blob = new Blob([presets], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'presets_almeria.json';
-            a.click();
-            URL.revokeObjectURL(url);
-            showToast("Descargado (muévelo a la carpeta del HTML)");
-        }
-
-        function importPresets() {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'application/json';
-            
-            input.onchange = (e) => {
-                const file = e.target.files[0];
-                if (!file) return;
-
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    try {
-                        const imported = JSON.parse(e.target.result);
-                        if (!Array.isArray(imported)) throw new Error("Formato inválido");
-
-                        const current = JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]');
-                        
-                        if (confirm(`Se han encontrado ${imported.length} presets. ¿Deseas UNIRLOS a los actuales? (Aceptar) o REEMPLAZARLOS por completo (Cancelar)?`)) {
-                            // Merge: evitar duplicados por nombre
-                            const merged = [...current];
-                            imported.forEach(p => {
-                                const idx = merged.findIndex(m => m.name === p.name);
-                                if (idx === -1) merged.push(p);
-                                else merged[idx] = p; // Sobrescribir si existe
-                            });
-                            localStorage.setItem(PRESETS_KEY, JSON.stringify(merged));
-                        } else {
-                            if (confirm("Se perderán todos los presets actuales. ¿Continuar?")) {
-                                localStorage.setItem(PRESETS_KEY, JSON.stringify(imported));
-                            }
-                        }
-                        
-                        renderPresetsList();
-                        showToast("Presets importados con éxito");
-                    } catch (err) {
-                        alert("Error al importar: El archivo no es un preset válido.");
-                    }
-                };
-                reader.readAsText(file);
-            };
-            input.click();
-        }
-
-        init();
-        renderPresetsList();
-    </script>
+    <script src="app.js?v=2026.03.26"></script>
 </body>
 </html>
 
