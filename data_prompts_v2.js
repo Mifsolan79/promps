@@ -174,15 +174,6 @@ window.PROMPT_DATABASE = {
             "style": "VFX & Efectos Especiales",
             "title": "INVISIBILIDAD PREDATOR-STYLE",
             "content": "Efecto de refracción activa que camufla el cuerpo con el entorno. Solo se percibe la silueta distorsionada y los ojos reales del rostro subido como referencia. Luz ambiental de jungla profunda. Estética de camuflaje térmico y digital avanzado. Arri Alexa 35."
-        }
-    ],
-    "Fantasía": [
-        {
-            "id": "fantasia_1",
-            "number": 1,
-            "style": "Fantasía",
-            "title": "EL GRAN SALÓN DEL TRONO",
-            "content": "Retrato maestro capturado con Arri Alexa 35 y lente Zeiss Supreme Prime. Un hombre con rostro subido como referencia con biometría extrema: poros de la piel visibles, micro-transpiración y vello facial fino. Camina por un pasillo de piedra volcánica (textura PBR) bajo iluminación Rembrandt dramática a 3200K. Calidad de fotograma IMAX, profundidad de color de 12 bits."
         },
         {
             "id": "vfx_26",
@@ -709,6 +700,16 @@ window.PROMPT_DATABASE = {
             "title": "EL ÚLTIMO MAESTRO DE LOS PROMPTS",
             "content": "Retrato definitivo absoluto. Rostro subido como referencia rodeado por todos los elementos VFX anteriores (Fuego, Agua, Luz, Datos). Biometría facial nivel realismo biológico. Iluminación Rembrandt perfecta a 3200K. Captura con Arri Alexa 35, lente Zeiss Supreme Prime. El pináculo de la creación visual en 8K."
         }
+    ],
+    "Fantasía": [
+        {
+            "id": "fantasia_1",
+            "number": 1,
+            "style": "Fantasía",
+            "title": "EL GRAN SALÓN DEL TRONO",
+            "content": "Retrato maestro capturado con Arri Alexa 35 y lente Zeiss Supreme Prime. Un hombre con rostro subido como referencia con biometría extrema: poros de la piel visibles, micro-transpiración y vello facial fino. Camina por un pasillo de piedra volcánica (textura PBR) bajo iluminación Rembrandt dramática a 3200K. Calidad de fotograma IMAX, profundidad de color de 12 bits."
+        },
+        
     ],
     "Fantasía": [
         {
